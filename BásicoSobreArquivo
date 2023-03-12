@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+	FILE *file;
+	file = fopen("C:\\Users\\Comix Zone\\Desktop\\teste.txt","w");
+	//letra "r" read, "w" writing, append alterar "a"
+	
+    return 0;
+}
