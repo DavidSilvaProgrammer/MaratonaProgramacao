@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	FILE *file;
+	file = fopen("numero.txt","r");
+	int x,y,z;
+	
+	//letra "r" read, "w" writing, append alterar "a"
+	//apenas com o nome e extensão cria arquivo no
+	//diretório do programa
+	fscanf(file,"%i %i %i",&x,&y,&z);
+	printf("%i %i %i",x,y,z);
+	
+	
+	fclose(file);
+    return 0;
+}
