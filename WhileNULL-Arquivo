@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	FILE *file;
+	file = fopen("string.txt","r");
+	
+	if(file == NULL){
+		printf("Arquivo nao pode ser aberto");
+		getchar();
+		//getchar() serve como um mecanismo de pausa
+		//quando se está executando o programa e
+		// nao quer que ele feche rapido
+		exit (0);
+	}
+	char frase[1000];
+	while(fgets(frase,100,file) != NULL){
+		printf("%s", frase);
+	
+	//enquanto essa função retornar qualquer valor
+	//esse círculo vai ser executado
+	}
+	
+	//letra "r" read, "w" writing, append alterar "a"
+	//apenas com o nome e extensão cria arquivo no
+	//diretório do programa
+	
+	
+	
+	fclose(file);
+    return 0;
+}
