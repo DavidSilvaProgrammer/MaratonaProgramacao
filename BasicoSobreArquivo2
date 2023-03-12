@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+	FILE *file;
+	file = fopen("teste.txt","w");
+	//letra "r" read, "w" writing, append alterar "a"
+	//apenas com o nome e extensão cria arquivo no
+	//diretório do programa
+	
+    return 0;
+}
