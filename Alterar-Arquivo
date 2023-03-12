@@ -12,7 +12,7 @@ int main() {
 	}
 	fprintf(file,"Segunda linha\n");
 	
-	char frase[] = "Terceira linha";
+	char frase[] = "Terceira linha\n";
 	fputs(frase, file);
 	//função fputs recebe 2 argumentos. O vetor frase e
 	//ponteiro file
