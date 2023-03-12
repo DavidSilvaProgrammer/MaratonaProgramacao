@@ -17,6 +17,8 @@ int main() {
 	while(fgets(frase,100,file) != NULL){
 		printf("%s", frase);
 	
+	//fgets sozinho só vai ler a string até encontrar
+	//a quebra de linha por isso que precisa do while
 	//enquanto essa função retornar qualquer valor
 	//esse círculo vai ser executado
 	}
