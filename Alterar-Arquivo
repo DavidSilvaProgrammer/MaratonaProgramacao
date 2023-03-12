@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	FILE *file;
+	file =fopen("string.txt","a");
+	
+	if(file == NULL){
+		printf("Arquivo nao pode ser aberto");
+		getchar();
+		exit(1);
+	}
+	fprintf(file,"Segunda linha\n");
+	
+	char frase[] = "Terceira linha";
+	fputs(frase, file);
+	//função fputs recebe 2 argumentos. O vetor frase e
+	//ponteiro file
+	
+	char caracter = "3";
+	fputc(caracter,file);
+	//recebe primeiro o caracter e depois o ponteiro file
+	
+	fclose(file);
+	
+	
+    return 0;
+}
