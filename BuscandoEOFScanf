@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    unsigned int A, B, C;
+    
+    while ( C != 1){
+        scanf("%u %u", &A, &B);
+        printf("%u\n", (A^B));
+    if (A || B == EOF){
+    C=1;
+    }
+    printf("Acabou o programa");
+    }
+    
+    return 0;
+}
