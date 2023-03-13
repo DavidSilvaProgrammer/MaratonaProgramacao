@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){   
+    
+    FILE *file1=fopen("entrada.txt","r");
+    unsigned int x,y;
+    
+    if (file1 == NULL){
+    	printf("Nao foi prossivel abrir o arquivo");
+    	return 1;
+	}
+	
+	FILE *file2=fopen("saida.txt","w");
+
+	
+	while (fscanf(file1,"%u %u",&x,&y) != EOF) {
+		printf("%u\n", (x^y));
+	}
+	
+	fprintf(file2,"%u",x^y);
+		
+	
+	fclose(file1);
+	fclose(file2);
+	
+    
+    
+        
+   return 0; 
+}
