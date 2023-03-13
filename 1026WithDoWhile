@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){   
+    
+    FILE *file1=fopen("entrada.txt","W");
+    unsigned int x,y;
+    
+	
+	FILE *file2=fopen("saida.txt","w");
+	
+	scanf("%u %u", &x,&y);
+	fprintf(file1,"%u",x^y);
+	fclose(file1);
+	FILE *file3=fopen("entrada.txt","W");
+
+	
+	do {
+		fprintf(file2,"%u",x^y);
+	} while (fscanf(file3,"%u %u",&x,&y) != EOF);
+	
+		
+	
+	fclose(file1);
+	fclose(file2);
+	fclose(file3);
+	
+    
+    
+        
+   return 0; 
+}
