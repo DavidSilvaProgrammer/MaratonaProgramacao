@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){   
+    
+    FILE *file1=fopen("saida.txt","W");
+    unsigned int x,y;
+	
+	while (scanf("%u %u", &x, &y) != EOF){
+		fprintf(file1,"%u",x^y);
+	}
+	
+		
+	
+	fclose(file1);
+
+	
+    
+    
+        
+   return 0; 
+}
