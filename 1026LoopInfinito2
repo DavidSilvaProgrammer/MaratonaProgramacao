@@ -6,7 +6,7 @@ int main(){
     unsigned int x,y;
 	
 while (scanf("%u %u", &x, &y) != EOF){
-	fprintf(file1,"%u",x^y);	
+	fprintf(file1,"%u\n",x^y);	
 }
 	
 	fclose(file1);
