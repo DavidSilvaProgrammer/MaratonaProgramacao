@@ -1,3 +1,5 @@
+//Obs.: Não abre porque o w de "writing" está maiusculo
+
 #include <stdio.h>
 #include <stdlib.h>
 int main(){   
