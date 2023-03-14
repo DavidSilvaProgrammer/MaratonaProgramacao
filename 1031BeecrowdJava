@@ -12,6 +12,26 @@ public class Main {
             teste = teclado.nextInt();
             if (teste <= 0) {// caso o teste seja <=0, saira do teste de repetição
                 break;
+            ArrayList <Integer> valores = new ArrayList<>();//Array com a lista de todas as regiões
+            for (int i=1;i<=teste;i++){
+                valores.add(i);// Adiciona de 1 até o número de regiões
+            }
+            antigo.clear();//Serve para repetições ->zerar sempre
+            antigo.add();//a região i é sempe a primeira, então já colocamos como garantida.
+            while(antigos.get(antigos.size() -1) != 13){ //Repetimos enquanto a última posição não seja igual a 13
+                salto++;
+                valor=1;
+            }
+            do {
+                for(int k = 0; k< salto;k++){ //Uma repetição que vai somar por vez até atingir o limite do salto
+                
+                }
+                
+            } while (antigos.size()<volume.size());
+            //Vamos adicionar valores nos antigos
+            //que haja o mesmo tanto de valores em antigos e valores
+            
+            
             }
         } while (teste != 0);// repete enquanto o valor for diferente de 0
     }
