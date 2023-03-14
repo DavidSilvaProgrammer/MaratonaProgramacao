@@ -2,15 +2,32 @@
 #include <stdlib.h>
 
 int main() {
-    int nl,antigos[nl],teste;
+    int nl,antigos[nl],teste,x,cidades[nl];
     do{
         int salto=0,valor=1;
         printf("Digite a quantidade de cidades entre (13 ≤ N ≤ 100 ):\n");
         scanf("%d",&teste);
         if (teste<=0){ //caso o teste seja <= 0, saira dos testes de repetição
             break;
+        for (x=1;x<=teste;x++){
+            cidades[x]=x;
+        }
+        antigos[teste-1] = 13;
+        antigos[0]=1;
+        for(int k = 0; k< teste;k++){
+            salto++;
+            
+            
+            
+        }
+        
+        
+        
+        
         } while (teste != 0);// repete enquanto o valor for diferente de 0
     }
 
     return 0;
 }
+
+//Erro
