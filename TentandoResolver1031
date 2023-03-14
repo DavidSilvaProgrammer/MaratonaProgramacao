@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int regioes, vetor_regioes[regioes], repetido[regioes],cont=0;
+    printf("Informe o numero de N (13 ≤ N ≤ 100 ):\n");
+    scanf("%d", &regioes);
+    
+    while (vetor_regioes[regioes-1]!= 13){
+        cont++;
+        for(int x=0,x<regioes;x++){
+            vetor_regioes[x] == cont;
+            if (cont > regioes){
+                cont
+            }
+        }
+            
+        }
+        
+        
+    }
+    
+
+    return 0;
+}
