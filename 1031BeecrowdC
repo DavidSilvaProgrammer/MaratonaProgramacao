@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int nl,antigos[nl],teste;
+    do{
+        int salto=0,valor=1;
+        printf("Digite a quantidade de cidades entre (13 ≤ N ≤ 100 ):\n");
+        scanf("%d",&teste);
+        if (teste<=0){ //caso o teste seja <= 0, saira dos testes de repetição
+            break;
+        } while (teste != 0);// repete enquanto o valor for diferente de 0
+    }
+
+    return 0;
+}
