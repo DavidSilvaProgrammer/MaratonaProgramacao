@@ -1,0 +1,18 @@
+import java.io.IOException;
+import java.until.ArrayList;
+import java.until.Scanner;
+
+public class Main {
+    public static void main(String args[]) throws IOException {
+        Scanner teclado = new Scanner(System.in);
+        ArrayList <Integer> antigos = new ArrayList<>(); //Lista com as cidades que já foram
+        int teste; //teste de quantas cidades existem
+        do {
+            int salto = 0,valor = 1;
+            teste = teclado.nextInt();
+            if (teste <= 0) {// caso o teste seja <=0, saira do teste de repetição
+                break;
+            }
+        } while (teste != 0);// repete enquanto o valor for diferente de 0
+    }
+}
