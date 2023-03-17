@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+//Eliminando os números repetidos posteriores e preservando os que foram
+//digitados primeiros
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+    int tam;
+    //determina o tamanho do vetor
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d",&tam);
+    printf("\n");
+    
+    int i,vet[tam],j,aux;
+    
+    //preencher vetor
+    printf("Digite os %d números inteiros: \n", tam);
+    for(i=0;i<tam;i++){
+        scanf("%d",&vet[i]);
+    }
+    //Eliminar números repetidos do vetor
+    printf("Sem números repetidos: \n");
+    for (i=0;i<tam;i++){
+        aux=0;
+        for(j=i-1;j>=0;j--){
+            if(vet[i]==vet[j]){
+                aux=1;
+            }
+        }
+        if(aux==0){
+            printf("%d \n",vet[i]);
+        }
+    }
+    printf("\n");
+    return 0;
+}
