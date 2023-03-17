@@ -7,15 +7,13 @@ int main() {
     for(x=0;x<10;x++){
         vetor[x]=0;
     }
-    while (vetor[10] != 5){
+    while (vetor[9] != 5){
         
         for(x=0;x<10;x++){
-            if (y>10 && recebe>10){
-                y=y/10;
-                recebe=0;
+            if (y>10){
+                y=y-10;
             }else{
-            recebe=recebe+y;
-            vetor[x]=recebe;
+            vetor[x]=y*(x+1);
             printf("%d\n",vetor[x]);
             }
         }
