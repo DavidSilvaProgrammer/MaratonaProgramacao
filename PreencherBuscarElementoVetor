@@ -1,0 +1,35 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int vetor[5];
+    int i, valor=1, tam=0, busca, pos_encontrado=-1;
+    
+    //entrada de dados
+    while(tam < 5){
+        printf("Digite o valor do elemento %d:\n" , tam);
+        scanf("%d",&valor);
+        vetor[tam]=valor;
+        tam++;
+    }
+    // valor de busca
+    
+    printf("digite o valor de busca ");
+    scanf("%d", &busca);
+    
+    //laço de busca
+    for(i=0;i<tam;i++){
+        if (busca == vetor[i]){
+            printf("encontrado o valor %d na posicao %d\n",busca,i);
+            pos_encontrado = i;
+            
+        }
+        
+    }
+    if (pos_encontrado == -1){
+        printf("nao foi encontrado o valor da busca %d", busca);
+    }
+    
+    
+    return 0;
+}
