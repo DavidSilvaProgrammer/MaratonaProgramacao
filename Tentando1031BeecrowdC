@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x,vetor[10],y=1,recebe=0;
+    
+    for(x=0;x<10;x++){
+        vetor[x]=0;
+    }
+    while (vetor[10] != 5){
+        
+        for(x=0;x<10;x++){
+            if (y>10 && recebe>10){
+                y=y/10;
+                recebe=0;
+            }else{
+            recebe=recebe+y;
+            vetor[x]=recebe;
+            printf("%d\n",vetor[x]);
+            }
+        }
+        printf("\n");
+        y++;
+    }
+    for(x=0;x<10;x++){
+        printf("%d",vetor[x]);
+        
+    }
+    
+    return 0;
+}
