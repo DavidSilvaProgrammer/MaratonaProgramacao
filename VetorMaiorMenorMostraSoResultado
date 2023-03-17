@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* Exercício: Leia um vetor de inteiros de tamanho 10. Em seguida, diga qual o maior e o menor elemento. */
+
+int main() {
+    int vet[10], i, menor=99999, maior=0;
+    
+    for (i=0;i<10; i++){
+        printf("Digite o valor da posicao %d ",i);
+        scanf("%d",&vet[i]);
+    }
+    for (i=0;i<10; i++){
+        printf("%d ",vet[i]);
+        if(menor > vet[i])
+        menor = vet[i];
+        if(maior < vet[i]){
+            maior=vet[i];
+        }
+    }
+    
+    printf("\nMenor: %d\nMaior: %d\n\n", menor,maior);
+
+    return 0;
+}
