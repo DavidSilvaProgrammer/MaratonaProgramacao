@@ -20,9 +20,10 @@ int main() {
     }
     printf("\nVetor 2: \n");
     for (i=0;i<10;i++){
-        printf("%d ",vete2[i]);
+        printf("%3d ",vete2[i]);
     }
     
+    //%3d serve para deixar garantir 3 caixas a cada números, isso é útil para manter os números aliandos.
 
     
 
