@@ -1,0 +1,18 @@
+for x in range(11):
+    print("\n"+str(x))
+
+print("\nDivisão entre for's ")    
+
+for x in range(0,10,1):
+    print("\n"+str(x))
+
+print("\nDivisão entre for's ")    
+
+w=2
+z=2
+
+for x in range(w,11,z):
+    if (x>=10):
+        x=x-10
+    print("\n"+str(x))
+    
