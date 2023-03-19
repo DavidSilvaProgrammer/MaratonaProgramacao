@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *p=(int *) malloc(sizeof(int));
+    *p=1000;
+    free(p);
+    printf("%i",*p);
+    /*Obs.: O free deve ser usado no fim do programa como uma boa prática de programação para liberar a 
+    memória do computador e permetir que esta possa ser reutilizada. Se ela for usada antes do fim, pode 
+    retornar um fim de mémoria e prejudicar o programa.
+    */
+
+    return 0;
+}
