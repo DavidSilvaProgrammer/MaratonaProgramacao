@@ -1,0 +1,19 @@
+x=int(input("Digite um valor entre 13 e 100"));
+y=True
+w=0
+vetorx[x];
+for(i=0,i<x,i+1){
+    vetorx[i]=i+1;
+}
+
+while(vetor[x-1]!=13){
+    while(y=True){
+        vetorx.insert(w,1)
+        if(vetor[x-1]== 13){
+            y=False
+        }
+    
+        
+    }
+
+}
