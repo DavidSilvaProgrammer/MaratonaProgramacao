@@ -1,0 +1,13 @@
+for x in range(11):
+    print("\n"+str(x))
+
+print("\nDivisão entre for's ")    
+
+for x in range(0,10,1):
+    print("\n"+str(x))
+
+print("\nDivisão entre for's ")    
+
+for x in range(0,10,2):
+    print("\n"+str(x))
+    
