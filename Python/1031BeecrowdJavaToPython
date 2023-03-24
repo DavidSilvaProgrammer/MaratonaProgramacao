@@ -1,0 +1,29 @@
+import sys
+
+while True:
+    teste = int(input())
+    if teste == 0:
+        sys.exit()
+    antigos = [1]
+    valores = list(range(1, teste + 1))
+    salto, valor = 0, 1
+
+    while antigos[-1] != 13:
+        salto += 1
+        valor = 1
+        while len(antigos) < len(valores):
+            for i in range(salto):
+                valor += 1
+                if valor > len(valores):
+                    valor -= len(valores)
+                while valor in antigos:
+                    valor += 1
+                    if valor > len(valores):
+                        valor -= len(valores)
+            antigos.append(valor)
+        if antigos[-1] == 13:
+            break
+        antigos.clear()
+        antigos.append(1)
+
+    print(salto)
