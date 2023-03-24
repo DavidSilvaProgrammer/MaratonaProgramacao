@@ -1,0 +1,17 @@
+while True:
+    n = int(input())
+    if n == 0:
+        break
+
+    m = 1
+    while True:
+        regioes_desligadas = set()
+        posicao_atual = 0
+        for i in range(n - 1):
+            regioes_desligadas.add(posicao_atual)
+            posicao_atual = (posicao_atual + m) % n
+        if posicao_atual == 12 and len(regioes_desligadas) == n - 1:
+            break
+        m += 1
+
+    print(m)
