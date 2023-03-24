@@ -50,3 +50,20 @@ de soldados que devem ser pulados antes de eliminar o próximo soldado. Esse aju
 na lista de soldados, o primeiro soldado é contado como 0 (zero), e não como 1 (um). Portanto, ao 
 subtrair 1 de m, estamos efetivamente contando os soldados a partir do soldado atual como 0 (zero) em vez de 
 1 (um), o que corrige o deslocamento na contagem.
+
+Sim, claro! Considere a seguinte lista de soldados:
+
+css
+
+soldiers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Suponha que estamos no início da lista, na posição 0, que corresponde ao soldado número 1. Se quisermos pular 2 soldados antes de eliminar o próximo, 
+podemos simplesmente usar m = 2.
+
+Se não subtrairmos 1 de m, a fórmula (pos + m) % len(soldiers) irá calcular a posição do soldado que está m posições à direita do soldado atual. 
+Nesse caso, a posição calculada será 2, que corresponde ao soldado número 3. No entanto, o soldado que deveria ser eliminado é o soldado número 2.
+
+Isso ocorre porque a lista de soldados é indexada a partir de 0 (zero), e não a partir de 1 (um). Portanto, para contar corretamente o 
+número de soldados que devem ser pulados a partir do soldado atual, é necessário subtrair 1 de m. Com isso, a fórmula correta a ser usada seria 
+(pos + m - 1) % len(soldiers), que irá calcular corretamente a posição do soldado a ser eliminado. Nesse caso, a posição calculada seria 1, 
+que corresponde ao soldado número 2.
