@@ -1,0 +1,55 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) throws IOException {
+        Scanner teclado = new Scanner(System.in);
+        ArrayList<Integer> antigos = new ArrayList<>(); // Lista com as cidades que já foram
+        int teste; // teste de quantas cidades existem
+        do {
+            int salto = 0, valor = 1;
+            teste = teclado.nextInt();
+            if (teste <= 0) { // caso o teste seja <=0, sairá do teste de repetição
+                break;
+            }
+            ArrayList<Integer> valores = new ArrayList<>();// Array com a lista de todas as regiões
+            for (int i = 1; i <= teste; i++) {
+                valores.add(i);// Adiciona de 1 até o número de regiões
+            }
+            antigos.clear();// Serve para repetições -> zerar sempre
+            antigos.add(1);// a região i é sempre a primeira, então já colocamos como garantida.
+            while (antigos.get(antigos.size() - 1) != 13) { // Repetimos enquanto a última posição não seja igual a 13
+                salto++;
+                valor = 1;
+                do {
+                    for (int k = 0; k < salto; k++) { // Uma repetição que vai somar por vez até atingir o limite do salto
+                        valor++;
+                        if (valor > valores.size()) {
+                            valor -= valores.size(); // volta para o inicio
+                        }
+                        while (antigos.contains(valor)) {// enquanto houver os valores que já foram
+                            valor++;// adiciona mais um
+                            if (valor > valores.size()) {// mesma situação já apresentada de voltar para o inicio do vetor
+                                valor -= valores.size();
+                            }
+                        }
+
+                    }
+                    antigos.add(valor); // Adiciona valor nos antigos
+                } while (antigos.size() < valores.size());
+                // Vamos adicionar valores nos antigos até
+                // que haja o mesmo tanto de valores em antigos e valores
+                if (antigos.get(antigos.size() - 1) == 13) {
+                    break;// Caso o último valor de antigos for igual a 13, podemos sair da repetição
+                }
+                antigos.clear(); // Caso não tenha encontrado, zeramos para começar de novo
+                antigos.add(1);
+
+            }
+
+            System.out.println(salto);// mostra o salto em que foi encontrado o 13 na última posição
+
+        } while (teste != 0);// repete enquanto o valor for diferente de 0
+    }
+}
