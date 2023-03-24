@@ -1,0 +1,17 @@
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    
+    m = 1
+    while True:
+        regions = list(range(1, n+1))
+        pos = 0
+        regions.pop(pos)
+        while len(regions) > 1:
+            pos = (pos + m - 1) % len(regions)
+            regions.pop(pos)
+        if regions[0] == 13:
+            print(m)
+            break
+        m += 1
