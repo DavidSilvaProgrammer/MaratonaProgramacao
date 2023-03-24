@@ -1,0 +1,36 @@
+O que essa linha de código significa? regions = list(range(1, n+1))
+
+Essa linha de código cria uma lista chamada regions contendo um intervalo de números inteiros que vai 
+de 1 até o número n especificado, incluindo o número n.
+
+A função range(start, stop, step) é uma função nativa do Python que gera um intervalo de números inteiros 
+de start (inclusive) até stop (exclusive), com um passo (ou incremento) de step. No código apresentado, 
+apenas os argumentos start e stop são passados para a função range, o que faz com que o intervalo gerado 
+comece em 1 e vá até n (inclusive), com um passo padrão de 1.
+
+A função range retorna um objeto iterável do tipo range, que é então convertido em uma lista usando a função 
+nativa list(). O resultado é uma lista contendo todos os números inteiros de 1 a n, que serão usados no algoritmo 
+de Josephus para representar os soldados.
+david.biblioteca.municipal@gmail.com
+O que essa linha de código significa? pos = (pos + m - 1) % len(regions)
+
+Essa linha de código é responsável por calcular a posição do próximo soldado que será eliminado 
+no algoritmo de Josephus.
+
+No algoritmo de Josephus, os soldados são dispostos em um círculo e são eliminados de maneira cíclica. 
+A variável pos representa a posição do soldado atual na lista de soldados, que é inicializada como zero 
+no início do loop interno.
+
+A fórmula (pos + m - 1) % len(regions) é usada para calcular a posição do próximo soldado a ser eliminado. 
+Ela funciona da seguinte maneira:
+
+    O valor de m é a quantidade de soldados que serão saltados antes de eliminar o próximo soldado.
+    Subtraindo 1 de m, obtemos a quantidade de soldados que precisam ser pulados a partir da posição atual pos.
+    Somando esse valor ao pos, obtemos a posição do próximo soldado a ser eliminado.
+    Como a lista de soldados é circular, é necessário usar o operador módulo % com o comprimento 
+    da lista de soldados len(regions) para garantir que a posição calculada esteja dentro dos limites da lista.
+
+Em resumo, essa linha de código calcula a posição do próximo soldado a ser eliminado no algoritmo de 
+Josephus, usando o valor de m para determinar quantos soldados devem ser pulados antes de eliminar o 
+próximo soldado, e o operador módulo para garantir que a posição calculada esteja dentro dos limites da 
+lista circular de soldados.
