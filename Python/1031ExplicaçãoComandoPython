@@ -34,3 +34,19 @@ Em resumo, essa linha de código calcula a posição do próximo soldado a ser e
 Josephus, usando o valor de m para determinar quantos soldados devem ser pulados antes de eliminar o 
 próximo soldado, e o operador módulo para garantir que a posição calculada esteja dentro dos limites da 
 lista circular de soldados.
+
+
+No algoritmo de Josephus, a cada iteração, m soldados são pulados antes de eliminar o próximo soldado. 
+Portanto, se m for igual a 1, o próximo soldado a ser eliminado será o soldado imediatamente 
+à direita do soldado atual na lista.
+
+No entanto, se m for maior que 1, o próximo soldado a ser eliminado será o m-ésimo soldado à direita 
+do soldado atual na lista. 
+Por exemplo, se m for igual a 2, o soldado imediatamente à direita do soldado atual é pulado, 
+e o próximo soldado a ser eliminado é o soldado que está duas posições à direita.
+
+Dessa forma, ao subtrair 1 de m na fórmula (pos + m - 1) % len(regions), estamos ajustando o número 
+de soldados que devem ser pulados antes de eliminar o próximo soldado. Esse ajuste é necessário porque, 
+na lista de soldados, o primeiro soldado é contado como 0 (zero), e não como 1 (um). Portanto, ao 
+subtrair 1 de m, estamos efetivamente contando os soldados a partir do soldado atual como 0 (zero) em vez de 
+1 (um), o que corrige o deslocamento na contagem.
