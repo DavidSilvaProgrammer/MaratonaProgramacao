@@ -1,0 +1,4 @@
+frutas = ['banana', 'maçã', 'laranja', 'abacaxi']
+laranja = frutas.pop(2)
+print(laranja)   # Output: "laranja"
+print(frutas)    # Output: ['banana', 'maçã', 'abacaxi']
