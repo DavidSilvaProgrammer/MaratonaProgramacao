@@ -1,0 +1,26 @@
+# vetor original com elementos de 0 a 9
+vetor_original = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# vetor que será preenchido
+vetor_secundario = []
+
+# variável para controlar o índice do vetor original
+indice_original = 0
+
+# laço para preencher o vetor secundário
+while len(vetor_secundario) < len(vetor_original):
+    # adiciona o elemento no vetor secundário
+    elemento_atual = vetor_original[indice_original]
+    if elemento_atual not in vetor_secundario:
+        vetor_secundario.append(elemento_atual)
+
+    # incrementa o índice do vetor original
+    indice_original += 3
+
+    # retorna para o início do vetor original, se necessário
+    if indice_original >= len(vetor_original):
+        indice_original %= len(vetor_original)
+
+# exibe os vetores
+print("Vetor original:", vetor_original)
+print("Vetor secundário:", vetor_secundario)
