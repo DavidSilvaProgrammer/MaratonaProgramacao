@@ -1,0 +1,26 @@
+while True:
+    antigos = []  # Lista com as cidades que já foram
+    salto, valor = 0, 1
+    teste = int(input())  # teste de quantas cidades existem
+    if teste <= 0:  # caso o teste seja <=0, sairá do teste de repetição
+        break
+    valores = list(range(1, teste+1))  # Lista com a cidade inicial
+    antigos.append(1)  # a região i é sempre a primeira, então já colocamos como garantida.
+    while antigos[-1] != 13:  # Repetimos enquanto a última posição não seja igual a 13
+        salto += 1
+        valor = 1
+        while len(antigos) < len(valores):
+            for k in range(salto):  # Uma repetição que vai somar por vez até atingir o limite do salto
+                valor += 1
+                if valor > len(valores):
+                    valor -= len(valores)  # volta para o inicio
+                while valor in antigos:  # enquanto houver os valores que já foram
+                    valor += 1  # adiciona mais um
+                    if valor > len(valores):  # mesma situação já apresentada de voltar para o inicio do vetor
+                        valor -= len(valores)
+            antigos.append(valor)  # Adiciona valor nos antigos
+        if antigos[-1] == 13:
+            break  # Caso o último valor de antigos for igual a 13, podemos sair da repetição
+        antigos.clear()  # Caso não tenha encontrado, zeramos para começar de novo
+        antigos.append(1)
+    print(salto)  # mostra o salto em que foi encontrado o 13 na última posição
