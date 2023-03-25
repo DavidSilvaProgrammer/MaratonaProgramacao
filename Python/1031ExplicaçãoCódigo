@@ -84,3 +84,18 @@ Portanto, não há necessidade de restaurar a lista original regions porque ela 
 se esse último elemento restante é igual a 13 e, se for o caso, imprime o valor de m. Se o último elemento restante não for igual a 13, o loop 
 externo continua com um novo valor de m e uma nova lista regions.
 
+
+Claro! Essa linha de código é responsável por calcular o índice do próximo elemento a ser removido da lista regions. 
+Vou explicar o que cada parte dessa linha de código faz:
+
+    (pos + m - 1) - primeiro, é calculada a posição do próximo elemento a ser removido. O valor de pos representa o 
+    índice do último elemento removido da lista regions e m é o valor atual do contador de jogadas. Subtraindo 1 do valor de m 
+    garante que a contagem comece a partir da posição de pos.
+
+    % len(regions) - depois, é calculado o resto da divisão do valor obtido na primeira parte da linha de código pelo tamanho 
+    atual da lista regions. Esse valor representa o índice do próximo elemento a ser removido da lista. O operador % é usado 
+    para garantir que o índice esteja dentro dos limites da lista.
+
+No geral, essa linha de código implementa a lógica do problema do "Josephus Problem", que consiste em remover elementos 
+de uma lista em um padrão específico até que apenas um elemento reste. O valor de pos e m são atualizados em cada iteração 
+do loop para garantir que o próximo elemento a ser removido seja sempre o correto.
