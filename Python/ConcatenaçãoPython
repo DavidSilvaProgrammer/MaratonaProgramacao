@@ -1,0 +1,33 @@
+# Exemplo
+idade = 25
+mensagem = "Eu tenho " + str(idade) + " anos."
+print(mensagem)
+
+# Exemplo com f-string
+idade = 25
+mensagem = f"Eu tenho {idade} anos."
+print(mensagem)
+
+
+'''
+Para concatenar um inteiro e uma string em Python, você pode usar a 
+função str() para converter o inteiro em uma string e, em seguida, 
+concatenar as duas strings usando o operador de adição +. 
+Por exemplo:
+
+Neste exemplo, a função str() é usada para converter o valor da variável 
+idade (que é um inteiro) em uma string. Em seguida, as duas strings 
+são concatenadas usando o operador +. O resultado será a string 
+"Eu tenho 25 anos.".
+
+Você também pode usar a f-string em Python 3.6+ para formatar strings, 
+como no exemplo a seguir:
+
+Neste exemplo, a variável idade é incluída dentro da string usando a 
+sintaxe de chaves {} dentro de uma f-string (string formatada). 
+O valor da variável é automaticamente convertido em uma string e 
+inserido na posição correspondente dentro da string. O resultado 
+será a mesma string "Eu tenho 25 anos.".
+
+'''
+
