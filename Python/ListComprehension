@@ -1,0 +1,27 @@
+Nesta linha de código:
+
+numeros = [int(x) for x in input("Digite uma sequência de números separados por vírgula: ").split(",")]
+
+O trecho [int(x) for x in input("Digite uma sequência de números separados por vírgula: ").split(",")] é uma expressão de 
+"list comprehension", que é uma forma mais concisa e pythonica de construir uma lista a partir de uma sequência de valores.
+
+Essa expressão consiste em uma estrutura de loop for embutido que percorre cada elemento da lista retornada pela função split(",") 
+e aplica a função int() em cada um deles, criando uma nova lista de inteiros.
+
+Ou seja, a expressão [int(x) for x in input("Digite uma sequência de números separados por vírgula: ").split(",")] é equivalente a 
+escrever o seguinte código usando um loop for explícito:
+
+
+entrada = input("Digite uma sequência de números separados por vírgula: ")
+numeros_str = entrada.split(",")
+numeros = []
+for x in numeros_str:
+    numeros.append(int(x))
+
+Nesse exemplo, o loop for explícito é usado para percorrer a lista numeros_str retornada pela função split(","), 
+aplicar a função int() a cada elemento e adicionar o resultado a uma nova lista numeros.
+
+Esses dois códigos produzem exatamente o mesmo resultado, mas a "list comprehension" é mais concisa e 
+geralmente considerada mais pythonica.
+
+
