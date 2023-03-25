@@ -1,0 +1,33 @@
+/*def josephus(n):
+    if (n == 1):
+        return 1;
+    if(n%2==0):
+        return 2*josephus(n/2)-1
+    else:
+        return 2*josephus(n/2)+1
+
+n=int(input("Digite o valor de n:\n"))
+x=josephus(n)
+print(x)
+
+*/
+#include <stdio.h>
+int josephus(n){
+    if(n==1){
+        return 1;
+    }
+    if(n%2==0){
+        return 2*josephus(n/2)-1;
+    }else{
+        return 2*josephus(n/2)+1;
+    }
+}
+
+int main() {
+    int n;
+    printf("Digite o valor de n:\n");
+    scanf("%d",&n);
+    printf("%d",josephus(n));
+
+    return 0;
+}
