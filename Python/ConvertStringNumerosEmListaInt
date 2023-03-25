@@ -45,4 +45,23 @@ em seguida, a conversão para inteiro é aplicada a cada substring usando a fun�
 Tudo isso é feito dentro de uma única linha de código usando a função list() e a função map() para criar a lista de inteiros resultante. 
 A lista resultante contendo os inteiros é armazenada na variável numeros_int.
 
+
+Claro, aqui está um exemplo completo de um programa Python que usa a técnica de "list comprehension" para converter uma sequência de números 
+separados por vírgula em uma lista de inteiros:
+
+numeros = [int(x) for x in input("Digite uma sequência de números separados por vírgula: ").split(",")]
+
+print("A lista de números é:", numeros)
+
+Neste exemplo, a função input() é usada para ler a entrada do usuário, a função split(",") é usada para separar a string em substrings sempre que 
+houver uma vírgula e, em seguida, a conversão para inteiro é aplicada a cada substring usando a expressão int(x) dentro da "list comprehension".
+
+Tudo isso é feito dentro de uma única linha de código, que cria a lista de inteiros numeros. Essa lista é exibida na tela usando a função print().
+
+Se o usuário digitar, por exemplo, a sequência "1,2,3,4,5", o programa irá converter essa string em uma lista de inteiros [1, 2, 3, 4, 5] e exibir 
+na tela.
+
+Observe que este método é mais conciso do que o exemplo anterior que usava as variáveis numeros_str e numeros_int. Além disso, 
+é mais eficiente em termos de memória, pois não cria listas temporárias intermediárias.
+
 '''
