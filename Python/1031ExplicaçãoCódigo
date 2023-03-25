@@ -1,0 +1,86 @@
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    
+    m = 1
+    while True:
+        regions = list(range(1, n+1))
+        pos = 0
+        regions.pop(pos)
+        while len(regions) > 1:
+            pos = (pos + m - 1) % len(regions)
+            regions.pop(pos)
+        if regions[0] == 13:
+            print(m)
+            break
+        m += 1
+        
+     ''' 
+     
+     O código que você apresentou é a solução para a questão 1031 do Beecrowd. 
+     A seguir, explico como ele funciona:
+
+A primeira linha do código cria um loop infinito com while True.
+
+Na linha 2, o código lê um número inteiro n do usuário.
+
+Na linha 3, o código verifica se o valor de n é zero. Se for, o loop 
+infinito é interrompido com o comando break.
+
+Na linha 5, a variável m é iniciada com o valor 1. Essa variável 
+será usada para contar quantos números são pulados na lista regions.
+
+Na linha 6, é criado um novo loop infinito com while True.
+
+Na linha 7, é criada uma lista regions com n elementos, numerados de 1 
+a n.
+
+Na linha 8, a variável pos é iniciada com o valor 0. Essa variável 
+será usada para acompanhar a posição atual na lista regions.
+
+Na linha 9, é removido o elemento da posição pos da lista regions.
+
+A partir da linha 10, é criado um novo loop com while 
+len(regions) > 1. Esse loop continua até que a lista regions tenha 
+apenas um elemento restante.
+
+Na linha 11, é calculada a nova posição pos com base na variável m.
+
+Na linha 12, é removido o elemento da posição pos da lista regions.
+
+Na linha 13, se o valor do último elemento restante na lista regions 
+for 13, o valor de m é impresso na tela com o comando print(m) e o 
+loop infinito interno é interrompido com o comando break.
+
+Se o valor do último elemento restante na lista regions não for 13, 
+o valor de m é incrementado em 1 na linha 14, e o loop interno 
+continua.
+
+Se o loop interno terminar, o loop externo continua na linha 6 e 
+repete o processo com um novo valor de m.
+
+Quando o loop externo terminar (porque o usuário digitou 0 
+na linha 2), o programa termina.
+
+Se o ultimo elemento restante na lista não for 13 o que acontece?
+
+
+Se o último elemento restante na lista regions não for igual a 13, o programa continuará a executar. 
+Na linha 14, a variável m será incrementada em 1 e um novo loop interno será iniciado na linha 6.
+
+O programa continuará a repetir esse processo até que o último elemento restante na lista regions seja igual a 
+13, ou seja, até que a condição na linha 13 seja satisfeita. Quando isso acontecer, o valor de m que levou a essa condição 
+será impresso na tela e o programa terminará.
+
+Mas os elementos já não foram retirados da lista? Não deveria a lista ser restaurada também?
+
+Na verdade, os elementos não são retirados da lista original regions. Em vez disso, é criada uma nova lista regions na linha 6 usando a 
+função list(range(1, n+1)). Em cada iteração do loop interno, os elementos são removidos da lista regions criada na linha 6 usando o método pop 
+e o índice do elemento a ser removido é calculado com base no valor da variável pos.
+
+Portanto, não há necessidade de restaurar a lista original regions porque ela não é modificada pelo programa. A cada iteração do loop externo, 
+é criada uma nova lista regions e essa é a lista que é manipulada e reduzida em tamanho até que apenas um elemento reste. O programa então verifica 
+se esse último elemento restante é igual a 13 e, se for o caso, imprime o valor de m. Se o último elemento restante não for igual a 13, o loop 
+externo continua com um novo valor de m e uma nova lista regions.
+
