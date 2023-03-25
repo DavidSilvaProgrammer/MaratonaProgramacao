@@ -31,4 +31,18 @@ irá converter essa string em uma lista de inteiros [1, 2, 3, 4, 5].
 numeros = [int(x) for x in input("Digite uma sequência de números separados por vírgula: ").split(",")]
 
 
+Eu gostaria que você não precisasse usar a variavel numeros_str e numeros_int. 
+Apenas uma em relação a isso. eu quero mais ou menos assim: numeros_int = list(map(int, entrada.split(",")))
+
+Sim, você pode fazer isso em apenas uma linha de código, como você sugeriu:
+
+numeros_int = list(map(int, input("Digite uma sequência de números separados por vírgula: ").split(",")))
+
+Neste exemplo, a função input() é usada para ler a entrada do usuário, a função split(",") é usada para separar a string em substrings 
+sempre que houver uma vírgula e, 
+em seguida, a conversão para inteiro é aplicada a cada substring usando a função int().
+
+Tudo isso é feito dentro de uma única linha de código usando a função list() e a função map() para criar a lista de inteiros resultante. 
+A lista resultante contendo os inteiros é armazenada na variável numeros_int.
+
 '''
