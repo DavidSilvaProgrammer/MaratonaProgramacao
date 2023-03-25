@@ -1,0 +1,27 @@
+# Exemplo
+nome = "João"
+idade = 30
+mensagem = "Meu nome é {0} e eu tenho {1} anos.".format(nome, idade)
+print(mensagem)
+
+
+A expressão {0} e {1} dentro da string "Meu nome é {0} e eu tenho {1} anos." são chamadas de "campos de substituição" ou "placeholders". 
+Eles indicam onde os valores a serem formatados serão inseridos na string.
+
+O número dentro dos colchetes indica a ordem dos argumentos que são passados para o método .format(). Ou seja, no exemplo, {0} representa 
+o primeiro argumento passado, que é a variável nome, e {1} representa o segundo argumento passado, que é a variável idade.
+
+Essa técnica permite formatar strings de forma dinâmica e inserir valores em locais específicos da string. Além disso, o método .format() 
+permite especificar o tipo de formatação, como largura mínima, alinhamento e número de casas decimais para números.
+
+Por exemplo, para especificar que o número da idade deve ser impresso com pelo menos 2 dígitos, você pode usar {1:02d} em vez de {1} na 
+string de formatação:
+
+nome = "João"
+idade = 30
+mensagem = "Meu nome é {0} e eu tenho {1:02d} anos.".format(nome, idade)
+print(mensagem)
+
+Nesse caso, o número 2 dentro dos dois pontos indica a largura mínima da representação numérica e o caractere d 
+indica que o valor é um inteiro. Isso resultará na 
+impressão de 30 com um zero à esquerda, ou seja, 30 será impresso como 30 em vez de 3.
