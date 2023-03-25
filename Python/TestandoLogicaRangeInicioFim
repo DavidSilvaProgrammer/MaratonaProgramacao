@@ -1,0 +1,8 @@
+n=25
+
+regions = list(range(1, n+1))
+
+#Se não colocar n+1, o range termina a lista uma casa antes do n, é como se fosse um enquanto 1<25
+
+print(regions)
+print(regions[0])
