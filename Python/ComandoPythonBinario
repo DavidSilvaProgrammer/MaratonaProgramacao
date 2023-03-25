@@ -1,0 +1,9 @@
+#decimal = 10
+#binario = bin(decimal).replace("0b", "")
+#print(binario)
+
+numero = 1010101
+binario = bin(numero)[2:]  # converte o número para binário e remove o prefixo "0b"
+binario = binario[-1] + binario[:-1]  # move o último caractere para o início da string
+numero = int(binario, 2)  # converte a string binária de volta para um número inteiro
+print(numero)
