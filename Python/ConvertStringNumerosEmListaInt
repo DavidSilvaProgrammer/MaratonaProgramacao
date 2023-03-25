@@ -64,4 +64,17 @@ na tela.
 Observe que este método é mais conciso do que o exemplo anterior que usava as variáveis numeros_str e numeros_int. Além disso, 
 é mais eficiente em termos de memória, pois não cria listas temporárias intermediárias.
 
+Claro, aqui está o exemplo usando a função map() para converter a sequência de números separados por vírgula em uma lista de inteiros:
+
+numeros_int = list(map(int, input("Digite uma sequência de números separados por vírgula: ").split(",")))
+
+print("A lista de números é:", numeros_int)
+
+Neste exemplo, a função input() é usada para ler a entrada do usuário, a função split(",") é usada para separar a string em substrings sempre que houver uma vírgula e, em seguida, a conversão para inteiro é aplicada a cada substring usando a função int() dentro da função map().
+
+Tudo isso é feito dentro de uma única linha de código, que cria a lista de inteiros numeros_int. Essa lista é exibida na tela usando a função print().
+
+Se o usuário digitar, por exemplo, a sequência "1,2,3,4,5", o programa irá converter essa string em uma lista de inteiros [1, 2, 3, 4, 5] e exibir na tela.
+
+
 '''
