@@ -1,0 +1,29 @@
+'''
+
+Faça um programa em python que receba uma string com números separados 
+com vírgula e depois converta para uma lista de int.
+
+Você pode fazer isso em Python usando a função split() para separar a 
+string em substrings nos pontos onde há vírgulas e, em seguida, a 
+função map() para aplicar a conversão para inteiro a  cada substring. 
+Aqui está um exemplo de programa:
+
+entrada = input("Digite uma sequência de números separados por vírgula: ")
+numeros_str = entrada.split(",")
+numeros_int = list(map(int, numeros_str))
+print(numeros_int)
+
+Neste exemplo, a entrada do usuário é lida usando a função input() e 
+armazenada na variável entrada. A função split(",") é usada para separar 
+a string em substrings sempre que houver uma vírgula. Os substrings são 
+armazenados em uma lista de strings chamada numeros_str.
+
+Em seguida, a função map(int, numeros_str) é usada para aplicar a 
+conversão para inteiro a cada elemento da lista numeros_str. 
+A função map() retorna um objeto de mapa, que é convertido em 
+uma lista de inteiros usando a função list() e armazenado na variável 
+numeros_int.
+
+Por fim, a lista numeros_int é exibida na tela usando a função print(). 
+Se o usuário digitar, por exemplo, a sequência "1,2,3,4,5", o programa 
+irá converter essa string em uma lista de inteiros [1, 2, 3, 4, 5].
