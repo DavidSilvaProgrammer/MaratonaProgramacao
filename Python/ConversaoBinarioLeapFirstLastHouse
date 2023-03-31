@@ -43,6 +43,64 @@ Novo número decimal: 5
 
 Observe que o programa pulou a primeira casa binária para a frente da última, gerando um novo código binário.
 
+
+A linha de código num_binario = bin(num_decimal)[2:] tem a função de converter o número decimal digitado pelo usuário em um número binário e armazená-lo na variável num_binario.
+
+A função bin() é utilizada para realizar essa conversão. Porém, o resultado da função bin() inclui os caracteres "0b" no início da representação binária. Por exemplo, se o número decimal digitado for 10, o resultado da função bin() será a string "0b1010".
+
+O slice [2:] é utilizado para descartar os dois primeiros caracteres (o "0b") da string resultante, deixando somente a representação binária pura e armazenando-a na variável num_binario.
+
+Resumindo, o slice [2:] é utilizado para eliminar os dois primeiros caracteres ("0b") da representação binária gerada pela função bin(), deixando apenas a parte binária do número e armazenando-a em num_binario.
+
+
+
+A função bin() retorna uma representação binária do número decimal fornecido como argumento. Porém, por convenção, o prefixo "0b" é adicionado antes da representação binária gerada pela função.
+
+O prefixo "0b" é utilizado para indicar que a string que segue representa um número binário. Ou seja, quando o Python retorna uma string com o prefixo "0b", ele está indicando que o valor subsequente é uma representação binária do número.
+
+Por exemplo, se você chama a função bin(10), ela retorna a string "0b1010". Isso significa que o valor binário correspondente ao número decimal 10 é 1010. O prefixo "0b" simplesmente indica que a string que segue é uma representação binária do número.
+
+É importante observar que o prefixo "0b" é utilizado somente para fins de identificação da representação binária na forma de uma string. Quando a representação binária é utilizada em operações aritméticas ou manipulações em código Python, o prefixo "0b" não é necessário e pode ser removido, como é feito na linha de código num_binario = bin(num_decimal)[2:].
+
+
+o termo "slice" que utilizei na minha resposta se refere a uma operação de "slicing" em Python. Na verdade, a expressão bin(num_decimal)[2:] utiliza essa operação para retornar uma parte da string resultante da chamada à função bin(), e não uma função chamada slice.
+
+A operação de "slicing" em Python é uma forma de selecionar uma parte de uma sequência (como uma string, uma lista, uma tupla, entre outras) a partir de uma posição inicial e uma posição final. O formato geral da sintaxe é [início:fim], onde início é a posição inicial e fim é a posição final (não inclusiva).
+
+No caso da linha de código bin(num_decimal)[2:], o "slicing" é utilizado para remover os dois primeiros caracteres ("0b") da representação binária gerada pela função bin(), mantendo apenas a parte binária do número. O 2: especifica que o "slicing" deve começar a partir do terceiro caractere da string resultante (índice 2, considerando que a indexação em Python começa em 0) e incluir todos os caracteres até o final da string.
+
+Sendo assim, a expressão bin(num_decimal)[2:] retorna uma string que contém somente a representação binária do número, sem o prefixo "0b".
+david.biblioteca.municipal@gmail.com
+Explica essa linha novo_binario = num_binario[1:] + num_binario[0] ?
+
+A linha de código novo_binario = num_binario[1:] + num_binario[0] cria uma nova representação binária a partir da original, deslocando o primeiro dígito (bit) da esquerda para a direita da representação.
+
+A expressão num_binario[1:] seleciona todos os dígitos da representação binária, exceto o primeiro dígito (índice 0). Isso é feito utilizando a operação de slicing em Python, especificando que a seleção deve começar no segundo dígito (índice 1) e seguir até o final da string.
+
+A expressão num_binario[0] seleciona apenas o primeiro dígito (bit) da representação binária, que é o que será deslocado para o final.
+
+Ao concatenar as duas expressões utilizando o operador +, obtemos uma nova representação binária que consiste em todos os dígitos da representação original, exceto o primeiro, seguidos do primeiro dígito deslocado para o final.
+
+Por exemplo, se a representação binária original for "101001", a expressão num_binario[1:] irá retornar "01001" e a expressão num_binario[0] irá retornar "1". Ao concatená-las, obtemos a nova representação binária "010011", que corresponde ao número binário 19 em decimal.
+
+Em resumo, essa linha de código realiza uma operação de deslocamento circular da representação binária, movendo o primeiro dígito (bit) da esquerda para a direita da representação.
+david.biblioteca.municipal@gmail.com
+Explica essa linha de código também, por favor.     novo_decimal = int(novo_binario, 2)
+
+A linha de código novo_decimal = int(novo_binario, 2) converte a nova representação binária gerada anteriormente (novo_binario) em um número decimal.
+
+A função int() em Python converte um valor para um número inteiro (int), e pode receber dois argumentos. O primeiro argumento é o valor a ser convertido, e o segundo é a base numérica do valor. No caso dessa linha de código, o segundo argumento é 2, indicando que o valor a ser convertido está na base binária.
+
+A partir dessa conversão, a variável novo_decimal irá conter o valor do número decimal correspondente à nova representação binária gerada anteriormente.
+
+Por exemplo, se a nova representação binária gerada foi "010011", a linha de código novo_decimal = int(novo_binario, 2) irá converter esse valor para o número decimal 19, que será atribuído à variável novo_decimal.
+david.biblioteca.municipal@gmail.com
+a função int então transforma automaticamente para decimal. Não precisa colocar como parametro 10 para informa a função que desejamos converter para decimal. Se não, por quê?
+
+Sim, você está correto. A função int() em Python, quando utilizada sem especificar a base numérica do valor a ser convertido, assume que o valor está na base decimal (base 10).
+
+Portanto, na linha de código novo_decimal = int(novo_binario, 2), o segundo argumento "2" indica que o valor a ser convertido está na base binária (base 2), e não na base decimal (base 10), como ocorreria por padrão se esse argumento fosse omitido.
+
 */
 
 
