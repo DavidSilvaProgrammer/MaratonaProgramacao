@@ -14,4 +14,36 @@ print(f"Número binário original: {num_binario}")
 print(f"Novo número binário: {novo_binario}")
 print(f"Novo número decimal: {novo_decimal}")
 
-first house, last house
+/*Código em Python que realiza a conversão do número decimal em binário, pula a primeira casa 
+binária para a frente da última e imprime o resultado em binário e decimal:
+
+Explicação do código:
+
+    O usuário é solicitado a digitar um número decimal, que é armazenado na variável num_decimal.
+
+    A função bin() é utilizada para converter o número decimal em binário. O resultado 
+    é armazenado na variável num_binario.
+
+    A variável novo_binario é criada concatenando todas as casas binárias exceto a primeira, 
+    com a primeira casa binária passando para a frente da última.
+
+    A função int() é utilizada para converter o novo número binário de volta para decimal. 
+    O resultado é armazenado na variável novo_decimal.
+
+    Por fim, o número binário original e o novo número em binário e decimal são impressos 
+    na tela utilizando a função print().
+
+Ao executar o código, serão impressos na tela os seguintes resultados para um número 
+decimal de exemplo:
+
+Digite um número decimal: 10
+Número binário original: 1010
+Novo número binário: 0101
+Novo número decimal: 5
+
+Observe que o programa pulou a primeira casa binária para a frente da última, gerando um novo código binário.
+
+*/
+
+
+
