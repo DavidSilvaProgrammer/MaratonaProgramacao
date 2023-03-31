@@ -1,0 +1,17 @@
+num_decimal = int(input("Digite um número decimal: "))
+
+# converte o número decimal para binário
+num_binario = bin(num_decimal)[2:]
+
+# pula a primeira casa binária para a frente da última
+novo_binario = num_binario[1:] + num_binario[0]
+
+# converte o novo número binário para decimal
+novo_decimal = int(novo_binario, 2)
+
+# imprime o número binário original e o novo número em binário e decimal
+print(f"Número binário original: {num_binario}")
+print(f"Novo número binário: {novo_binario}")
+print(f"Novo número decimal: {novo_decimal}")
+
+first house, last house
