@@ -96,6 +96,27 @@ Em seguida, a função inicializa as variáveis idx e prime, que são usadas par
    print(josephus(n))
   
   
+  *****************************************
+  
+  EXPLICAÇÃO função is_prime:
+  
+  Claro! A função is_prime(n) recebe um número inteiro n como entrada e retorna True se n for um número primo e False caso contrário.
+
+O código funciona da seguinte maneira:
+
+    A função começa com uma verificação para ver se o número n é menor do que 2, pois números menores do que 2 
+    não são considerados primos. Se n for menor que 2, a função retorna False.
+
+    A função então itera sobre os números inteiros de 2 até a raiz quadrada de n, mais um. 
+    O uso da raiz quadrada de n limita a quantidade de iterações necessárias para verificar se n é primo.
+
+    Dentro do loop for, a função verifica se n é divisível por i, ou seja, se o resto da divisão de n por i 
+    é igual a zero. Se isso for verdade, n não é primo e a função retorna False.
+
+    Se o loop for concluído sem encontrar um divisor de n, isso significa que n é um número primo e a função retorna True.
+
+Em resumo, a função is_prime(n) usa um algoritmo simples de força bruta para verificar se n é um número primo ou não.
+  
  
    
    
