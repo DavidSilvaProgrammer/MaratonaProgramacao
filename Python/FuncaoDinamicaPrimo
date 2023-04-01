@@ -1,0 +1,41 @@
+def is_prime(num):
+    """
+    Verifica se um número é primo.
+    """
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def nth_prime(n):
+    """
+    Retorna o n-ésimo número primo.
+    """
+    count = 0
+    num = 2
+    while True:
+        if is_prime(num):
+            count += 1
+            if count == n:
+                return num
+        num += 1
+        
+/*
+
+Explicando a solução:
+
+A função is_prime(num) recebe um número e retorna True se ele é primo e False caso contrário. Para isso, ela verifica se o número é menor ou igual a 1 (já que nenhum número menor ou igual a 1 é primo) e depois verifica se ele é divisível por algum número de 2 até a raiz quadrada do próprio número (pois, se um número tem um divisor maior do que a raiz quadrada dele, então também deve ter um divisor menor do que a raiz quadrada dele).
+
+A função nth_prime(n) recebe um número inteiro n e retorna o n-ésimo número primo. Para isso, ela inicia uma contagem em zero e um número num em 2 (o primeiro número primo). Em seguida, ela entra em um loop infinito e verifica se o número num é primo. Se for, incrementa a contagem e verifica se ela é igual a n. Se for, retorna o número num. Se não, continua procurando o próximo número primo incrementando num e repetindo o processo.
+
+Exemplo de uso:
+n = 4
+print(nth_prime(n))  # Saída: 7
+Nesse exemplo, o quarto número primo é o 7.
+
+
+
+*/
+
