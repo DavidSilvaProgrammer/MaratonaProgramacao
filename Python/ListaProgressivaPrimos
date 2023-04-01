@@ -67,3 +67,18 @@ pode ser um fator primo. Por exemplo, se quisermos verificar se o número 16 é 
 primo de 16. Se adicionarmos 1 a 4, obtemos 5, que é o último número que precisamos testar.
 
 */
+
+/*
+
+Um fator primo de um número inteiro é um número primo que pode ser multiplicado por outros números inteiros 
+para obter esse número. Em outras palavras, um fator primo é um número que é um divisor exato do número 
+original e que é ele mesmo um número primo.
+
+Por exemplo, os fatores primos de 12 são 2, 2 e 3. Isso ocorre porque 2 x 2 x 3 = 12 e 2 e 3 são números primos. 
+Portanto, os fatores primos de 12 são 2 e 3.
+
+Os fatores primos são importantes na teoria dos números, pois podem ser usados para decompor um número inteiro em 
+seus fatores primos. Essa decomposição é chamada de fatoração em números primos e é útil em muitas áreas 
+da matemática e da ciência, incluindo criptografia, teoria dos números e álgebra.
+
+*/
