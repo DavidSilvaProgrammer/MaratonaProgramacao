@@ -1,0 +1,39 @@
+def josephus(n):
+    # Criando lista circular com os valores de 1 a n
+    people = list(range(1, n+1))
+    # Variável para controlar o índice atual na lista
+    idx = 0
+    # Variável para controlar o número primo atual
+    prime = 2
+    
+    while len(people) > 1:
+        # Calculando o próximo número primo
+        while True:
+            is_prime = True
+            for i in range(2, int(prime**(0.5))+1):
+                if prime % i == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                break
+            prime += 1
+        
+        # Encontrando a pessoa a ser eliminada
+        idx_to_remove = (idx + prime - 1) % len(people)
+        # Removendo a pessoa da lista
+        people.pop(idx_to_remove)
+        # Atualizando o índice atual
+        idx = idx_to_remove % len(people)
+        # Atualizando o número primo atual
+        prime += 1
+    
+    # Retornando a posição da pessoa salva (o único elemento que resta na lista)
+    return people[0]
+
+# Lendo os valores de n da entrada
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    # Chamando a função josephus e imprimindo o resultado
+    print(josephus(n))
