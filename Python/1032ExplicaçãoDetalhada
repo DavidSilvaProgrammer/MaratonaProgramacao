@@ -116,7 +116,7 @@ O código funciona da seguinte maneira:
     Se o loop for concluído sem encontrar um divisor de n, isso significa que n é um número primo e a função retorna True.
 
 Em resumo, a função is_prime(n) usa um algoritmo simples de força bruta para verificar se n é um número primo ou não.
-  
+
  
    
    
