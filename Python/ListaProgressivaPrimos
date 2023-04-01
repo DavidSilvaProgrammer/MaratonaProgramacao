@@ -111,3 +111,25 @@ Adicionando 1 ao resultado da raiz quadrada garantimos que estamos testando todo
 fatores primos menores ou iguais à raiz quadrada de num, incluindo o caso especial em que a raiz quadrada é um número inteiro.
 
 */
+
+Para entender por que o último número testado no algoritmo de verificação de números primos deve ser a raiz 
+quadrada arredondada para cima, é importante entender que qualquer número inteiro maior que 1 que não 
+seja primo pode ser fatorizado em fatores primos. Esses fatores primos serão sempre menores ou iguais à 
+raiz quadrada do número em questão.
+
+Por exemplo, se quisermos fatorizar o número 24, podemos dividi-lo pelos menores números primos maiores que 1, 
+começando com o número 2: 24 ÷ 2 = 12, 12 ÷ 2 = 6, 6 ÷ 2 = 3. Portanto, os fatores primos de 24 são 2, 2, 2 e 3. 
+Observe que a raiz quadrada de 24 é aproximadamente 4,9, e todos os seus fatores primos são menores ou iguais a 4.
+
+Com base nesse exemplo, podemos concluir que, se um número inteiro num não for primo, então ele terá pelo menos 
+um fator primo p menor ou igual a sua raiz quadrada sqrt(num). Portanto, quando estamos testando se num é primo, 
+só precisamos verificar se ele é divisível por números primos menores ou iguais a sqrt(num).
+
+No entanto, se não arredondarmos a raiz quadrada sqrt(num) para cima, podemos perder um fator primo especial: 
+a própria raiz quadrada. Se sqrt(num) for um número inteiro, então ele é um fator primo de num e não será testado 
+se não arredondarmos para cima. Por exemplo, se num for 16, a raiz quadrada é 4, que é um fator primo de 16. 
+Se não arredondarmos 4 para cima, não testaremos o fator primo 4 e erroneamente concluiríamos que 16 é um número primo.
+
+Portanto, para garantir que todos os possíveis fatores primos de num sejam testados, o último número testado 
+no algoritmo deve ser a raiz quadrada arredondada para cima, usando a função ceil da biblioteca math, 
+por exemplo. Isso garantirá que a raiz quadrada seja incluída no conjunto de possíveis fatores primos a serem testados.
