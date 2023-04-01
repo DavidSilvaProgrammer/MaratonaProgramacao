@@ -106,3 +106,33 @@ Essa posição é removida da lista people usando o método pop(). O índice idx
 
 Finalmente, o programa retorna a posição da única pessoa restante na lista people[0]. O programa continua executando em um loop 
 while que lê um número inteiro n da entrada padrão até que n seja igual a 0, e imprime o resultado da função josephus(n).
+
+***********************************
+
+Esse conjunto de códigos é um programa que resolve o problema do Josephus. O problema de Josephus é um problema teórico em matemática 
+e ciência da computação. O problema é assim:
+
+N pessoas (numeradas de 1 a N) estão sentadas em uma mesa circular. De repente, começa um jogo em que a primeira pessoa, 
+ou seja, a pessoa de número 1, é morta e retirada da mesa. Em seguida, a pessoa seguinte (ou seja, a pessoa de número 2) 
+é morta e retirada da mesa, e o jogo continua no sentido horário até que apenas uma pessoa permaneça. O objetivo do jogo 
+é determinar quem será a última pessoa que permanecerá sentada na mesa.
+
+Para resolver esse problema, o programa define duas funções: is_prime e josephus.
+
+A função is_prime verifica se um número é primo ou não. Se o número for menor que 2, a função retorna False. 
+Se o número for maior ou igual a 2, a função verifica se ele é divisível por algum número inteiro entre 2 e a 
+raiz quadrada do número (int(n**(0.5))+1). Se o número for divisível por algum desses números, a função retorna False. 
+Caso contrário, a função retorna True.
+
+A função josephus usa a lista people para representar as pessoas sentadas na mesa circular. A variável idx é o 
+índice da pessoa que será morta na próxima rodada do jogo. A variável prime é o próximo número primo. O programa 
+entra em um loop enquanto a lista people tiver mais de uma pessoa. Dentro do loop, o programa entra em outro loop 
+enquanto o número primo não for encontrado. Quando o número primo é encontrado, o índice da pessoa a ser morta na 
+próxima rodada é calculado usando a fórmula (idx + prime - 1) % len(people), onde len(people) é o comprimento da lista people. 
+Essa fórmula calcula o índice da pessoa que está localizada prime posições à direita da pessoa atual idx, levando em consideração 
+o fato de que a lista people é circular. Depois disso, a pessoa correspondente é removida da lista people usando o método pop. 
+O novo valor de idx é calculado como idx_to_remove % len(people), onde idx_to_remove é o índice da pessoa que acabou de ser removida. 
+Finalmente, o número primo é incrementado em 1 e o loop continua até que apenas uma pessoa permaneça na lista people. 
+O número da última pessoa que permanece na lista é retornado pela função josephus.
+
+O loop while True no final do programa lê o valor de n a partir da entrada padrão e imprime o resultado da função josephus para cada valor de n até que n seja igual a 0. Quando n é igual a 0, o programa sai do loop usando a instrução break.
