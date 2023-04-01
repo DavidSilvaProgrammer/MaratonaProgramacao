@@ -95,3 +95,19 @@ terminamos o range no número int(num ** 0.5) + 1, pois esse é o maior fator po
 ainda ser menor ou igual à sua raiz quadrada. Isso ocorre porque, se um número n for maior que a raiz 
 quadrada de num e puder dividir num, então num/n seria um fator menor que a raiz quadrada de num, que já 
 teríamos verificado. Portanto, não precisamos testar números maiores que int(num ** 0.5) + 1.
+*/
+
+Na linha for i in range(2, int(num ** 0.5) + 1):, adicionamos 1 ao resultado da raiz quadrada de num 
+para garantir que o último número testado seja a raiz 
+quadrada arredondada para cima. Isso é importante porque se o número for um quadrado perfeito, 
+a raiz quadrada sem arredondamento pode ser um fator primo.
+
+Por exemplo, se quisermos verificar se o número 16 é primo, a raiz quadrada é 4, que é um fator primo de 16. 
+Se adicionarmos 1 a 4, obtemos 5, que é o último número que precisamos testar. Se não adicionássemos 
+1 ao resultado da raiz quadrada, não testaríamos o fator primo 4 e, portanto, erroneamente concluiríamos 
+que 16 é um número primo.
+
+Adicionando 1 ao resultado da raiz quadrada garantimos que estamos testando todos os possíveis 
+fatores primos menores ou iguais à raiz quadrada de num, incluindo o caso especial em que a raiz quadrada é um número inteiro.
+
+*/
