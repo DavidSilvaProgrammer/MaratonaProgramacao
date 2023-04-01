@@ -76,3 +76,26 @@ while True:
     if n == 0:
         break
     print(josephus(n))
+
+*************************************
+
+Esse programa implementa o problema de Josephus, que é um antigo problema matemático que descreve uma situação de sobrevivência. 
+A situação descrita é a seguinte: um grupo de n pessoas está em uma roda, 
+numeradas de 1 a n. A partir da pessoa 1, é contado até a pessoa k e essa pessoa é removida da roda. 
+O processo se repete, com a contagem iniciando na pessoa seguinte à pessoa removida e indo até a pessoa k seguinte. 
+O processo continua até que apenas uma pessoa permaneça na roda. O objetivo do problema é determinar 
+qual é a posição dessa pessoa sobrevivente.
+
+O programa começa definindo uma função is_prime(n) que verifica se um número n é primo. Para isso, ele primeiro verifica 
+se n é menor que 2, pois 0 e 1 não são considerados primos. Em seguida, ele faz um loop que vai de 2 até a raiz 
+quadrada de n, verificando se o resto da divisão de n por cada número no loop é igual a zero. Se n for divisível 
+por algum número no loop, a função retorna False, indicando que n não é primo. Se nenhum dos números no loop for 
+um fator de n, a função retorna True, indicando que n é primo.
+
+Em seguida, o programa define a função josephus(n), que recebe um número inteiro n como entrada e retorna a posição da pessoa sobrevivente no problema de Josephus descrito acima. Ele começa criando uma lista people com os números de 1 a n. A variável idx é inicializada com 0 e a variável prime é inicializada com 2.
+
+O programa então entra em um loop while que continua até que haja apenas uma pessoa restante na lista people. Dentro desse loop, ele entra em outro loop while que continua até que prime seja um número primo. Ele faz isso chamando a função is_prime(prime) e incrementando prime em 1 enquanto o resultado for False.
+
+Uma vez que prime é um número primo, o programa calcula a posição da pessoa a ser removida como (idx + prime - 1) % len(people). Essa posição é removida da lista people usando o método pop(). O índice idx é atualizado como idx_to_remove % len(people) e prime é incrementado em 1. O loop continua até que apenas uma pessoa reste na lista people.
+
+Finalmente, o programa retorna a posição da única pessoa restante na lista people[0]. O programa continua executando em um loop while que lê um número inteiro n da entrada padrão até que n seja igual a 0, e imprime o resultado da função josephus(n).
