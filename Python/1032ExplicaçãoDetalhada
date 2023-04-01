@@ -1,0 +1,104 @@
+def is_prime(n):
+    
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def josephus(n):
+    people = list(range(1, n+1))
+    idx = 0
+    prime = 2
+    
+    while len(people) > 1:
+        while not is_prime(prime):
+            prime += 1
+        
+        idx_to_remove = (idx + prime - 1) % len(people)
+        people.pop(idx_to_remove)
+        idx = idx_to_remove % len(people)
+        prime += 1
+    
+    return people[0]
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(josephus(n))
+    
+    
+    *****************************************************
+    EXPLICAÇÃO:
+    
+    Primeiro, há um loop infinito usando a instrução while True.
+    
+  while True:
+    n = int(input())
+    if n == 0:
+        break
+        
+   Dentro do loop, o usuário é solicitado a inserir um número inteiro, que é armazenado na variável n. 
+   Se o valor inserido for 0, o loop é interrompido com a instrução break.
+
+   O valor de n é então passado para a função josephus, que realiza uma operação 
+   com base no valor de n e retorna um resultado.
+   
+   print(josephus(n))
+   
+   A função josephus começa criando uma lista de números inteiros de 1 até n (inclusivo) usando a função range.
+   
+   def josephus(n):
+    people = list(range(1, n+1))
+
+Em seguida, a função inicializa as variáveis idx e prime, que são usadas para rastrear a 
+ posição atual na lista people e o número primo atual, respectivamente.
+ 
+     idx = 0
+    prime = 2
+    
+ O loop principal da função começa, que continua enquanto o comprimento da lista people é maior que 1.
+ 
+     while len(people) > 1:
+     
+     
+ Dentro do loop, um loop interno é executado até que prime seja um número primo, usando a função is_prime.
+ 
+         while not is_prime(prime):
+            prime += 1
+            
+  A próxima linha de código calcula o índice do elemento a ser removido da lista people com base no 
+  valor atual de idx e prime, usando a operação de módulo %.
+  
+          idx_to_remove = (idx + prime - 1) % len(people)
+          
+  O elemento correspondente ao índice idx_to_remove é então removido da lista people usando a função pop.
+  
+          people.pop(idx_to_remove)
+          
+ A variável idx é atualizada para apontar para o próximo elemento a ser removido, com base no 
+ índice do elemento removido e o comprimento atual da lista people.
+ 
+         idx = idx_to_remove % len(people)
+         
+ A variável prime é incrementada em 1, para que o próximo número primo possa ser encontrado no próximo ciclo do loop interno.
+  
+          prime += 1
+          
+   Depois que o loop principal termina, a função retorna o único elemento restante na lista people.
+   
+       return people[0]
+       
+   Finalmente, o resultado retornado pela função josephus é impresso na tela.
+   
+   print(josephus(n))
+  
+  
+ 
+   
+   
+
+    
+    
