@@ -48,3 +48,22 @@ algum desses números, a função retorna False, pois num não é primo. Se nenh
 a função retorna True, indicando que num é primo.
 
  */
+
+
+/*
+
+Vou tentar explicar de uma forma mais simples.
+
+A linha int(num ** 0.5) é usada para calcular a raiz quadrada inteira de num. Essa operação é importante porque é 
+possível determinar se um número é primo verificando se ele é divisível por algum número menor ou igual à sua raiz quadrada.
+
+Por exemplo, se queremos verificar se o número 49 é primo, não precisamos verificar se ele é divisível por 2, 3, 4, 5, 6, 7 ou 8. 
+Basta verificar se ele é divisível por 2, 3, 4, 5, 6 ou 7. Isso ocorre porque a raiz quadrada de 49 é 7, e qualquer número maior 
+que 7 não pode ser um fator primo de 49.
+
+Adicionamos 1 ao resultado da linha int(num ** 0.5) para garantir que o último número testado seja a raiz quadrada 
+arredondada para cima. Isso é importante porque se o número for um quadrado perfeito, a raiz quadrada sem arredondamento 
+pode ser um fator primo. Por exemplo, se quisermos verificar se o número 16 é primo, a raiz quadrada é 4, que é um fator 
+primo de 16. Se adicionarmos 1 a 4, obtemos 5, que é o último número que precisamos testar.
+
+*/
