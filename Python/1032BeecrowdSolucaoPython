@@ -37,3 +37,35 @@ while True:
         break
     # Chamando a função josephus e imprimindo o resultado
     print(josephus(n))
+
+***********************************************
+
+def josephus(n):
+    people = list(range(1, n+1))
+    idx = 0
+    prime = 2
+    
+    while len(people) > 1:
+        while True:
+            is_prime = True
+            for i in range(2, int(prime**(0.5))+1):
+                if prime % i == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                break
+            prime += 1
+        
+        idx_to_remove = (idx + prime - 1) % len(people)
+        people.pop(idx_to_remove)
+        idx = idx_to_remove % len(people)
+        prime += 1
+    
+  
+    return people[0]
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(josephus(n))
