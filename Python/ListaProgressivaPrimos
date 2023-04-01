@@ -26,3 +26,25 @@ while count < n:
     tela e o contador count é incrementado.
     
     */
+    
+    /*
+    Claro, vou explicar essa linha em detalhes!
+
+Essa linha está dentro da função is_prime(num) e é usada para determinar se um número num é primo ou não.
+
+A linha int(num ** 0.5) calcula a raiz quadrada inteira de num. Por exemplo, se num for 16, essa expressão 
+retornará 4, que é a raiz quadrada inteira de 16.
+
+Em seguida, adicionamos 1 ao resultado da expressão int(num ** 0.5). Isso é feito porque se num for um número 
+quadrado perfeito (ou seja, um número que é o quadrado de outro número inteiro), como 4, 9, 16, 25, etc., 
+a expressão int(num ** 0.5) retornará o fator primo mais alto de num. Nesses casos, se não adicionarmos 1 
+ao resultado, não testaremos o número num corretamente.
+
+Por exemplo, se num for 16, a expressão int(num ** 0.5) + 1 retornará 5. Isso significa que a função is_prime(num) 
+testará se num é divisível por 2, 3, 4 ou 5.
+
+Finalmente, o for itera sobre todos os números de 2 até int(num ** 0.5) + 1. Se num for divisível por 
+algum desses números, a função retorna False, pois num não é primo. Se nenhum desses números divide num, 
+a função retorna True, indicando que num é primo.
+
+ */
