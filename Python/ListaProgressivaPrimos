@@ -1,0 +1,28 @@
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+n = int(input("Quantos números primos deseja imprimir? "))
+count = 0
+num = 2
+
+while count < n:
+    if is_prime(num):
+        print(num)
+        count += 1
+    num += 1
+    
+    /*
+    
+    A função is_prime recebe um número como entrada e retorna True se o número é primo e 
+    False caso contrário. Em seguida, o programa solicita ao usuário quantos números primos 
+    deseja imprimir. O contador count é usado para controlar quantos números primos foram 
+    impressos até agora. O laço while continua a procurar números primos até que count seja igual 
+    ao número solicitado pelo usuário. Quando um número primo é encontrado, ele é impresso na 
+    tela e o contador count é incrementado.
+    
+    */
