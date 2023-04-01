@@ -1,7 +1,5 @@
 def sequencia_primos(n):
-    # Lista de números primos encontrados
     primos = []
-    # Número atual a ser testado
     num = 2
     while len(primos) < n:
         is_primo = True
@@ -14,12 +12,11 @@ def sequencia_primos(n):
         num += 1
     return primos
 
-
 while True:
     n = int(input())
     if n == 0:
         break
-    
+
     primos = sequencia_primos(n)  
     m = primos[0]
     while True:
@@ -32,4 +29,5 @@ while True:
         if len(regions) == 1:  
             print(regions[0])
             break
-        m = primos[(pos + 1) % n]  
+        m = primos[(pos + 1) % n]
+
