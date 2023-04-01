@@ -82,3 +82,16 @@ seus fatores primos. Essa decomposição é chamada de fatoração em números p
 da matemática e da ciência, incluindo criptografia, teoria dos números e álgebra.
 
 */
+
+/*
+
+Na linha for i in range(2, int(num ** 0.5) + 1):, o valor 2 é usado como o primeiro valor para o range. 
+Isso ocorre porque o número 1 não é considerado um número primo, então não precisamos testá-lo. 
+Além disso, se começarmos o range com o número 2, podemos evitar a verificação de números pares maiores que 2, 
+que não podem ser números primos, já que são divisíveis por 2.
+
+Portanto, começamos a testar a divisibilidade de num a partir do número 2. E, como mencionado anteriormente, 
+terminamos o range no número int(num ** 0.5) + 1, pois esse é o maior fator possível que pode dividir num e 
+ainda ser menor ou igual à sua raiz quadrada. Isso ocorre porque, se um número n for maior que a raiz 
+quadrada de num e puder dividir num, então num/n seria um fator menor que a raiz quadrada de num, que já 
+teríamos verificado. Portanto, não precisamos testar números maiores que int(num ** 0.5) + 1.
