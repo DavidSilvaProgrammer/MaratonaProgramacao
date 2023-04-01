@@ -1,0 +1,92 @@
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+n = int(input("Digite um número inteiro: "))
+
+if is_prime(n):
+    print(n, "é um número primo.")
+else:
+    print(n, "não é um número primo.")
+    
+    
+EXPLICAÇÃO:
+
+Nesse código, a função is_prime é definida da mesma maneira que na pergunta anterior. Em seguida, o usuário é solicitado 
+a digitar um número inteiro e o valor é armazenado na variável n.
+
+Em seguida, o código verifica se n é um número primo usando a função is_prime. Se is_prime(n) retornar True, o código 
+imprime a mensagem "n é um número primo". Caso contrário, o código imprime a mensagem "n não é um número primo".
+
+Por exemplo, se o usuário digitar o número 17, o programa imprimirá "17 é um número primo". Se o usuário digitar o 
+número 15, o programa imprimirá "15 não é um número primo".
+
+A função não conta um número que é divisível pelo menos uma vez como um número primo. Na verdade, o algoritmo 
+verifica se o número é divisível por algum número entre 2 e a raiz quadrada do número.
+
+Se o número for divisível por algum desses valores, então ele não é primo, e a função retorna False. 
+Caso contrário, o número é considerado primo, e a função retorna True.
+
+"""OBS: Prova que a raiz quadrada de qualquer número primo deve ser um número irracional. 
+Por exemplo, por causa desta prova podemos determinar rapidamente que √3, √5, √7 ou √11 são números irracionais.
+Nesse sentido, não vai existir no laço de repetição que só possui números inteiros a  """"
+
+
+A ideia por trás desse algoritmo é que, se um número n for divisível por algum número i maior do que a raiz quadrada de n, 
+então necessariamente n também é divisível por um número j menor do que a raiz quadrada de n. Isso ocorre porque j seria o 
+resultado da divisão de n por i. Portanto, se a função não encontrar nenhum divisor entre 2 e a raiz quadrada de n, 
+então n é um número primo.
+
+Não necessariamente. O fato de um número n não ser divisível pela raiz quadrada de n não implica necessariamente que n seja um número primo.
+
+O que a função is_prime(n) faz é verificar se n é divisível por algum número i entre 2 e a raiz quadrada de n. 
+Se n for divisível por algum i, então n não é um número primo. Se n não for divisível por nenhum i, então n é um número primo.
+
+No entanto, é verdade que, se n for um número composto (ou seja, não for primo), então ele deve ter pelo menos 
+um fator primo menor ou igual à raiz quadrada de n. Isso ocorre porque, se n não tiver nenhum fator primo menor 
+ou igual à raiz quadrada de n, então todos os fatores primos de n devem ser maiores do que a raiz quadrada de n.
+
+Nesse caso, se n tiver dois fatores primos maiores do que a raiz quadrada de n, então o produto desses dois fatores 
+seria maior do que n, o que contradiz a definição de n como um produto de fatores primos. Portanto, se n for composto, 
+ele deve ter pelo menos um fator primo menor ou igual à raiz quadrada de n.
+
+
+Por exemplo, se quisermos verificar se o número 29 é primo, a função is_prime(29) irá iterar sobre os números inteiros 
+de 2 a 5 (que é a parte inteira da raiz quadrada de 29). Nesse caso, nenhum desses números é divisor de 29, portanto 
+a função retornará True, indicando que 29 é um número primo.
+
+Nenhum número primo é divisível por sua raiz quadrada exata.
+
+Para ver isso, podemos pensar em um número primo p qualquer e sua raiz quadrada sqrt(p). 
+Se p fosse divisível por sqrt(p), isso implicaria que existiria outro número q tal que q * sqrt(p) = p. 
+Mas isso significaria que p não é um número primo, pois ele seria igual ao produto de dois números diferentes de 1 e de p.
+
+
+Na verdade, o número 2 é uma exceção a essa regra. O número 2 é o único número primo que é divisível por sua raiz quadrada exata, 
+que é 2 também. Isso ocorre porque a raiz quadrada de 2 é um número irracional e não pode ser expressa como uma fração simples.
+
+No geral, podemos dizer que quase todos os números primos não são divisíveis por sua raiz quadrada exata. Para qualquer 
+número primo p diferente de 2, sua raiz quadrada sqrt(p) será um número irracional, e portanto não haverá um outro número 
+inteiro q que seja um divisor exato de p.
+
+Portanto, podemos concluir que nenhum número primo é divisível por sua raiz quadrada exata.
+
+
+Sim, é verdade que a multiplicação da raiz quadrada irracional de um número primo por ela mesma é igual ao próprio número primo. 
+Por exemplo, a raiz quadrada de 2 é irracional e é aproximadamente 1.41421356, 
+e se multiplicarmos esse número por si próprio, obtemos aproximadamente 2.
+
+No entanto, é importante observar que essa multiplicação não é uma divisão exata, como ocorre quando um número é 
+dividido por sua raiz quadrada exata. A raiz quadrada irracional de um número primo é um número irracional e não pode 
+ser expressa como uma fração simples. Portanto, não é possível encontrar um número inteiro q que seja um divisor exato 
+do número primo p quando estamos trabalhando com raízes quadradas irracionais.
+
+Por esse motivo, podemos dizer que a maioria dos números primos não pode ser dividida exatamente por suas raízes 
+quadradas irracionais. A exceção é o número 2, que é o único número primo que pode ser dividido exatamente 
+por sua raiz quadrada, que também é 2.
+
+
