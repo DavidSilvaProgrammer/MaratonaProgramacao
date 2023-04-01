@@ -1,0 +1,37 @@
+import math
+
+def josephus(n, m):
+    # Cria uma lista com os números de 1 a n
+    pessoas = list(range(1, n+1))
+    # Define o índice da primeira pessoa a ser removida
+    index = 0
+    # Enquanto houver mais de uma pessoa na lista
+    while len(pessoas) > 1:
+        # Calcula o próximo primo m
+        while not is_prime(m):
+            m += 1
+        # Calcula o índice da pessoa a ser removida
+        index = (index + m - 1) % len(pessoas)
+        # Remove a pessoa da lista
+        pessoas.pop(index)
+    # Retorna a posição da pessoa que sobreviveu
+    return pessoas[0]
+
+def is_prime(n):
+    # Verifica se um número é primo
+    if n <= 1:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            return False
+    return True
+
+# Leitura das entradas
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    # Define o primeiro primo como 2
+    m = 2
+    # Chama a função josephus e imprime a posição da pessoa que sobreviveu
+    print(josephus(n, m))
