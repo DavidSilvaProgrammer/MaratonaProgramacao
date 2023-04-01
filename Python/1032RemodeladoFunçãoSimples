@@ -75,5 +75,4 @@ while True:
     n = int(input())
     if n == 0:
         break
-    # Chamando a função josephus e imprimindo o resultado
     print(josephus(n))
