@@ -1,0 +1,47 @@
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+
+    m = 2
+    while True:
+        # inicializa o contador e a região atual
+        contador = 0
+        regiao_atual = 0
+
+        # percorre as regiões
+        while contador < n - 1:
+            # incrementa a região atual e ajusta para não ultrapassar o limite
+            regiao_atual = (regiao_atual + m - 1) % n + 1
+
+            # verifica se a região atual é diferente de 13
+            if regiao_atual != 13:
+                contador += 1
+
+        # verifica se a próxima região seria a de Wellington
+        if (regiao_atual + m - 1) % n + 1 == 13:
+            break
+
+        # incrementa o valor de m por um número primo e tenta novamente
+        while True:
+            m += 1
+            if is_prime(m):
+                break
+
+    print(m)
+    
+    /*
+    
+    A função is_prime verifica se um número é primo utilizando a mesma lógica do algoritmo anterior. 
+    No while externo, o valor inicial de m é 2, o primeiro número primo. Em seguida, o while interno 
+    incrementa o valor de m apenas para números primos, utilizando o is_prime para verificar cada número 
+    até encontrar o próximo número primo a ser usado.
+    */
