@@ -1,0 +1,72 @@
+def sequencia_primos(n):
+    # Lista de números primos encontrados
+    primos = []
+    # Número atual a ser testado
+    num = 2
+    # Loop para encontrar os n primeiros números primos
+    while len(primos) < n:
+        # Testa se o número atual é primo
+        is_primo = True
+        for p in primos:
+            if num % p == 0:
+                is_primo = False
+                break
+        # Se o número for primo, adiciona à lista de primos
+        if is_primo:
+            primos.append(num)
+        # Incrementa o número atual para testar o próximo número
+        num += 1
+    # Retorna a lista de primos encontrados
+    return primos
+    
+    
+    /*
+    Essa função inicializa uma lista vazia para armazenar os números primos encontrados e um contador 
+    num que começa em 2, que é o primeiro número primo. A função então entra em um loop que 
+    verifica se o número atual é primo, testando a divisibilidade desse número pelos números 
+    primos já encontrados. Se o número atual for primo, ele é adicionado à lista de primos e o 
+    contador num é incrementado. O loop continua até que n primos tenham sido encontrados. 
+    Finalmente, a função retorna a lista de primos.
+
+Para testar a função, você pode chamar sequencia_primos(n) com um valor n para obter os n 
+primeiros números primos. Por exemplo:
+
+print(sequencia_primos(10))  # imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+Você pode criar uma função em Python que recebe como entrada um número inteiro n e retorna os n primeiros números primos em uma lista. Para isso, você pode utilizar o algoritmo de Crivo de Eratóstenes, que é uma maneira eficiente de encontrar todos os números primos menores que um dado número.
+
+Segue abaixo um exemplo de implementação:
+
+python
+Copy code
+def sequencia_primos(n):
+    # Lista de números primos encontrados
+    primos = []
+    # Número atual a ser testado
+    num = 2
+    # Loop para encontrar os n primeiros números primos
+    while len(primos) < n:
+        # Testa se o número atual é primo
+        is_primo = True
+        for p in primos:
+            if num % p == 0:
+                is_primo = False
+                break
+        # Se o número for primo, adiciona à lista de primos
+        if is_primo:
+            primos.append(num)
+        # Incrementa o número atual para testar o próximo número
+        num += 1
+    # Retorna a lista de primos encontrados
+    return primos
+Essa função inicializa uma lista vazia para armazenar os números primos encontrados e um contador num que começa em 2, que é o primeiro número primo. A função então entra em um loop que verifica se o número atual é primo, testando a divisibilidade desse número pelos números primos já encontrados. Se o número atual for primo, ele é adicionado à lista de primos e o contador num é incrementado. O loop continua até que n primos tenham sido encontrados. Finalmente, a função retorna a lista de primos.
+
+Para testar a função, você pode chamar sequencia_primos(n) com um valor n para obter os n primeiros números primos. Por exemplo:
+
+
+
+print(sequencia_primos(10))  # imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+Este código imprimirá os 10 primeiros números primos: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]. 
+Você pode alterar o valor de n para obter um número diferente de primo
+*/
