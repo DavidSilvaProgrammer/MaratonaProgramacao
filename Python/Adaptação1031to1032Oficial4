@@ -1,0 +1,43 @@
+import math
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def josephus(n):
+    m = 1
+    while True:
+        regions = list(range(1, n+1))
+        pos = 0
+        regions.pop(pos)
+        while len(regions) > 1:
+            pos = (pos + m - 1) % len(regions)
+            regions.pop(pos)
+        if regions[0] == 13:
+            return m
+        m = next((i for i in range(m+1, n+1) if is_prime(i)), m+1)
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(josephus(n))
+    
+    /*
+    
+    O programa começa definindo uma função is_prime para verificar se um número é primo ou não. 
+    A função recebe um número n e retorna True se ele é primo e False caso contrário.
+
+Em seguida, a função josephus é definida para resolver o problema em si. A função recebe um número n 
+representando a quantidade de pessoas no círculo e retorna a posição da pessoa que será salva.
+
+O código principal do programa recebe uma entrada n e chama a função josephus(n) para cada valor de n 
+diferente de zero, imprimindo o resultado retornado pela função.
+
+O programa funciona encontrando sucessivamente os números primos maiores que m (a variável dinâmica 
+que determina a ordem de eliminação das pessoas) até que uma solução seja encontrada.
+/*
