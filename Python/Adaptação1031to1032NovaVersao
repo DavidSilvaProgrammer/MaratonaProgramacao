@@ -1,0 +1,40 @@
+def sequencia_primos(n):
+    # Lista de números primos encontrados
+    primos = []
+    # Número atual a ser testado
+    num = 2
+    # Loop para encontrar os n primeiros números primos
+    while len(primos) < n:
+        # Testa se o número atual é primo
+        is_primo = True
+        for p in primos:
+            if num % p == 0:
+                is_primo = False
+                break
+        # Se o número for primo, adiciona à lista de primos
+        if is_primo:
+            primos.append(num)
+        # Incrementa o número atual para testar o próximo número
+        num += 1
+    # Retorna a lista de primos encontrados
+    return primos
+
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    
+    primos = sequencia_primos(n)  # chamada correta da função
+    m = primos[0]
+    while True:
+        regions = list(range(1, n+1))
+        pos = 0
+        regions.pop(pos)
+        while len(regions) > 1:
+            pos = (pos + m - 1) % len(regions)
+            regions.pop(pos)
+        if len(regions) == 1:  # correção do nome da variável e saída do loop correto
+            print(regions[0])
+            break
+        m = primos[(pos + 1) % n]  # correção do cálculo de m e da posição a ser removida de regions
