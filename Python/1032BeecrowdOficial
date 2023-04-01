@@ -1,0 +1,30 @@
+def eh_primo(n):
+    
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def primo_josephus(n):
+    pessoas = list(range(1, n+1))
+    pos = 0
+    primo = 2
+    
+    while len(pessoas) > 1:
+        while not eh_primo(primo):
+            primo += 1
+        
+        remove_indice = (pos + primo - 1) % len(pessoas)
+        pessoas.pop(remove_indice)
+        pos = remove_indice % len(pessoas)
+        primo += 1
+    
+    return pessoas[0]
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(primo_josephus(n))
