@@ -1,0 +1,79 @@
+def is_prime(n):
+    """
+    Função para verificar se um número é primo.
+    Retorna True se n é primo, False caso contrário.
+    """
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def josephus(n):
+    # Criando lista circular com os valores de 1 a n
+    people = list(range(1, n+1))
+    # Variável para controlar o índice atual na lista
+    idx = 0
+    # Variável para controlar o número primo atual
+    prime = 2
+    
+    while len(people) > 1:
+        # Calculando o próximo número primo
+        while not is_prime(prime):
+            prime += 1
+        
+        # Encontrando a pessoa a ser eliminada
+        idx_to_remove = (idx + prime - 1) % len(people)
+        # Removendo a pessoa da lista
+        people.pop(idx_to_remove)
+        # Atualizando o índice atual
+        idx = idx_to_remove % len(people)
+        # Atualizando o número primo atual
+        prime += 1
+    
+    # Retornando a posição da pessoa salva (o único elemento que resta na lista)
+    return people[0]
+
+# Lendo os valores de n da entrada
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    # Chamando a função josephus e imprimindo o resultado
+    print(josephus(n))
+    
+    
+    ****************************************************
+    
+    def is_prime(n):
+    
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def josephus(n):
+    people = list(range(1, n+1))
+    idx = 0
+    prime = 2
+    
+    while len(people) > 1:
+        while not is_prime(prime):
+            prime += 1
+        
+        idx_to_remove = (idx + prime - 1) % len(people)
+        people.pop(idx_to_remove)
+        idx = idx_to_remove % len(people)
+        prime += 1
+    
+    return people[0]
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    # Chamando a função josephus e imprimindo o resultado
+    print(josephus(n))
