@@ -1,0 +1,71 @@
+def eh_primo(n):
+    
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+    
+'''
+
+A função eh_primo recebe n como parâmetro e retorna falso se o número for menor que 2. Também tem um range que vai até a 
+raiz quadrada de n +1. Obs: É necessário colocar esse +1, pois a função range termina antes do último número. 
+Logo adiante, na condição if, o módulo de n por i é calculado, então se retornar zero é porque ocorreu uma divisão inteira 
+e este número não é primo, então retornará false. Se a condição if não for acionada, a função retornará verdadeira, 
+confirmando que é um número primo.
+'''
+
+def primo_josephus(n):
+    pessoas = list(range(1, n+1))
+    pos = 0
+    pulo_primo = 2
+    
+    while len(pessoas) > 1:
+        while not eh_primo(primo):
+            pulo_primo += 1
+        
+        remove_indice = (pos + primo - 1) % len(pessoas)
+        pessoas.pop(remove_indice)
+        pos = remove_indice % len(pessoas)
+        primo += 1
+    
+    return pessoas[0]
+    
+'''
+A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, 
+Obs: Lembrando que esse +1 segue  o mesmo princípio do range anterior.
+Depois disso, é necessário declarar duas variáveis, “pos” de posição e “pulo_primo” igual a 2, 
+sendo esse valor determinado por ser o primeiro número primo que será utilizado.
+
+Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. 
+Depois, vem outro loop while que servirá para capturar o próximo número primo que será usado no pulo.
+
+Mais adiante, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá até 
+pessoas ter apenas um único elemento, existe a variável "remove_elemento" que removerá um elemento da lista 
+com base no valor da posição + variável pulo_primo com -1 (considerando que o vetor começa em zero) e 
+tomando o módulo pelo valor da função len que está retornando o número de elementos da lista de pessoas.
+
+Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos números primos 
+não excedam o número de elementos da lista.
+
+Depois disso, no final do loop, tem o pulo_primo sendo incrementado em +1 de novo, para que o loop 
+"while not eh_primo (primo)" seja acionado novamente em busca do novo número primo que servirá 
+para definir um novo valor para o pulo. 
+
+Basicamente, após isso, o programa continua até que apenas o elemento de 
+índice 0 permaneça na lista de pessoas.
+
+'''
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(primo_josephus(n))
+    
+'''
+E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na variável “n”. 
+Existe um if que encerra o programa se o número digitado for 0 e no final é impresso o elemento com 
+índice 0, que é retornado na função primo_joseph.
+'''
