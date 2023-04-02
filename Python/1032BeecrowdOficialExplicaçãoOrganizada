@@ -1,5 +1,40 @@
 def eh_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+
+def primo_josephus(n):
+    pessoas = list(range(1, n+1))
+    pos = 0
+    pulo_primo = 2
     
+    while len(pessoas) > 1:
+        while not eh_primo(pulo_primo):
+            pulo_primo += 1
+        
+        remove_indice = (pos + pulo_primo - 1) % len(pessoas)
+        pessoas.pop(remove_indice)
+        pos = remove_indice % len(pessoas)
+        pulo_primo += 1
+    
+    return pessoas[0]
+    
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(primo_josephus(n))
+    
+    *********************************************************************************************
+    
+    BLOCOS DE EXPLICAÇÃO:
+    
+    def eh_primo(n):
     if n < 2:
         return False
     for i in range(2, int(n**(0.5))+1):
@@ -8,7 +43,6 @@ def eh_primo(n):
     return True
     
 '''
-
 A função eh_primo recebe n como parâmetro e retorna falso se o número for menor que 2. Também tem um range que vai até a 
 raiz quadrada de n +1. Obs: É necessário colocar esse +1, pois a função range termina antes do último número. 
 Logo adiante, na condição if, o módulo de n por i é calculado, então se retornar zero é porque ocorreu uma divisão inteira 
@@ -16,22 +50,23 @@ e este número não é primo, então retornará false. Se a condição if não f
 confirmando que é um número primo.
 '''
 
+
 def primo_josephus(n):
     pessoas = list(range(1, n+1))
     pos = 0
     pulo_primo = 2
     
     while len(pessoas) > 1:
-        while not eh_primo(primo):
+        while not eh_primo(pulo_primo):
             pulo_primo += 1
         
-        remove_indice = (pos + primo - 1) % len(pessoas)
+        remove_indice = (pos + pulo_primo - 1) % len(pessoas)
         pessoas.pop(remove_indice)
         pos = remove_indice % len(pessoas)
-        primo += 1
+        pulo_primo += 1
     
     return pessoas[0]
-    
+
 '''
 A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, 
 Obs: Lembrando que esse +1 segue  o mesmo princípio do range anterior.
@@ -63,7 +98,7 @@ while True:
     if n == 0:
         break
     print(primo_josephus(n))
-    
+
 '''
 E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na variável “n”. 
 Existe um if que encerra o programa se o número digitado for 0 e no final é impresso o elemento com 
