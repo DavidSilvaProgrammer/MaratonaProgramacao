@@ -29,9 +29,7 @@ while True:
     if n == 0:
         break
     print(primo_josephus(n))
-   
-
-	
+    
 Explicação do que eu entendi:
 
 def eh_primo(n):
@@ -66,18 +64,19 @@ def primo_josephus(n):
 
 
 '''
-A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, Obs: Lembrando que esse +1 segue  o mesmo princípio do range anterior.
-Depois disso, existem duas variáveis, “pos” de posição e “pulo_primo” igual a 2 (sendo esse valor determinado por ser o primeiro número primo que será utilizado). 
+A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, Obs: Lembrando que este +1 segue o mesmo princípio do range anterior.
+Depois disso, existem duas variáveis, “pos” para posição e “pulo_primo” igual a 2 (este valor sendo determinado por ser o primeiro número primo a ser utilizado).
 
-Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. Depois, vem outro loop while que servirá para capturar o próximo número primo que será usado no pulo. 
+Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. Depois vem outro loop while que servirá para capturar o próximo número primo que será usado no salto.
 
-Mais adiante, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá até pessoas ter apenas um único elemento, existe a variável "remove_elemento" que removerá por meio da função pop um elemento da lista com base no valor da posição + variável pulo_primo com -1 (considerando que o vetor começa em zero) e calculado pelo módulo do valor da função len (que retorna o número de elementos da lista de pessoas).
+Mais para frente, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá até que pessoas tenham apenas um único elemento, existe a variável "remove_elemento" que irá remover, através da função pop, um elemento da lista com base no valor de pos + variável pulo_primo com -1 (considerando que o vetor começa em zero) e calculado pelo módulo do valor da função len (que retorna o número de elementos da lista pessoas).
 
-Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos números primos não excedam o número de elementos da lista.
+Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos números primos não ultrapassem o número de elementos da lista. Além disso, é necessário fazer o módulo da variável remove_elemento com a função len na lista pessoas para reajustar a posição da lista para o próximo pulo primo.
 
-Depois disso, no final do loop, tem o pulo_primo sendo incrementado em +1 de novo, para que o loop "while not eh_primo (primo)" seja acionado novamente em busca do novo número primo que servirá para definir um novo valor para o pulo.
+Depois disso, ao final do loop, o pulo_primo é incrementado em +1 novamente, de modo que o loop “while not eh_primo (primo)” seja acionado novamente em busca do novo número primo que servirá para definir um novo valor para o pulo .
 
-Basicamente, após isso, o programa continua até que apenas o elemento de índice 0 permaneça na lista de pessoas.
+Basicamente, depois disso, o programa continua até que apenas o elemento de índice 0 permaneça na lista pessoas.
+
 
 '''
 while True:
@@ -89,7 +88,5 @@ while True:
 
 '''
 E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na variável “n”. Existe um if que encerra o programa se o número digitado for 0 e no final é impresso o elemento com índice 0, que é retornado na função primo_joseph. 
-
-Obs.: Fiz mais para aprender a lógica do código do Fábio. Valeu, Fábio pelo código.
-
 '''
+Obs.: Fiz mais para aprender a lógica do código do Fábio. Valeu, Fábio pelo código.
