@@ -1,4 +1,7 @@
-Olá, bom dia. Ficou legal seu código, Fábio. Bem compacto e com funções bem definidas. Segui seu código como base dessa vez e fiz algo bem semelhante mais para aprender a lógica dessa questão 1032 mesmo. A função primo fiz igual só troquei algumas coisas na segunda função e no modo de impressão na função principal.
+Olá, bom dia. Ficou legal seu código, Fábio. Bem compacto e com funções bem definidas. 
+Segui seu código como base dessa vez e fiz algo bem semelhante mais para aprender a lógica 
+dessa questão 1032 mesmo. A função primo fiz igual só troquei algumas coisas na segunda função 
+e no modo de impressão na função principal.
 
 def eh_primo(n):
     if n < 2:
@@ -42,7 +45,11 @@ def eh_primo(n):
 
     
 '''
-A função eh_primo recebe n como parâmetro e retorna falso se o número for menor que 2. Também tem um range que vai até a raiz quadrada de n +1. Obs.: É necessário colocar esse +1, pois a função range termina antes do último número. Logo adiante, na condição if, o módulo de n por i é calculado, então se retornar zero é porque ocorreu uma divisão inteira e esse número não é primo, então retornará false. Se a condição if não for acionada, a função retornará verdadeira, confirmando que é um número primo.
+A função eh_primo recebe n como parâmetro e retorna falso se o número for menor que 2. 
+Também tem um range que vai até a raiz quadrada de n +1. Obs.: É necessário colocar esse +1, 
+pois a função range termina antes do último número. Logo adiante, na condição if, o módulo de n por i é calculado, 
+então se retornar zero é porque ocorreu uma divisão inteira e esse número não é primo, então retornará false. 
+Se a condição if não for acionada, a função retornará verdadeira, confirmando que é um número primo.
 '''
 
 
@@ -64,16 +71,26 @@ def primo_josephus(n):
 
 
 '''
-A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, Obs: Lembrando que este +1 segue o mesmo princípio do range anterior.
-Depois disso, existem duas variáveis, “pos” para posição e “pulo_primo” igual a 2 (este valor sendo determinado por ser o primeiro número primo a ser utilizado).
+A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, 
+Obs: Lembrando que este +1 segue o mesmo princípio do range anterior.
+Depois disso, existem duas variáveis, “pos” para posição e “pulo_primo” igual a 2 (este valor sendo 
+determinado por ser o primeiro número primo a ser utilizado).
 
-Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. Depois vem outro loop while que servirá para capturar o próximo número primo que será usado no salto.
+Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. 
+Depois vem outro loop while que servirá para capturar o próximo número primo que será usado no salto.
 
-Mais para frente, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá até que pessoas tenham apenas um único elemento, existe a variável "remove_elemento" que irá remover, através da função pop, um elemento da lista com base no valor de pos + variável pulo_primo com -1 (considerando que o vetor começa em zero) e calculado pelo módulo do valor da função len (que retorna o número de elementos da lista pessoas).
+Mais para frente, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá 
+até que pessoas tenham apenas um único elemento, existe a variável "remove_elemento" que irá remover, 
+através da função pop, um elemento da lista com base no valor de pos + variável pulo_primo com -1 
+(considerando que o vetor começa em zero) e calculado pelo módulo do valor da função len 
+(que retorna o número de elementos da lista pessoas).
 
-Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos números primos não ultrapassem o número de elementos da lista. Além disso, é necessário fazer o módulo da variável remove_elemento com a função len na lista pessoas para reajustar a posição da lista para o próximo pulo primo.
+Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos números 
+primos não ultrapassem o número de elementos da lista. Além disso, é necessário fazer o módulo da variável 
+remove_elemento com a função len na lista pessoas para reajustar a posição da lista para o próximo pulo primo.
 
-Depois disso, ao final do loop, o pulo_primo é incrementado em +1 novamente, de modo que o loop “while not eh_primo (primo)” seja acionado novamente em busca do novo número primo que servirá para definir um novo valor para o pulo .
+Depois disso, ao final do loop, o pulo_primo é incrementado em +1 novamente, de modo que o loop “while not 
+eh_primo (primo)” seja acionado novamente em busca do novo número primo que servirá para definir um novo valor para o pulo .
 
 Basicamente, depois disso, o programa continua até que apenas o elemento de índice 0 permaneça na lista pessoas.
 
@@ -87,6 +104,8 @@ while True:
 
 
 '''
-E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na variável “n”. Existe um if que encerra o programa se o número digitado for 0 e no final é impresso o elemento com índice 0, que é retornado na função primo_joseph. 
+E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na variável “n”. 
+Existe um if que encerra o programa se o número digitado for 0 e no final é impresso o elemento 
+com índice 0, que é retornado na função primo_joseph. 
 '''
 Obs.: Fiz mais para aprender a lógica do código do Fábio. Valeu, Fábio pelo código.
