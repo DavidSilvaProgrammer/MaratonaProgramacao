@@ -1,0 +1,1 @@
+Pasta para códigos da questão 1024 Criptografia.
