@@ -1,0 +1,9 @@
+mensagem_codificada[::-1] não é equivalente a mensagem_codificada[:-1]. A notação mensagem_codificada[::-1] 
+é usada para inverter a ordem dos caracteres da string. Ela seleciona todos os caracteres da string, 
+mas em ordem reversa.
+
+Por outro lado, mensagem_codificada[:-1] seleciona todos os caracteres da string, exceto o último caractere. 
+Portanto, as duas notações selecionam coisas diferentes e não são equivalentes.
+
+No programa em questão, a segunda fase usa a notação mensagem_codificada[::-1] para inverter a ordem 
+dos caracteres da string mensagem_codificada.
