@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String texto;
+        System.out.print("Digite um texto: ");
+        texto = entrada.nextLine();
+        define(texto); // chama a função que vai começar os procedimentos necessários
+    }
+
+    public static void aumentar(char c[]) { // coloca todas as letras 3 posições para frente na tabela ASCII
+        for (int i = 0; i < c.length; i++) {
+            c[i] += 3;
+        }
+    }
+
+    public static void voltar_metade(char c[]) {// volta a metade da frente uma posição na tabela ASCII
+        int metade = c.length / 2;
+        for (int i = metade; i < c.length; i++) {
+            c[i]--;
+        }
+    }
+
+    public static void inverter(char c[]) { // inverte o texto
+        int j = c.length - 1;
+        for (int i = 0; i < j; i++, j--) {
+            char temp = c[i];
+            c[i] = c[j];
+            c[j] = temp;
+        }
+    }
+
+    public static void define(String texto) { // define a string e chama as funções necessárias
+        char c[] = texto.toCharArray();
+        aumentar(c);
+        voltar_metade(c);
+        inverter(c);
+        System.out.println(c);
+    }
+
+}
