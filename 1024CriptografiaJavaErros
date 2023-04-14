@@ -1,0 +1,60 @@
+import java.IO.IOException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main{
+    public class void define(String texto){ //converte para um array de char
+        aumentar(texto.toCharArray());
+    }
+    public static void aumentar(char c[]){ //coloca todas as letras 3 posições para frente na tabela ASCII
+        int posicao=0;
+        char d[];
+        d=c;
+        for(int i=0;i<c.length;i++){
+            posicao=c[i]+3;
+            if(c[i] >= 65 && c[i] <= 122){
+                c[i]= (char)posicao;
+            }
+        inverter(c);
+        }
+        
+        public static void inventer(char c[]){//Inverte a ordem
+            String d="";
+            for(int j=c.length -1;j>=0;j--){
+                d +=c[j];
+            }
+            
+            voltar_metade(d.toCharArray());
+            
+        }
+        public static void voltar_metade(char c[]){//volta a metade da frente uma posição na tabela ASCII
+            int posicao=0;
+            for(int i=0;i<c.lenght;i++){
+                posicao=c[i]-1;
+                if(i>c.length/2-1){
+                    c[i]=(char)posicao;
+                }
+            }
+            mostrar(c);
+        }
+        public static void mostrar(char[] c){//Imprime na tela
+            System.out.println(c);
+        }
+        public static void main(String[] args) throws IOException{
+            Scanner teclado = new Scanner(System.in);
+            DecimalFormat formata= new DecimalFormat("0.000");
+            
+            String texto;
+            int teste;
+            
+            teste=Integer.parseInt(teclado.nextLine());
+            
+            for(int j=0;j<teste;j++){
+                texto=teclado.nextLine();
+                define(texto)///chama a função que vai começar os procedimentos necessários
+            }
+        }
+    
+}
+
+}
