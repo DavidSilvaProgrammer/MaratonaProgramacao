@@ -1,0 +1,6 @@
+A diferença entre mensagem_codificada[:metade] e mensagem_codificada[metade:] é que o primeiro pega uma 
+fatia da string mensagem_codificada que vai desde o início da string até o índice metade (exclusivo), 
+enquanto o segundo pega uma fatia da string que vai do índice metade até o final da string.
+
+Em outras palavras, mensagem_codificada[:metade] pega a primeira metade da string, enquanto mensagem_codificada[metade:] 
+pega a segunda metade da string.
