@@ -28,3 +28,21 @@ for i in range(n):
     mensagem_codificada = criptografar(linha)
     print(mensagem_codificada)
 
+'''
+As funções nativas usadas no programa são as seguintes:
+
+    chr(): é uma função embutida que retorna a string que representa um caractere cujo código ASCII é o valor de entrada.
+
+    ord(): é uma função embutida que retorna o valor inteiro do código ASCII do caractere de entrada.
+
+    isalpha(): é um método embutido que retorna True se todos os caracteres em uma string são letras, caso contrário, retorna False.
+
+    join(): é um método embutido que concatena uma lista de strings em uma única string, usando o objeto que chama o método como separador 
+    entre as strings.
+
+    strip(): é um método embutido que remove todos os espaços em branco iniciais e finais de uma string.
+
+O programa recebe uma mensagem como entrada e a criptografa usando um algoritmo de três passos. Na primeira passada, cada letra na mensagem é deslocada 
+três posições no alfabeto. Na segunda passada, a mensagem é invertida. Na terceira passada, a segunda metade da mensagem (após a inversão) 
+é deslocada uma posição para trás no alfabeto. A mensagem criptografada resultante é retornada pela função criptografar().
+'''
