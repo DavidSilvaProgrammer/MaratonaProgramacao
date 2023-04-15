@@ -1,0 +1,19 @@
+def imprime_sequencia(inicio, fim, salto):
+    for i in range(inicio, fim, salto):
+        print(i)
+
+# Exemplo de uso
+imprime_sequencia(0, 10, 2)
+
+'''
+Exemplo de um programa simples em Python que usa o loop "for" com a função "range" para imprimir 
+uma sequência de números com base nos parâmetros de entrada:
+
+Neste exemplo, a função "imprime_sequencia" recebe três parâmetros: "inicio", "fim" e "salto". 
+Em seguida, usamos o loop "for" com a função "range" para gerar uma sequência de números que começa em "inicio" 
+e vai até "fim", com um intervalo de "salto" entre cada número. A cada iteração do loop, o valor atual de "i" é impresso na tela.
+
+No exemplo de uso, chamamos a função "imprime_sequencia" com os valores 0, 10 e 2, respectivamente, 
+o que significa que a sequência impressa será: 0, 2, 4, 6, 8.
+
+'''
