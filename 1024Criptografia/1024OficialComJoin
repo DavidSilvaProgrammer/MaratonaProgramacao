@@ -1,0 +1,30 @@
+def criptografar(mensagem):
+    # primeira etapa:
+    mensagem_codificada = ''
+    for caracter in mensagem:
+        if caracter.isalpha():
+            novo_caracter = chr(ord(caracter) + 3)
+            
+        else:
+            novo_caracter = caracter
+        mensagem_codificada += novo_caracter
+    
+    # segunda etapa:
+    mensagem_codificada = mensagem_codificada[::-1]
+    
+    # terceira etapa:
+    metade = len(mensagem_codificada) // 2
+    primeira_metade = mensagem_codificada[:metade] 
+    for caracter in mensagem_codificada[metade:]:
+        segunda_metade=''
+        segunda_metade += chr(ord(caracter) - 1) 
+    mensagem_codificada = primeira_metade + ''.join(segunda_metade)
+    return mensagem_codificada
+
+
+n = int(input())
+
+for i in range(n):
+    linha = input()
+    mensagem_codificada = criptografar(linha)
+    print(mensagem_codificada)
