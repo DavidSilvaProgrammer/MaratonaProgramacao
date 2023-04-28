@@ -1,0 +1,60 @@
+import java.util.Scanner;
+import java.util.Arrays;
+import java.text.DecimalFormat;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        DecimalFormat formata = new DecimalFormat("0.000");
+
+        int n1, q1, teste, pos, contador = 0;
+
+        do {// repete enquanto n1 e q1 forem diferentes de 0
+            contador++;
+
+            n1 = teclado.nextInt(); // Numero de marmores
+            q1 = teclado.nextInt(); // Numero de palpites
+            if (q1 == 0 && n1 == 0) { // se q1 e n1 forem igual a 0,
+                                     // sai do while
+                break;
+            }
+            int n[] = new int[n1]; // vetor do tamanho do numero
+                                   // de marmores
+
+            for (int i = 0; i < n1; i++) {// inserir valores no vetor
+                n[i] = teclado.nextInt();
+            }
+            int q[] = new int[q1]; // vetor do tamanho do numero de palpites
+            for (int i = 0; i < q1; i++) {
+                teste = teclado.nextInt();
+                q[i] = teste;
+            }
+            Arrays.sort(n);// Ordem de forma crescente(ascedente)
+                            // o vetor com os numeros de cada marmore
+            System.out.println("CASE# " + contador + ":");// imprime o caso
+            for (int i = 0; i < q.length; i++) {// repete de acordo com o
+                                                // numero de tentativas de cada pessoa. Ex: 2 tentativas,vai repetir 2
+                if (Arrays.binarySearch(n, q[i]) >= 0) {// testa se o valor que exista no vetor de palpites existe nos marmores
+                    for (int j = 0; j < n.length; j++) {
+                        if (n[j] == q[i]) {// descobrimos a primeira posição em que foi encontrado o valor
+                            System.out.println(q[i] + " found at " + (j + 1));
+                            break;
+
+                        }
+                    }
+                } else {
+                    System.out.println(q[i] + " not found"); // caso não exista
+                }
+
+            }
+        } while (n1 != 0 && q1 != 0);
+    }
+}
+
+/*
+Nessa versão do código, corrigimos os erros de sintaxe e semântica que foram mencionados anteriormente. 
+Note que em particular, na linha 41 corrigimos a expressão lógica, adicionando um parêntese após "q[i]" 
+para obter o valor correto. Além disso, também adicionamos um espaço após o número na linha 45 para melhorar 
+a legibilidade da mensagem de saída.
+
+*/
