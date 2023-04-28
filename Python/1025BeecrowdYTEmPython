@@ -1,0 +1,43 @@
+import array as arr
+from typing import List
+from bisect import bisect_left
+from decimal import Decimal
+
+contador = 0
+
+while True:
+    contador += 1
+
+    n1, q1 = map(int, input().split()) # Numero de marmores, Numero de palpites
+    
+    if q1 == 0 and n1 == 0:
+        break
+    
+    n = arr.array('i', []) # vetor do tamanho do numero de marmores
+    
+    for i in range(n1): # inserir valores no vetor
+        n.append(int(input()))
+    
+    q = arr.array('i', []) # vetor do tamanho do numero de palpites
+    
+    for i in range(q1):
+        q.append(int(input()))
+    
+    n = sorted(n) # Ordena o vetor em ordem crescente
+    print(f'CASE# {contador}:')
+    
+    for i in range(q1): # repete de acordo com o numero de tentativas de cada pessoa
+        
+        pos = bisect_left(n, q[i]) # testa se o valor que exista no vetor de palpites existe nos marmores
+        
+        if pos < len(n) and n[pos] == q[i]: # testa se o valor foi encontrado
+            print(f'{q[i]} found at {pos+1}')
+        else:
+            print(f'{q[i]} not found')
+
+
+Observe que a biblioteca java.util.Scanner foi substituída por input() e a biblioteca java.text.DecimalFormat foi substituída 
+por Decimal do módulo decimal. A biblioteca java.util.Arrays não é necessária no Python, pois as operações de ordenação e 
+pesquisa são realizadas com os métodos nativos sorted() e bisect_left() do módulo bisect. Também é necessário importar o 
+módulo array para criar arrays em Python. 
+Além disso, adicionamos uma tipagem nas funções e variáveis para ajudar na leitura e manutenção do código.
