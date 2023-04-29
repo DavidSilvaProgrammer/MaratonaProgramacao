@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+#define MAX 1001
+
+int main() {
+    
+    char expressao[MAX];
+    int parentese, tamanho,i,cont=1;
+    while(cont <= 10000) {
+        cont++;
+        parentese = 0;
+        if (fgets(expressao, MAX, stdin) == NULL) {
+            break; // final do arquivo
+        }
+        tamanho = strlen(expressao);
+        for (i = 0; i < tamanho; i++) {
+            if (expressao[i] == '(') {
+                parentese++;
+            } else if (expressao[i] == ')' && parentese != 0) {
+                parentese--;
+            } else if (expressao[i] == ')' && parentese == 0) {
+                parentese = -1;
+                break;
+            }
+        }
+        if (parentese == 0) {
+            printf("correct\n");
+        } else {
+            printf("incorrect\n");
+        }
+    }
+
+    return 0;
+}
