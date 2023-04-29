@@ -1,0 +1,12 @@
+#include <stdio.h>
+#define MAX 100
+
+int main() {
+    char str[MAX];
+
+    printf("Digite uma string: ");
+    fgets(str, MAX, stdin);
+
+    printf("A string digitada foi: %s", str);
+    return 0;
+}
