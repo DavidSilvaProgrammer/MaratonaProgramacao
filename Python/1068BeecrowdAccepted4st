@@ -1,0 +1,22 @@
+import sys
+
+while True:
+    expressao = sys.stdin.readline().strip() # lê a entrada e remove espaços em branco
+    if not expressao: # verifica se a entrada é vazia
+        break
+    if len(expressao) <= 1000:
+        parentese = 0
+        for caractere in expressao:
+            if caractere == "(":
+                parentese += 1
+            elif caractere == ")" and parentese != 0:
+                parentese -= 1
+            elif caractere == ")":
+                parentese = -1
+                break
+        if parentese == 0:
+            print("correct")
+        else:
+            print("incorrect")
+    else:
+        break
