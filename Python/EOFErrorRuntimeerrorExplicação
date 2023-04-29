@@ -1,0 +1,7 @@
+Esse erro ocorre porque o programa está tentando ler uma entrada de usuário, mas não há mais entradas disponíveis. 
+Isso pode acontecer se o programa esperar mais entradas do que as que foram fornecidas como entrada, 
+ou se o programa estiver lendo entradas de um arquivo e o arquivo terminar abruptamente.
+
+Verifique se o seu programa está esperando mais entradas do que as que foram fornecidas ou se há um erro no arquivo 
+de entrada. Se você estiver lendo entradas de um arquivo, verifique se o arquivo tem todas as linhas esperadas ou 
+se o caminho do arquivo está correto.
