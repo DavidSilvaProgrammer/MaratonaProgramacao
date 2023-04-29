@@ -1,0 +1,16 @@
+cont=1
+while (cont <= 10000):
+    cont+=1
+    parentese= 0
+
+    expressao = input()
+    for caractere in expressao:
+        if caractere == "(":
+            parentese += 1
+        if (caractere == ")") and parentese != 0:
+            parentese -= 1
+        
+    if (parentese == 0):
+        print("correct")
+    else:
+        print("incorrect")
