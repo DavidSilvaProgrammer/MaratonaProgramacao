@@ -1,0 +1,13 @@
+import sys
+
+while True:
+    entrada = input("Digite algo (ou Enter para sair): ")
+    if entrada == "\n":
+        sys.exit()
+    else:
+        # Fazer algo com a entrada do usuário
+
+
+
+Você pode usar a função input() para ler a entrada do usuário e verificar se a entrada está vazia 
+(só contém o caractere '\n'). Se a entrada estiver vazia, você pode encerrar o programa com o comando sys.exit(). Exemplo:
