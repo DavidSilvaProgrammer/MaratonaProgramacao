@@ -5,3 +5,9 @@ ou se o programa estiver lendo entradas de um arquivo e o arquivo terminar abrup
 Verifique se o seu programa está esperando mais entradas do que as que foram fornecidas ou se há um erro no arquivo 
 de entrada. Se você estiver lendo entradas de um arquivo, verifique se o arquivo tem todas as linhas esperadas ou 
 se o caminho do arquivo está correto.
+
+O erro EOFError ocorre quando o Python tenta ler uma entrada de dados (como o comando input()) e 
+encontra o final do arquivo (EOF) antes de receber os dados esperados. Isso geralmente acontece 
+quando o programa espera mais entradas, mas o usuário ou a entrada de dados chegam ao fim.
+
+Por exemplo, considere o seguinte código:
