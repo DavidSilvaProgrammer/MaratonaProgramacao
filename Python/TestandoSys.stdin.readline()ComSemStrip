@@ -1,0 +1,7 @@
+import sys
+
+while True:
+    expressao = sys.stdin.readline()#.strip()  # lê a entrada sem remover espaços em branco
+    if not expressao:  # verifica se a entrada é vazia
+        break
+    print("Expressão lida:", expressao)  # imprime a entrada capturada, incluindo o caractere de nova linha
