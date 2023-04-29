@@ -1,0 +1,9 @@
+string = input("Digite uma string: ")
+
+contagem_parenteses = 0
+
+for caractere in string:
+    if caractere == "(" or caractere == ")":
+        contagem_parenteses += 1
+
+print(f"A string '{string}' possui {contagem_parenteses} parênteses.")
