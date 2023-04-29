@@ -1,0 +1,49 @@
+O for em Python pode ser usado de várias maneiras, mas uma das mais comuns é com a função range(), que cria uma sequência de números em um intervalo específico. A sintaxe do for com range() é a seguinte:
+
+rust
+
+for variavel in range(inicio, fim, passo):
+    # corpo do loop
+
+    variavel é a variável que será usada para iterar sobre a sequência de números.
+    inicio é o número em que a sequência começará (por padrão, é 0).
+    fim é o número em que a sequência terminará (o valor final não é incluído na sequência).
+    passo é o valor que será adicionado a cada iteração (por padrão, é 1).
+
+Por exemplo, o seguinte código imprimirá os números de 0 a 4:
+
+scss
+
+for i in range(5):
+    print(i)
+
+Se você quiser imprimir os números de 1 a 5, pode especificar o início como 1:
+
+scss
+
+for i in range(1, 6):
+    print(i)
+
+Se você quiser imprimir os números de 0 a 10, mas apenas os números pares, pode especificar o passo como 2:
+
+scss
+
+for i in range(0, 11, 2):
+    print(i)
+
+Também é possível usar o for com outras sequências, como listas ou tuplas. Nesse caso, a sintaxe seria:
+
+rust
+
+for variavel in sequencia:
+    # corpo do loop
+
+Por exemplo:
+
+css
+
+nomes = ["Alice", "Bob", "Charlie"]
+for nome in nomes:
+    print(nome)
+
+Isso imprimirá cada nome da lista nomes.
