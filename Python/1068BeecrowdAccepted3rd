@@ -1,0 +1,19 @@
+while True:
+    try:
+        expressao = input()
+        parentese = 0
+        for caractere in expressao:
+            if caractere == "(":
+                parentese += 1
+            elif caractere == ")" and parentese != 0:
+                parentese -= 1
+            elif caractere == ")":
+                parentese = -1
+                break
+        if parentese == 0:
+            print("correct")
+        else:
+            print("incorrect")
+
+    except EOFError:
+        break
