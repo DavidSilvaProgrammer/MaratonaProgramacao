@@ -11,3 +11,19 @@ encontra o final do arquivo (EOF) antes de receber os dados esperados. Isso gera
 quando o programa espera mais entradas, mas o usuário ou a entrada de dados chegam ao fim.
 
 Por exemplo, considere o seguinte código:
+
+
+Quando um programa Python executa o comando input(), ele espera receber uma entrada de dados a partir do teclado ou de outro dispositivo de entrada. 
+No entanto, às vezes ocorrem situações em que não há mais entradas disponíveis, ou o dispositivo de entrada foi encerrado ou fechado antes que todas 
+as entradas esperadas fossem fornecidas. 
+Quando isso acontece, o Python não pode mais ler entradas de dados e gera um erro chamado EOFError (End of File Error), que indica que o final 
+do arquivo (EOF) foi encontrado antes que os dados esperados fossem recebidos.
+
+Por exemplo, suponha que um programa Python esteja aguardando uma entrada de dados do usuário para preencher uma lista de compras e o 
+usuário termine o programa antes de inserir todos os itens necessários. Nesse caso, o programa tentará obter mais dados, mas não conseguirá e, 
+eventualmente, gerará um erro de EOFError.
+
+Para contornar esse problema, é necessário garantir que haja entradas de dados suficientes antes de executar um comando input(). 
+Isso pode ser feito lendo a entrada de dados de um arquivo ou de outra fonte externa antes de executar o programa, ou usando um laço 
+de entrada que só termina quando todas as entradas necessárias são fornecidas. Além disso, também é possível usar o método try-except para 
+capturar exceções como o EOFError e lidar com elas adequadamente no código.
