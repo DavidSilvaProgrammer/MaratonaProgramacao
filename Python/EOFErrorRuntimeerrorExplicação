@@ -27,3 +27,16 @@ Para contornar esse problema, é necessário garantir que haja entradas de dados
 Isso pode ser feito lendo a entrada de dados de um arquivo ou de outra fonte externa antes de executar o programa, ou usando um laço 
 de entrada que só termina quando todas as entradas necessárias são fornecidas. Além disso, também é possível usar o método try-except para 
 capturar exceções como o EOFError e lidar com elas adequadamente no código.
+
+
+Na verdade, o problema não está no número de expressões de entrada fornecidas pelo usuário, mas sim na forma como o programa está lendo as entradas.
+
+Quando o comando input() é executado, o Python espera receber uma entrada de dados do usuário (digitada pelo teclado) para 
+continuar a execução do programa. Se o usuário não fornecer nenhuma entrada e pressionar a tecla Enter, o Python irá interpretar 
+isso como o final do arquivo (EOF) e gerará um EOFError.
+
+No caso do programa que você postou, ele está em um loop while que irá executar 10.000 vezes. Em cada iteração do loop, o programa irá 
+executar o comando input() para receber uma entrada de dados do usuário. Se o usuário não fornecer nenhuma entrada e pressionar Enter, 
+o Python irá gerar um EOFError.
+
+Uma forma de contornar esse problema seria adicionar um tratamento de exceção para capturar o EOFError e encerrar a execução do programa de forma adequada. Outra forma seria utilizar o sys.stdin.readline() em vez do input(), como já discutido anteriormente.
