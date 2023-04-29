@@ -1,0 +1,13 @@
+A diferença entre stdin.readline() e input() é que stdin.readline() lê a entrada do usuário como uma string, 
+incluindo espaços em branco e caracteres de nova linha, enquanto input() lê a entrada até que uma nova linha 
+seja inserida (ou seja, o usuário pressione a tecla Enter) e 
+retorna a string resultante sem o caractere de nova linha.
+
+Em geral, é recomendado usar stdin.readline() para leitura de entrada quando se lida com grandes 
+quantidades de dados de entrada, pois é mais rápido do que input(). No entanto, ao usar stdin.readline(), 
+é importante remover os caracteres de nova linha e quaisquer espaços em branco adicionais usando o método strip().
+
+O problema com input() é que ele pode causar um erro EOFError quando não houver mais entrada a ser lida. 
+Isso ocorre porque o input() tentará continuar esperando pela entrada do usuário, mesmo quando não houver
+mais entrada a ser lida. Isso pode ser evitado usando um bloco try-except para capturar o erro EOFError e 
+lidar com a entrada de forma adequada.
