@@ -1,0 +1,24 @@
+while True:
+    expressao = input()
+    if not expressao:
+        break  # fim do arquivo
+    parentese = 0
+    for i in range(len(expressao)):
+        if expressao[i] == '(':
+            parentese += 1
+        elif expressao[i] == ')' and parentese != 0:
+            parentese -= 1
+        elif expressao[i] == ')' and parentese == 0:
+            parentese = -1
+            break
+    if parentese == 0:
+        print("correct")
+    else:
+        print("incorrect")
+
+
+'''
+A lógica é basicamente a mesma do código em C. A diferença é que em Python, podemos usar o comando input() 
+para receber a entrada do usuário. A condição if not expressao: é equivalente ao if (fgets(expressao, MAX, stdin) == NULL) 
+do código em C, e verifica se a entrada é uma string vazia, indicando que chegamos ao final do arquivo de entrada.
+'''
