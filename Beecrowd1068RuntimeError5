@@ -1,0 +1,21 @@
+expressoes = []
+while True:
+    expressao = input()
+    if expressao == "":
+        break
+    expressoes.append(expressao)
+
+for expressao in expressoes:
+    parentese = 0
+    for caractere in expressao:
+        if caractere == "(":
+            parentese += 1
+        elif caractere == ")" and parentese != 0:
+            parentese -= 1
+        elif caractere == ")":
+            parentese = -1
+            break
+    if parentese == 0:
+        print("correct")
+    else:
+        print("incorrect")
