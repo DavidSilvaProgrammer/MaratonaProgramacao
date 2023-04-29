@@ -1,0 +1,15 @@
+string = input("Digite uma string: ")
+
+parentese_abertura= 0
+parentese_fechamento=0
+
+for caractere in string:
+    if caractere == "(":
+        parentese_abertura += 1
+    if caractere == ")":
+        parentese_fechamento +=1
+        
+if (parentese_abertura == parentese_fechamento):
+    print("correct")
+else:
+    print("incorrect")
