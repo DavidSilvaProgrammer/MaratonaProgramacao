@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 1001
+
+int main() {
+    
+    char linha[MAX];
+    char expressao[MAX];
+    int parentese, tamanho;
+    while(fgets(linha, MAX, stdin) != NULL){
+        if (sscanf(linha, "%[^\n]", expressao) != 1) {
+            continue; // linha vazia, ignora
+        }
+        parentese=0;
+        tamanho=strlen(expressao);
+        for(int i=0; i<tamanho;i++){
+            if(expressao[i] == '('){
+                parentese++;
+            }
+            else if(expressao[i] == ')' && parentese != 0){
+                parentese--;
+            }
+            else if(expressao[i] == ')' && parentese == 0){
+                parentese=-1;
+                break;
+            }
+        }
+        if(parentese == 0){
+            printf("correct\n");
+        }else{
+            printf("incorrect\n");
+        }
+    }
+
+    return 0;
+} 
