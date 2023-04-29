@@ -1,0 +1,17 @@
+n = int(input(""))
+
+
+for x in range(0, n):
+    parentese_abertura= 0
+    parentese_fechamento=0
+    expressao = input("Digite uma string: ")
+    for caractere in expressao:
+        if caractere == "(":
+            parentese_abertura += 1
+        if caractere == ")":
+            parentese_fechamento +=1
+        
+    if (parentese_abertura == parentese_fechamento):
+        print("correct")
+    else:
+        print("incorrect")
