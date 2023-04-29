@@ -1,0 +1,37 @@
+Uma maneira de corrigir isso é usar a exceção EOFError, que é lançada pelo Python quando o final do arquivo é 
+alcançado, ou seja, quando o programa tenta ler mais entradas do que existe. Você pode capturar essa exceção para 
+interromper o loop. Além disso, em vez de usar input(), é recomendado usar sys.stdin.readline() para entrada padrão, 
+para evitar problemas com a quebra de linha.
+
+Um exemplo de código corrigido seria:
+
+import sys
+
+while True:
+    try:
+        expressao = sys.stdin.readline().strip()  # lê a entrada e remove espaços em branco
+        if not expressao:  # verifica se a entrada é vazia
+            break
+        if len(expressao) > 0 and len(expressao) <= 1000:
+            parentese = 0
+            for caractere in expressao:
+                if caractere == "(":
+                    parentese += 1
+                elif caractere == ")" and parentese != 0:
+                    parentese -= 1
+                elif caractere == ")":
+                    parentese = -1
+                    break
+            if parentese == 0:
+                print("correct")
+            else:
+                print("incorrect")
+        else:
+            break
+    except EOFError:
+        break
+
+
+Esse código lê a entrada usando sys.stdin.readline().strip() e captura a exceção EOFError para interromper 
+o loop quando a entrada termina. Além disso, ele adiciona uma verificação adicional para a entrada vazia (linha 6) 
+para evitar que o loop seja interrompido quando uma linha vazia é lida, mas ainda há mais linhas na entrada.
