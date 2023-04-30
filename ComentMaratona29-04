@@ -1,0 +1,110 @@
+Boa noite, colegas e professor. Gostaria de compartilhar os códigos que eu fiz da questão 1068 aqui no grupo, fiz em Python e Linguagem C. 
+
+cont=1
+while (cont <= 10000):
+    cont+=1
+    parentese= 0
+
+    expressao = input()
+    for caractere in expressao:
+        if caractere == "(":
+            parentese += 1
+        if (caractere == "):
+            parentese -= 1
+        
+    if (parentese == 0):
+        print("correct")
+    else:
+        print("incorrect")
+
+
+
+A princípio, quando eu fiz em Python, neste código anterior, o Beecrowd estava alertando RuntimeError e apontando erro na linha de entrada: “input() EOFError: EOF when reading a line”. 
+
+Pelo que entendi, a função input do Python quando está armazenando muitos dados seguidos está sujeito a esse erro porque se o usuário não digita um valor específico e apenas clica enter, a função vai encerrar sem registrar nenhum dado, já que a função input não armazena o “\n” do enter, o que deixa o input completamente vazio e trava a função.
+
+Para contornar esse problema, encontrei duas maneiras, uma foi por meio do tratamento de exceções utilizando os comandos try e except:
+
+while True:
+    try:
+        expressao = input()
+        if len(expressao) > 0 and len(expressao) <= 1000:
+            parentese = 0
+            for caractere in expressao:
+                if caractere == "(":
+                    parentese += 1
+                elif caractere == ")" and parentese != 0:
+                    parentese -= 1
+                elif caractere == ")":
+                    parentese = -1
+                    break
+            if parentese == 0:
+                print("correct")
+            else:
+                print("incorrect")
+        else:
+            break
+    except EOFError:
+        break
+        
+ Obs.: coloquei uma limitação de tamanho na string espressão aqui, mas o programa foi aceito sem também.
+
+
+A outra que encontrei também foi trocando a função input pela readline(), que armazena o “\n” na entrada de dados e evita o EOFError:
+
+import sys
+
+while True:
+    expressao = sys.stdin.readline().strip()
+    if expressao == '':
+        sys.exit()
+    else:
+        if len(expressao) > 0 and len(expressao) <= 1000:
+            parentese = 0
+            for caractere in expressao:
+                if caractere == "(":
+                    parentese += 1
+                elif caractere == ")" and parentese != 0:
+                    parentese -= 1
+                elif caractere == ")":
+                    parentese = -1
+                    break
+            if parentese == 0:
+                print("correct")
+            else:
+                print("incorrect")
+
+
+
+O que achei interessante foi que mesmo usando o strip() que remove o “\n” e os espaços extras nessa função o Beecrowd aceitou também. Tive que importar
+a biblioteca "sys" para usar o readline() e o sys.exit() para encerrar o programa caso o valor de entrada fosse de uma string vazia.
+
+Depois desse problema, surgiu outro em relação à própria lógica da questão que eu não tinha percebido. Como o professor mostrou na sala e a questão pede, não basta apenas existir a mesma quantidade de parentes de abertura e de fechamento, eles também não podem ficar invertidos assim apenas: “)(“, a não ser que formem ângulo com outros como: “()()”.
+
+Para resolver isso, usei a variável parêntese como contador para registrar +1
+cada vez que um parêntese de abertura for encontrado. Usei a estrutura condicional elif duas vezes para delimitar as possibilidades do parêntese de fechamento, uma para
+subtrair 1 toda vez que um parêntese de abertura tenha sido encontrado e registrado por meio da alteração da variável "parentes" e outro elif para atribuir -1 a parentese e encerrar o loop com break, de modo que no if e else finais será impresso "correct" somente quando o parêntese valer 0 e "incorrect" quando houver qualquer valor diferente nessa variável.
+
+
+
+Já no programa em C, tentei fazer um modelo semelhante:
+
+
+No entanto, houve um erro parecido também na entrada de dados porque eu usei o fgets como função de entrada. Quando coloquei a condição if para comparar se o valor de expressao é igual NULL e encerrar o loop e o programa caso isso acontecesse, o problema foi resolvido e o código foi aceito pelo Beecrowd.
+
+Achei incrível como desafio foi maior para mim em relação a entrada de dados do que com a questão dos parênteses em si. Mas gostei muito do aprendizado que essa questão proporcionou.
+
+
+
+
+
+
+
+
+Depois disso, decidi fazer uma versão parecida para C e ficou assim:
+
+
+
+
+
+
