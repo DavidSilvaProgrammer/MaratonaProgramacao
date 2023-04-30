@@ -76,35 +76,58 @@ while True:
 
 
 
-O que achei interessante foi que mesmo usando o strip() que remove o “\n” e os espaços extras nessa função o Beecrowd aceitou também. Tive que importar
-a biblioteca "sys" para usar o readline() e o sys.exit() para encerrar o programa caso o valor de entrada fosse de uma string vazia.
+O que achei interessante foi que mesmo usando o strip() que remove o “\n” e os espaços extras nessa função o Beecrowd aceitou também, tive 
+que importar a biblioteca "sys" para usar o readline() e o sys.exit() para encerrar o programa caso o valor de entrada fosse de uma string vazia. Entretanto, quando eu usava
+esse sys.exit() após a função input, o Beecrowd reprovava e mantinha o mesmo EOFError.
 
 Depois desse problema, surgiu outro em relação à própria lógica da questão que eu não tinha percebido. Como o professor mostrou na sala e a questão pede, não basta apenas existir a mesma quantidade de parentes de abertura e de fechamento, eles também não podem ficar invertidos assim apenas: “)(“, a não ser que formem ângulo com outros como: “()()”.
 
-Para resolver isso, usei a variável parêntese como contador para registrar +1
-cada vez que um parêntese de abertura for encontrado. Usei a estrutura condicional elif duas vezes para delimitar as possibilidades do parêntese de fechamento, uma para
+Para resolver isso, usei a variável parêntese como contador para registrar +1 cada vez que um parêntese de abertura for encontrado. Usei a estrutura condicional elif duas vezes para delimitar as possibilidades do parêntese de fechamento, uma para
 subtrair 1 toda vez que um parêntese de abertura tenha sido encontrado e registrado por meio da alteração da variável "parentes" e outro elif para atribuir -1 a parentese e encerrar o loop com break, de modo que no if e else finais será impresso "correct" somente quando o parêntese valer 0 e "incorrect" quando houver qualquer valor diferente nessa variável.
 
 
 
 Já no programa em C, tentei fazer um modelo semelhante:
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 1001
+
+int main() {
+    
+    char expressao[MAX];
+    int parentese, tamanho,i;
+    for (i = 0; i < 10000; i++) {
+        parentese = 0;
+        if (fgets(expressao, MAX, stdin) == NULL) {
+            break;
+        }
+        tamanho = strlen(expressao);
+        for (i = 0; i < tamanho; i++) {
+            if (expressao[i] == '(') {
+                parentese++;
+            } else if (expressao[i] == ')' && parentese != 0) {
+                parentese--;
+            } else if (expressao[i] == ')' && parentese == 0) {
+                parentese = -1;
+                break;
+            }
+        }
+        if (parentese == 0) {
+            printf("correct\n");
+        } else {
+            printf("incorrect\n");
+        }
+    }
+
+    return 0;
+}
+
 
 No entanto, houve um erro parecido também na entrada de dados porque eu usei o fgets como função de entrada. Quando coloquei a condição if para comparar se o valor de expressao é igual NULL e encerrar o loop e o programa caso isso acontecesse, o problema foi resolvido e o código foi aceito pelo Beecrowd.
 
-Achei incrível como desafio foi maior para mim em relação a entrada de dados do que com a questão dos parênteses em si. Mas gostei muito do aprendizado que essa questão proporcionou.
+Achei incrível como desafio foi maior para mim em relação a entrada de dados no progama do que com a lógica dos parênteses em si. Mas gostei muito do aprendizado que essa questão proporcionou.
 
-
-
-
-
-
-
-
-Depois disso, decidi fazer uma versão parecida para C e ficou assim:
-
-
-
-
-
-
+#Depois disso, decidi fazer uma versão parecida para C e ficou assim:
