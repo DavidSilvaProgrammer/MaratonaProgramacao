@@ -1,0 +1,23 @@
+from collections import deque
+
+minha_lista_limitada = deque(maxlen=5)
+
+
+minha_lista_limitada = deque(maxlen=5)
+minha_lista_limitada.append(1)
+minha_lista_limitada.append(2)
+minha_lista_limitada.append(3)
+minha_lista_limitada.append(4)
+minha_lista_limitada.append(5)
+minha_lista_limitada.append(6) # o elemento mais antigo (1) é removido automaticamente
+
+print(minha_lista_limitada) # deque([2, 3, 4, 5, 6], maxlen=5)
+
+
+'''
+Depois de criar uma lista limitada, você pode adicionar elementos 
+a ela usando o método append() como faria com uma lista normal. 
+No entanto, se você tentar adicionar mais elementos do que o 
+tamanho máximo da lista permitir, os elementos mais antigos serão 
+automaticamente removidos para manter a lista dentro do tamanho máximo.
+'''
