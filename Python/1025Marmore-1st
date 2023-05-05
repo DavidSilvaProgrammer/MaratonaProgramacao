@@ -1,0 +1,36 @@
+import sys
+
+caso = 1
+n_lista = []
+q_lista = []
+
+while caso < 65:
+    n = int(input("Digite o número de marmores: "))
+    q = int(input("Digite o número de consultas: "))
+    if n == 0 and q == 0:
+        sys.exit()
+
+    for i in range(n):
+        valor = input("Marmore: Digite o valor para a posição {}: ".format(i))
+        n_lista.append(valor)
+
+    for i in range(q):
+        valor = input("Consultas: Digite o valor para a posição {}: ".format(i))
+        q_lista.append(valor)
+
+    cont = 0
+    while q_lista:
+        cont += 1
+        achado = 0
+        quant = len(q_lista) - 1
+        print("CASE# {}\n".format(cont))
+        retira = q_lista.pop(0)
+        for i in n_lista:
+            if retira == i:
+                achado = 1
+                print("{} found at {}\n".format(retira, n_lista.index(i) + 1))
+                break
+        if achado == 0:
+            print("{} not found".format(retira))
+
+    caso += 1
