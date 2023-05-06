@@ -1,0 +1,35 @@
+import sys
+import bisect
+
+caso = 1
+
+while caso < 65:
+    n_lista = []
+    q_lista = []
+
+    caso += 1
+
+    n, q = map(int, input().split())
+    
+    if n < 0 or n > 10000:
+        sys.exit()
+    if n == 0 and q == 0:
+        sys.exit()
+
+    for i in range(n):
+        valor = int(input())
+        n_lista.append(valor)
+
+    for i in range(q):
+        valor = int(input())
+        q_lista.append(valor)
+
+    cont = 0
+    print("CASE# {}:".format(caso-1))
+    for retira in q_lista:
+        cont += 1
+        pos = bisect.bisect_left(n_lista, retira)
+        if pos < len(n_lista) and n_lista[pos] == retira:
+            print("{} found at {}".format(retira, pos+2))
+        else:
+            print("{} not found".format(retira))
