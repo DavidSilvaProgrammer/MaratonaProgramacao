@@ -1,0 +1,8 @@
+from bisect import bisect_left
+
+pos = bisect_left(n_lista, valor)
+
+
+import bisect
+
+pos = bisect.bisect_left(n_lista, valor)
