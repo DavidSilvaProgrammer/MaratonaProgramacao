@@ -11,7 +11,7 @@ while caso < 65:
     caso += 1
 
     n, q = map(int, input().split())
-
+    
     if n < 0 or n > 10000:
         sys.exit()
     if n == 0 and q == 0:
@@ -25,15 +25,19 @@ while caso < 65:
         valor = int(input())
         q_lista.append(valor)
 
-    cont = 0
+    n_lista=list(set(n_lista))
+    q_lista=list(set(q_lista))
     print("CASE# {}:".format(caso-1))
-    for i, valor in enumerate(q_lista):
+    #while q_lista:
+    for q_idx, q_valor in enumerate(q_lista):
+        #cont += 1
         achados = []
-        for j, elem in enumerate(n_lista):
-            if valor == elem and elem not in achados:
-                achados.append(elem)
-                print("{} found at {}".format(valor, j+1))
-                break
+        retira = q_lista.pop(0)
+        #for i in n_lista:
+        for n_idx, n_valor in enumerate(n_lista):
+            if retira == n_valor and n_valor not in achados:
+                achados.append(n_valor)
+                print("{} found at {}".format(retira, n_idx + 1))
                 
         if not achados:
-            print("{} not found".format(valor))
+            print("{} not found".format(retira))
