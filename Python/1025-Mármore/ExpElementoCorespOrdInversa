@@ -6,3 +6,22 @@ n = len(lista)
 for i in range(n):
     elemento_inverso = lista[n-i-1]
     print("O elemento correspondente na ordem inversa de", lista[i], "é", elemento_inverso)
+    
+ *******************************
+ 
+ Exemplo de função que retorna o índice correspondente na ordem inversa de um elemento de uma lista:
+ 
+ def indice_inverso(lista, elemento):
+    indice = lista.index(elemento)
+    inverso = len(lista) - 1 - indice
+    return inverso
+
+
+A função recebe a lista e o elemento que se deseja buscar o índice correspondente na ordem inversa. Primeiro, a função encontra o índice do elemento na lista usando o método index. Em seguida, subtrai esse índice da quantidade total de elementos na lista menos 1, que é o índice do último elemento na ordem inversa.
+
+Por exemplo, para a lista [0, 1, 2, 3, 4]:
+
+    O índice do elemento 0 é 0. O índice inverso correspondente é 4.
+    O índice do elemento 1 é 1. O índice inverso correspondente é 3.
+    O índice do elemento 2 é 2. O índice inverso correspondente é 2.
+    E assim por diante.
