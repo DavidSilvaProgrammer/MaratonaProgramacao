@@ -1,0 +1,12 @@
+def ultimo_idx(lista, elemento):
+    idx = -1
+    for i in reversed(range(len(lista))):
+        if lista[i] == elemento:
+            idx = i
+            break
+    return idx
+
+valor = 3
+lista = [0, 3, 2, 5, 3]
+imprimir = ultimo_idx(lista, valor)
+print(imprimir)  # output: 4
