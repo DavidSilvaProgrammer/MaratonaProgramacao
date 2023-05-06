@@ -1,0 +1,19 @@
+lista = ['a', 'b', 'c', 'd', 'e']
+
+for i, valor in enumerate(lista):
+    print("Índice:", i, "Valor:", valor)
+
+/*
+Saída:
+Índice: 0 Valor: a
+Índice: 1 Valor: b
+Índice: 2 Valor: c
+Índice: 3 Valor: d
+Índice: 4 Valor: e
+
+A função enumerate() retorna uma tupla contendo o índice e o 
+valor correspondente a cada elemento da lista. Ao usar o for com a 
+função enumerate(), é possível acessar tanto o índice quanto o valor 
+de cada elemento de maneira mais simples e direta.
+*/
+
