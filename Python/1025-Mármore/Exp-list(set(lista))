@@ -1,0 +1,17 @@
+minha_lista = [1, 2, 3, 2, 4, 1, 5, 3]
+sem_repetidos = remove_repetidos(minha_lista)
+print(sem_repetidos)
+
+/*
+
+Explicação:
+
+Nesta função, a lista é convertida para um set, que é uma coleção não-ordenada de 
+valores únicos. Em seguida, é utilizada a função list() para converter o set de volta 
+para uma lista. Esta nova lista não contém mais valores duplicados.
+
+Você pode chamar esta função passando uma lista como argumento, por exemplo:
+
+Este código irá imprimir [1, 2, 3, 4, 5], que é a lista original sem os valores duplicados.
+
+*/
