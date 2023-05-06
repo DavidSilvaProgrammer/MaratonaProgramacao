@@ -1,0 +1,16 @@
+def ultimo_idx(lista, elemento):
+    for i in lista:
+        if elemento == i:
+            idx=lista.index(elemento)
+            return idx
+
+valor=3
+lista = [0, 1, 2, 5, 3]
+
+imprimir=ultimo_idx(lista,valor)
+
+print(imprimir)
+
+
+
+
