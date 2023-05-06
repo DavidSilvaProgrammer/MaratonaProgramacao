@@ -1,10 +1,11 @@
 import sys
 
 caso = 1
-n_lista = []
-q_lista = []
 
 while caso < 65:
+    n_lista = []
+    q_lista = []
+
     caso += 1
 
     n, q = map(int, input().split())
@@ -27,12 +28,12 @@ while caso < 65:
         cont += 1
         achado = 0
         quant = len(q_lista) - 1
-        print("CASE# {}:\n".format(cont))
+        print("CASE# {}:".format(cont))
         retira = q_lista.pop(0)
         for i in n_lista:
             if retira == i:
                 achado = 1
                 print("{} found at {}\n".format(retira, n_lista.index(i) + 1))
-                break
+                
         if achado == 0:
             print("{} not found".format(retira))
