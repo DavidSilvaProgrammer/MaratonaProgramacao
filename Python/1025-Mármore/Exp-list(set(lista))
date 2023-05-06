@@ -1,3 +1,6 @@
+def remove_repetidos(lista):
+    return list(set(lista))
+
 minha_lista = [1, 2, 3, 2, 4, 1, 5, 3]
 sem_repetidos = remove_repetidos(minha_lista)
 print(sem_repetidos)
