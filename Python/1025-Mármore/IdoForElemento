@@ -1,0 +1,4 @@
+lista = [4, 1, 2, 5, 3]
+
+for i in lista:
+    print(i)
