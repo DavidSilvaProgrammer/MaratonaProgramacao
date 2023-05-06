@@ -1,0 +1,39 @@
+//Time limit exceeded
+
+import sys
+
+caso = 1
+
+while caso < 65:
+    n_lista = []
+    q_lista = []
+
+    caso += 1
+
+    n, q = map(int, input().split())
+
+    if n < 0 or n > 10000:
+        sys.exit()
+    if n == 0 and q == 0:
+        sys.exit()
+
+    for i in range(n):
+        valor = int(input())
+        n_lista.append(valor)
+
+    for i in range(q):
+        valor = int(input())
+        q_lista.append(valor)
+
+    cont = 0
+    print("CASE# {}:".format(caso-1))
+    for i, valor in enumerate(q_lista):
+        achados = []
+        for j, elem in enumerate(n_lista):
+            if valor == elem and elem not in achados:
+                achados.append(elem)
+                print("{} found at {}".format(valor, j+1))
+                break
+                
+        if not achados:
+            print("{} not found".format(valor))
