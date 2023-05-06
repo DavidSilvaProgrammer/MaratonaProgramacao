@@ -1,0 +1,15 @@
+def indice_inverso(lista, elemento):
+    indice = lista[::-1].index(elemento)
+    inverso = len(lista) - 1 - indice
+    return inverso
+
+valor=3
+lista = [0, 1, 2, 3, 4]
+
+imprimir=indice_inverso(lista,valor)
+
+print(imprimir)
+
+
+
+
