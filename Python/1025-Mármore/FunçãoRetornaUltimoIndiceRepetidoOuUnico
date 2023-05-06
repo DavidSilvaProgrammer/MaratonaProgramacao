@@ -1,0 +1,21 @@
+def ultimo_negativo_ou_unica(lista):
+    ultimo_negativo = None
+    unico = None
+    for i, elemento in enumerate(lista):
+        if elemento < 0:
+            ultimo_negativo = i
+        if lista.count(elemento) == 1:
+            unico = i
+    if ultimo_negativo is not None:
+        return ultimo_negativo
+    elif unico is not None:
+        return unico
+    else:
+        return None
+
+
+lista=[1,2,2,3,4,8]
+
+print(lista)
+
+print(ultimo_negativo_ou_unica(lista))
