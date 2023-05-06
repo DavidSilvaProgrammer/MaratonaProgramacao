@@ -1,0 +1,38 @@
+import sys
+
+caso = 1
+
+while caso < 65:
+    n_lista = []
+    q_lista = []
+
+    caso += 1
+
+    n, q = map(int, input().split())
+    
+    if n < 0 or n > 10000:
+        sys.exit()
+    if n == 0 and q == 0:
+        sys.exit()
+
+    for i in range(n):
+        valor = int(input())
+        n_lista.append(valor)
+
+    for i in range(q):
+        valor = int(input())
+        q_lista.append(valor)
+
+    cont = 0
+    while q_lista:
+        cont += 1
+        achados = []
+        print("CASE# {}:".format(cont))
+        retira = q_lista.pop(0)
+        for i in n_lista:
+            if retira == i and i not in achados:
+                achados.append(i)
+                print("{} found at {}\n".format(retira, n_lista.index(i) + 1))
+                
+        if not achados:
+            print("{} not found".format(retira))
