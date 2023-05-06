@@ -28,6 +28,7 @@ while caso < 65:
     print("CASE# {}:".format(caso-1))
     for retira in q_lista:
         cont += 1
+        n_lista.sort()
         pos = bisect.bisect_left(n_lista, retira)
         if pos < len(n_lista) and n_lista[pos] == retira:
             print("{} found at {}".format(retira, pos+2))
