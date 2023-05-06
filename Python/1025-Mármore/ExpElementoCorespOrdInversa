@@ -1,0 +1,8 @@
+#Código: elemento correspondente na ordem inversa:
+
+lista = [0, 1, 2, 3, 4]
+n = len(lista)
+
+for i in range(n):
+    elemento_inverso = lista[n-i-1]
+    print("O elemento correspondente na ordem inversa de", lista[i], "é", elemento_inverso)
