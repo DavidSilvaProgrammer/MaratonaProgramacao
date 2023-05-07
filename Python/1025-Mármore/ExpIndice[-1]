@@ -1,0 +1,7 @@
+Na linha ultimo_idx = indices[-1], estamos atribuindo à variável ultimo_idx o último elemento da lista indices. 
+Em Python, o índice -1 representa 
+o último elemento de uma lista, então indices[-1] é uma forma de obter o último índice 
+encontrado para o elemento buscado.
+
+Por exemplo, se a lista de índices for [2, 5, 8, 10], a expressão indices[-1] vai retornar o 
+valor 10, que é o último elemento da lista e, portanto, o último índice encontrado para o elemento buscado.
