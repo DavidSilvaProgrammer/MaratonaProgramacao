@@ -1,0 +1,25 @@
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(input()) for i in range(n)]
+    q_lista = [int(input()) for i in range(q)]
+
+    print("CASE# {}: ".format(caso))
+
+    for elemento in q_lista:
+        indice = -1
+        for idx2, elem2 in enumerate(n_lista):
+            if elem2 == elemento:
+                indice = idx2
+            
+        if indice != -1:
+            print("{} found at {}".format(elemento, indice))
+        else:
+            print("{} not found".format(elemento))
+
+    caso += 1
