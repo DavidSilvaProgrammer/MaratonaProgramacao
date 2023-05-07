@@ -1,0 +1,29 @@
+def ultimo_idx(lista, elemento):
+    idx = None
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            idx = i
+    return idx
+
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(input()) for i in range(n)]
+    q_lista = [int(input()) for i in range(q)]
+    
+    print("CASE# {}:".format(caso))
+    
+    for i in range(len(q_lista)):
+        if ultimo_idx(n_lista, q_lista[i]) is None:
+            print("{} not found".format(q_lista[i]))
+        else:
+            idx=ultimo_idx(n_lista, q_lista[i])
+            print("{} found at {}".format(q_lista[i],idx))
+    caso+=1
+    
+    
