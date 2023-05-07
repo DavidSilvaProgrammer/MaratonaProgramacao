@@ -1,0 +1,27 @@
+Explicação:
+
+Em Python, você pode fazer a concatenação de strings usando o método format() para inserir 
+variáveis em uma string. A sintaxe geral é a seguinte:
+
+lua
+
+string = "algum texto {} e mais algum texto {}"
+resultado = string.format(valor1, valor2)
+
+Nesse exemplo, as chaves {} são espaços reservados onde os valores das variáveis valor1 e valor2 serão inseridos 
+quando a string for formatada. O método format() retorna uma nova string que contém as variáveis inseridas.
+
+Se você quiser concatenar strings sem usar o método format(), pode simplesmente usar o operador de adição (+) 
+para concatenar as strings. Por exemplo:
+
+makefile
+
+string1 = "algum texto"
+string2 = "mais algum texto"
+resultado = string1 + " e " + string2
+
+Nesse exemplo, as duas strings são concatenadas com a string " e " no meio. O resultado é armazenado na variável resultado.
+
+Lembre-se de que as strings em Python são imutáveis, o que significa que, quando você concatena duas strings, uma nova string é criada na memória. 
+Portanto, se você precisa fazer muitas concatenações de strings, é melhor usar o método join() em vez do operador +, pois é mais eficiente 
+em termos de memória.
