@@ -1,0 +1,48 @@
+def ultimo_idx(lista, elemento):
+    idx = None
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            idx = i
+    return idx
+
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(input()) for i in range(n)]
+    q_lista = [int(input()) for i in range(q)]
+    
+    print("****************")
+    
+    for i in range(len(n_lista)):
+        print(n_lista[i])
+    print("*************")
+    
+    for i in range(len(q_lista)):
+        print(q_lista[i])
+    print("*************")
+    
+    for i in range(len(q_lista)):
+        print(ultimo_idx(n_lista, q_lista[i]))
+    print("*************")
+    
+valor=3
+lista = [0, 1, 2, 5, 3]
+
+imprimir=ultimo_idx(lista,valor)
+
+print(imprimir)
+
+
+'''
+Simplesmente o output não está relacionado com a posição do elemento 5,
+e esse elemento não se repete, ele simplesmente é postado de novo
+como instrumento do que vai ser consultado, mas não é repetido duas
+vezes como eu estava pensando, o que significa que as funções que
+eu estava testando estavam corretas, esse output do beecrowd ou
+está errado ou está significando outra coisa.
+'''
