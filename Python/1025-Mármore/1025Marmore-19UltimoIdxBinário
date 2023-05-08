@@ -1,0 +1,36 @@
+import sys
+
+def ultimo_idx_binario(lista, elemento):
+    esquerda, direita = 0, len(lista) - 1
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if lista[meio] == elemento:
+            return meio
+        elif lista[meio] < elemento:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    
+    caso_resultados = []
+    
+    for i in range(q):
+        q_elemento = int(sys.stdin.readline())
+        idx = ultimo_idx_binario(n_lista, q_elemento)
+        if idx is None:
+            caso_resultados.append("{} not found".format(q_elemento))
+        else:
+            caso_resultados.append("{} found at {}".format(q_elemento, idx+1))
+    
+    sys.stdout.write("CASE# {}:\n{}\n".format(caso, '\n'.join(caso_resultados)))
+    caso += 1
