@@ -1,0 +1,37 @@
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+    
+    if (n == 0 and q == 0) or (n<0 or n>10000) or (q<0 or q>10000):
+        break
+        
+    n_lista=[]
+    q_lista=[]
+    
+    for i in range(n):
+        entrada=int(input())
+        if (entrada<0 or entrada>10000):
+            break
+        else:
+            n_lista.append(entrada)
+    
+    for i in range(q):
+        entrada=int(input())
+        if (entrada<0 or entrada>10000):
+            break
+        else:
+            q_lista.append(entrada)
+    
+    n_set = set(n_lista)
+    
+    print("CASE# {}: ".format(caso))
+    
+    for q_valor in q_lista:
+        if q_valor in n_set:
+            n_idx = n_lista.index(q_valor) + 1
+            print("{} found at {}".format(q_valor, n_idx))
+        else:
+            print("{} not found".format(q_valor))
+    
+    caso += 1
