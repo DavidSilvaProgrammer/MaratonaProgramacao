@@ -1,0 +1,46 @@
+import sys
+
+def ultimo_idx_binario(lista, elemento):
+    esquerda, direita = 0, len(lista) - 1
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if lista[meio] == elemento:
+            return meio
+        elif lista[meio] < elemento:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        sys.exit()
+
+    if n < 0 or n > 10000 or q < 0 or q > 10000:
+        sys.exit()
+
+    n_lista = [int(input()) for i in range(n)]
+
+    if any(num < 0 or num > 10000 for num in n_lista):
+        sys.exit()
+
+    q_lista = [int(input()) for i in range(q)]
+
+    if any(num < 0 or num > 10000 for num in q_lista):
+        sys.exit()
+
+    n_lista.sort()
+
+    print("CASE# {}:".format(caso))
+
+    for i in range(len(q_lista)):
+        idx = ultimo_idx_binario(n_lista, q_lista[i])
+        if idx is None:
+            print("{} not found".format(q_lista[i]))
+        else:
+            print("{} found at {}".format(q_lista[i], idx))  # adiciona 1 ao índice
+    caso += 1
