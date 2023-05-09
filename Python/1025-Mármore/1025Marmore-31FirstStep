@@ -1,0 +1,27 @@
+def busca_indice(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(input()) for i in range(n)]
+    n_lista.sort()
+    q_lista = [int(input()) for i in range(q)]
+    
+    print("CASE# {}:".format(caso))
+    
+    for i in range(len(q_lista)):
+        if busca_indice(n_lista, q_lista[i]) is None:
+            print("{} not found".format(q_lista[i]))
+        else:
+            idx=busca_indice(n_lista, q_lista[i])
+            print("{} found at {}".format(q_lista[i],idx+1))
+    caso+=1
