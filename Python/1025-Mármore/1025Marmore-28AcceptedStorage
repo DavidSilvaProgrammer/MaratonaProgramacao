@@ -1,0 +1,35 @@
+import bisect
+import sys
+
+def busca_binaria(lista, elemento):
+    idx = bisect.bisect_left(lista, elemento)
+    if idx != len(lista) and lista[idx] == elemento:
+        return idx
+    return None
+
+
+caso = 1
+resultados = []
+
+while True:
+    n, q = map(int, input().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(input()) for i in range(n)]
+    n_lista.sort()
+    caso_resultados = []
+    
+    for i in range(q):
+        q_elemento = int(input())
+        idx = busca_binaria (n_lista, q_elemento)
+        if idx is None:
+            caso_resultados.append("{} not found".format(q_elemento))
+        else:
+            caso_resultados.append("{} found at {}".format(q_elemento, idx+1))
+    
+    resultados.append("CASE# {}:\n{}".format(caso, '\n'.join(caso_resultados)))
+    caso += 1
+
+print('\n'.join(resultados))
