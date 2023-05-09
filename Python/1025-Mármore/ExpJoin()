@@ -1,0 +1,19 @@
+lista = [1, 2, 3, 4, 5]
+string = ', '.join(str(x) for x in lista)
+print(string)
+# Output: "1, 2, 3, 4, 5"
+
+A função join() é utilizada em strings para unir elementos de uma sequência (por exemplo, uma lista) em uma única string, 
+separando-os com um separador especificado. Ela retorna uma nova string que contém todos os elementos da sequência concatenados.
+
+A sintaxe básica da função join() é a seguinte:
+
+separador.join(iteravel)
+
+onde separador é uma string que será usada para separar os elementos e iteravel é a sequência de elementos que serão unidos.
+
+Por exemplo, o código abaixo cria uma lista de números inteiros, converte cada número para uma string e depois une todos os 
+elementos da lista em uma única string separada por vírgulas:
+
+Nesse exemplo, a função join() é usada para unir os elementos da lista separados por ", ". A expressão str(x) for x in 
+lista é uma expressão geradora que converte cada número na lista para uma string antes de ser unido.
