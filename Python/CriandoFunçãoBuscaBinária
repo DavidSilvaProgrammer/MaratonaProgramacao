@@ -1,0 +1,17 @@
+import bisect
+
+def busca_binaria(lista, elemento):
+    idx = bisect.bisect_left(lista, elemento)
+    if idx != len(lista) and lista[idx] == elemento:
+        return idx
+    return None
+
+# Exemplo de uso
+lista = [1, 3, 4, 6, 8, 9]
+elemento = 6
+
+posicao = busca_binaria(lista, elemento)
+if posicao is None:
+    print("{} não encontrado na lista".format(elemento))
+else:
+    print("{} encontrado na posição {}".format(elemento, posicao))
