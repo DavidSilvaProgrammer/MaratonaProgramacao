@@ -1,0 +1,16 @@
+O trecho idx != len(lista) é usado para garantir que o índice idx retornado pela função bisect_left 
+esteja dentro do limite dos índices da lista.
+
+A função bisect_left retorna o índice onde o elemento deveria ser inserido na lista, para que a 
+lista permaneça ordenada. 
+Isso significa que, se o elemento não estiver na lista, a função bisect_left retorna o índice 
+onde ele deveria estar.
+
+Se idx == len(lista), significa que o elemento a ser buscado é maior do que todos os elementos 
+da lista e, portanto, não está na lista. 
+Nesse caso, a busca binária deve retornar None para indicar que o elemento não foi encontrado.
+
+Por outro lado, se idx != len(lista), significa que o elemento pode estar na lista. 
+Então, a condição lista[idx] == elemento 
+verifica se o elemento encontrado no índice idx é o elemento buscado. Se for, a função 
+retorna idx, caso contrário, a função retorna None.
