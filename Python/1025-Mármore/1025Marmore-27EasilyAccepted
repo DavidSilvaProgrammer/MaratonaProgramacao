@@ -1,0 +1,23 @@
+import bisect
+import sys
+
+case = 1
+while True:
+    n, q = map(int, input().split())
+    if n == 0 and q == 0:
+        break
+    
+    marbles = []
+    for i in range(n):
+        marbles.append(int(input()))
+    marbles.sort()
+    
+    print(f'CASE# {case}:')
+    for i in range(q):
+        x = int(input())
+        pos = bisect.bisect_left(marbles, x)
+        if pos < n and marbles[pos] == x:
+            print(f'{x} found at {pos+1}')
+        else:
+            print(f'{x} not found')
+    case += 1
