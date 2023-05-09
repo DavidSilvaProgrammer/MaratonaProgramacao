@@ -34,3 +34,5 @@ while True:
     caso += 1
 
 print('\n'.join(resultados))
+
+#Erro no Beecrowd: Time limit exceeded 
