@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int busca_binaria(int lista[], int tamanho, int elemento){
+    int inicio = 0, fim = tamanho - 1, meio, idx = -1;
+    while (inicio <= fim){
+        meio = (inicio + fim) / 2;
+        if (lista[meio] == elemento){
+            idx = meio;
+            fim = meio - 1;
+        }
+        else if (lista[meio] < elemento){
+            inicio = meio + 1;
+        }
+        else{
+            fim = meio - 1;
+        }
+    }
+    return idx;
+}
+
+int comparacao(const void* a, const void* b){
+    return (*(int*)a - *(int*)b);
+}
+
+int main(){
+    int n, q, i, caso = 1;
+    int *n_lista;
+    while (1){
+        scanf("%d %d", &n, &q);
+        if (n == 0 && q == 0){
+            break;
+        }
+        n_lista = (int*)malloc(n * sizeof(int));
+        for (i = 0; i < n; i++){
+            scanf("%d", &n_lista[i]);
+        }
+        qsort(n_lista, n, sizeof(int), comparacao);
+        printf("CASE# %d:\n", caso);
+        for (i = 0; i < q; i++){
+            int q_elemento, idx;
+            scanf("%d", &q_elemento);
+            idx = busca_binaria(n_lista, n, q_elemento);
+            if (idx == -1){
+                printf("%d not found\n", q_elemento);
+            }
+            else{
+                printf("%d found at %d\n", q_elemento, idx + 1);
+            }
+        }
+        free(n_lista);
+        caso++;
+    }
+    return 0;
+}
+
