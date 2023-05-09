@@ -35,4 +35,13 @@ while True:
 
 print('\n'.join(resultados))
 
-#Erro no Beecrowd: Time limit exceeded 
+#Erro no Beecrowd: Time limit exceeded
+
+'''
+Versão otimizada:
+def busca_idx(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return None
+'''
