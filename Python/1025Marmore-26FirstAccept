@@ -1,0 +1,30 @@
+import bisect
+import sys
+
+def ultimo_idx(lista, elemento):
+    idx = bisect.bisect_left(lista, elemento)
+    if idx != len(lista) and lista[idx] == elemento:
+        return idx
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    
+    print("CASE# {}:".format(caso))
+    for i in range(q):
+        q_elemento = int(sys.stdin.readline())
+        idx = ultimo_idx(n_lista, q_elemento)
+        if idx is None:
+            print("{} not found".format(q_elemento))
+        else:
+            print("{} found at {}".format(q_elemento, idx+1))
+    
+    caso += 1
