@@ -1,0 +1,12 @@
+Em Python, a função sorted é usada para ordenar listas de elementos. Ela recebe como parâmetros uma lista de elementos e 
+um argumento opcional chamado key, que é uma função usada para calcular o valor a ser usado como critério de ordenação. 
+A função key recebe cada elemento da lista 
+como argumento e retorna um valor, que é usado como chave para ordenação.
+
+No caso específico do código key=lambda x: x % m, essa função lambda recebe cada elemento da lista como argumento x 
+e calcula o seu módulo (%) em relação ao valor de m. Esse resultado é usado como chave de ordenação para a função sorted. 
+Portanto, a lista é ordenada de acordo com o resultado do módulo de cada elemento em relação a m.
+
+Por exemplo, se m=5 e a lista é [1, 6, 2, 4, 9], a função lambda x: x % m é aplicada a cada elemento da lista, gerando 
+os seguintes resultados: 1 % 5 = 1, 6 % 5 = 1, 2 % 5 = 2, 4 % 5 = 4 e 9 % 5 = 4. Esses valores são usados como chaves 
+ara a ordenação da lista, resultando na lista ordenada [1, 6, 4, 2, 9].
