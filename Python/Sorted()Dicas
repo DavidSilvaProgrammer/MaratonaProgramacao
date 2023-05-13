@@ -23,3 +23,27 @@ print(sorted_lista)
 Neste exemplo, definimos uma função separada ordena_por_ultimo_caractere() que recebe uma string como parâmetro e retorna o último caractere da string. Essa função é passada como parâmetro key para a função sorted(), e é usada para determinar a ordem dos elementos na lista ordenada resultante.
 
 Observe que a função que você passar como parâmetro para a função sorted() deve receber um único argumento e retornar um valor que possa ser usado para determinar a ordem dos elementos na lista. O valor retornado deve ser comparável usando o operador <, ou seja, os valores devem ser do mesmo tipo e ter uma ordem natural definida.
+
+
+é possível criar uma função personalizada e passá-la como parâmetro para a função sorted() sem utilizar uma função lambda. Na verdade, essa é uma opção preferível, pois torna o código mais legível e fácil de entender.
+
+Para criar uma função personalizada, você deve definir uma função que receba um único argumento e retorne um valor que possa ser usado para determinar a ordem dos elementos na lista. Em seguida, basta passar o nome da função como argumento para o parâmetro key da função sorted().
+
+Aqui está um exemplo:
+
+def ordena_por_ultimo_caractere(s):
+    return s[-1]
+
+lista = ['maçã', 'banana', 'uva', 'abacaxi', 'laranja']
+sorted_lista = sorted(lista, key=ordena_por_ultimo_caractere)
+print(sorted_lista)
+
+Neste exemplo, a função ordena_por_ultimo_caractere() recebe uma string como argumento e retorna o último caractere da string. A função é então passada como argumento para o parâmetro key da função sorted(), que a utiliza para ordenar a lista de acordo com o último caractere de cada elemento.
+
+Observe que, ao passar o nome da função como argumento para o parâmetro key, não precisamos usar uma função lambda. Além disso, ao definir uma função separada, podemos escrever uma implementação mais complexa e legível do que seria possível com uma função lambda.
+
+
+
+
+
+
