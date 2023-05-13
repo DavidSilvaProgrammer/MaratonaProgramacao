@@ -1,0 +1,11 @@
+
+n=-1
+m=-1
+while n and m != 0:
+    n, m = map(int, input("Digite N e M:\n").split())
+    lista_n = []
+    for i in range(n):
+        elemento = int(input())
+        lista_n.append(elemento)
+    lista_ordenada = sorted(lista_n, key=lambda elemento: elemento % m)
+    print(lista_ordenada)
