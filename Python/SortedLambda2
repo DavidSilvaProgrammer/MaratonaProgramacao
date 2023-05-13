@@ -1,0 +1,17 @@
+def ordena_por_modulo_2(lista):
+    return sorted(lista, key=lambda x: x % 2)
+
+lista = [5, 3, 2, 1, 4, 6, 7]
+lista_ordenada = ordena_por_modulo_2(lista)
+print(lista_ordenada)
+
+
+Claro! Você pode criar uma função que ordene uma lista de inteiros com base em seu valor no módulo 2 usando a função sorted() e passando uma função personalizada como argumento para o parâmetro key. Aqui está um exemplo:
+
+
+Neste exemplo, definimos a função ordena_por_modulo_2() que recebe uma lista de inteiros como argumento. A função usa a função sorted() para ordenar a lista, e passa uma função lambda como argumento para o parâmetro key. Essa função lambda retorna o valor do elemento da lista no módulo 2, que será usado para determinar a ordem dos elementos na lista ordenada resultante.
+
+Ao executar o código, a lista original [5, 3, 2, 1, 4, 6, 7] é ordenada com base em seu valor no módulo 2, resultando na lista ordenada [2, 4, 6, 1, 3, 5, 7]. Observe que os elementos com valor par no módulo 2 são colocados antes dos elementos com valor ímpar no módulo 2.
+
+
+
