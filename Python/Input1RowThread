@@ -1,0 +1,5 @@
+# Recebe dois números inteiros em uma única linha
+num1, num2 = map(int, input("Digite dois números inteiros separados por um espaço: ").split())
+
+# Exibe os números recebidos
+print("Você digitou:", num1, "e", num2)
