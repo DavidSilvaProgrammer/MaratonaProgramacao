@@ -1,0 +1,14 @@
+def modulo(valor, m):
+    if m == 0:
+        return valor
+    return valor % m
+
+m, n = 0, 0
+while not (m and n):
+    m, n = map(int, input("Digite N e M:\n").split())
+lista_n = []
+for i in range(n):
+    elemento = int(input())
+    lista_n.append(elemento)
+lista_ordenada = sorted(lista_n, key=lambda x: modulo(x, m))
+print(lista_ordenada)
