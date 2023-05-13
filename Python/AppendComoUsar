@@ -1,0 +1,15 @@
+m, n = map(int, input("Digite N e M:\n").split())
+lista_n = []
+for i in range(n):
+    x = int(input())
+    lista_n.append(x)
+
+while True:
+    m, n = map(int, input("Digite N e M:\n").split())
+    if m == 0 and n == 0:
+        break
+    lista_n = []
+    for i in range(n):
+        x = int(input())
+        lista_n.append(x)
+    # Aqui vai o resto do código, que usa os valores de m, n e lista_n
