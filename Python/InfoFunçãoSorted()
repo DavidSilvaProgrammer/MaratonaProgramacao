@@ -1,0 +1,18 @@
+A função sorted() em Python é usada para ordenar uma sequência de elementos, como uma lista, tupla ou string, e retorna uma nova sequência ordenada. Ela tem a seguinte sintaxe básica:
+
+sorted(iterable, *, key=None, reverse=False)
+
+Onde:
+
+iterable é a sequência de elementos a ser ordenada. Pode ser uma lista, tupla, string ou qualquer outro objeto iterável.
+key é uma função que é usada para extrair um valor chave de cada elemento antes de fazer a comparação de ordenação. Por padrão, a função sorted() usa a ordem natural dos elementos para fazer a ordenação.
+reverse é um parâmetro booleano opcional que controla a direção da ordenação. Se reverse=True, a sequência é ordenada em ordem decrescente; caso contrário, a sequência é ordenada em ordem crescente.
+A função sorted() funciona da seguinte maneira:
+
+Primeiro, a função sorted() recebe a sequência de elementos a ser ordenada e, opcionalmente, uma função key e um valor booleano reverse.
+Se a função key for fornecida, a função sorted() chama essa função para cada elemento da sequência e usa os valores resultantes para fazer a comparação de ordenação. Caso contrário, a função sorted() usa a ordem natural dos elementos para fazer a ordenação.
+A função sorted() classifica a sequência de elementos com base nos valores resultantes da função key ou na ordem natural dos elementos.
+A sequência ordenada é retornada como um novo objeto.
+Vale ressaltar que a função sorted() não modifica a sequência original; ela retorna uma nova sequência ordenada. Além disso, a função sorted() usa um algoritmo de ordenação estável, o que significa que elementos iguais na sequência original serão mantidos na mesma ordem relativa na sequência ordenada resultante.
+
+Em resumo, a função sorted() em Python é usada para ordenar uma sequência de elementos, usando uma função opcional key para extrair um valor chave de cada elemento antes da ordenação e um valor booleano reverse para controlar a direção da ordenação. A função sorted() retorna uma nova sequência ordenada, sem modificar a sequência original, usando um algoritmo de ordenação estável.
