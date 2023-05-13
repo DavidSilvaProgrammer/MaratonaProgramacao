@@ -1,0 +1,31 @@
+def comparar_elementos(x, y, m):
+    if x % 2 == 0 and y % 2 == 0:  # se ambos são pares
+        if x % m == y % m:  # se têm o mesmo módulo
+            return x - y  # retorna o menor valor primeiro
+    elif x % 2 == 1 and y % 2 == 1:  # se ambos são ímpares
+        if x % m == y % m:  # se têm o mesmo módulo
+            return y - x  # retorna o maior valor primeiro
+    else:  # se um é ímpar e o outro é par
+        if x % 2 == 1:  # se x é ímpar
+            return -1  # retorna x primeiro
+        else:  # se y é ímpar
+            return 1  # retorna y primeiro
+
+n = -1
+m = -1
+while n != 0 and m != 0:
+    n, m = map(int, input("Digite N e M:\n").split())
+    lista_n = []
+    for i in range(n):
+        elemento = int(input())
+        lista_n.append(elemento)
+    lista_ordenada = sorted(lista_n, key=lambda x: (x % m, comparar_elementos(x, x, m)))
+    print(lista_ordenada)
+    
+    
+    A função comparar_elementos recebe dois elementos x e y e o valor de m, e retorna -1 se x deve vir antes de y na lista, 
+    0 se não há preferência, ou 1 se y deve vir antes de x na lista. A função compara primeiro se ambos são pares ou ímpares, 
+    e em seguida compara o módulo e o valor dos elementos, conforme especificado no enunciado.
+
+O parâmetro x e y são iguais porque a função é usada dentro da função sorted, que ordena a lista usando uma função de 
+comparação que recebe apenas um elemento. Por isso, a função recebe dois parâmetros iguais e compara eles.
