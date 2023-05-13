@@ -1,0 +1,6 @@
+string = "   Olá mundo!     \n"
+string = string.rstrip()  # Remove espaços em branco à direita da string
+print(string)  # Output: "   Olá mundo!"
+
+string = string.rstrip('\n')  # Remove apenas o caractere de quebra de linha (\n) à direita da string
+print(string)  # Output: "   Olá mundo!"
