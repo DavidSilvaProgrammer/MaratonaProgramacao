@@ -1,0 +1,25 @@
+Para criar uma função que possa ser passada como parâmetro para a função sorted() do Python, você pode usar a sintaxe lambda ou definir uma função separada. Vamos ver um exemplo de cada uma das opções:
+
+Exemplo usando lambda:
+
+
+lista = ['maçã', 'banana', 'uva', 'abacaxi', 'laranja']
+sorted_lista = sorted(lista, key=lambda x: len(x))
+print(sorted_lista)
+
+
+Neste exemplo, a função lambda lambda x: len(x) é passada como parâmetro key para a função sorted(). Essa função lambda retorna o comprimento (número de caracteres) de cada elemento da lista, e é usada para determinar a ordem dos elementos na lista ordenada resultante.
+
+Exemplo definindo uma função separada:
+
+def ordena_por_ultimo_caractere(s):
+    return s[-1]
+
+lista = ['maçã', 'banana', 'uva', 'abacaxi', 'laranja']
+sorted_lista = sorted(lista, key=ordena_por_ultimo_caractere)
+print(sorted_lista)
+
+
+Neste exemplo, definimos uma função separada ordena_por_ultimo_caractere() que recebe uma string como parâmetro e retorna o último caractere da string. Essa função é passada como parâmetro key para a função sorted(), e é usada para determinar a ordem dos elementos na lista ordenada resultante.
+
+Observe que a função que você passar como parâmetro para a função sorted() deve receber um único argumento e retornar um valor que possa ser usado para determinar a ordem dos elementos na lista. O valor retornado deve ser comparável usando o operador <, ou seja, os valores devem ser do mesmo tipo e ter uma ordem natural definida.
