@@ -48,3 +48,6 @@ Dessa forma, se o usuário digitar "Sim", "sim" ou "SIM", todas essas variaçõe
 
 Essa abordagem é útil para garantir que a entrada do usuário seja aceita independentemente do uso de maiúsculas ou minúsculas, 
 tornando a comparação de respostas mais flexível e evitando discrepâncias devido ao caso das letras.
+
+
+********************
