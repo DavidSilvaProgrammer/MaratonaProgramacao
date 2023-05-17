@@ -1,0 +1,55 @@
+A função lower() é um método em Python que converte uma string em minúsculas. 
+Ela retorna uma cópia da string original com todos os caracteres convertidos para minúsculas.
+
+Aqui está um exemplo para ilustrar o uso da função lower():
+
+texto = "Olá, Mundo!"
+texto_lower = texto.lower()
+
+print(texto_lower)
+
+
+Neste exemplo, a função lower() é aplicada à variável texto, que contém a string "Olá, Mundo!". A função converte todas as letras maiúsculas 
+para minúsculas, resultando na saída "olá, mundo!".
+
+A função lower() é comumente utilizada quando se deseja fazer comparações de strings sem considerar o caso (maiúsculas ou minúsculas). 
+Ela facilita a comparação de strings, pois garante que todas 
+estejam em minúsculas antes da comparação, evitando possíveis discrepâncias devido ao caso das letras.
+
+
+A função upper() é um método em Python que converte uma string em letras maiúsculas. 
+Ela retorna uma cópia da string original com todos os caracteres convertidos para maiúsculas.
+
+Aqui está um exemplo para ilustrar o uso da função upper():
+
+texto = "Olá, Mundo!"
+texto_upper = texto.upper()
+
+print(texto_upper)
+
+
+Neste exemplo, a função upper() é aplicada à variável texto, que contém a string "Olá, Mundo!". 
+A função converte todas as letras minúsculas para maiúsculas, resultando na saída "OLÁ, MUNDO!".
+
+Assim como a função lower(), a função upper() também é frequentemente usada para padronizar strings 
+antes de comparações ou para exibir texto em letras maiúsculas.
+
+
+Para deixar a string "Olá Mundo" com a primeira letra de cada palavra em maiúscula e as 
+demais letras em minúscula, você pode usar o método title() em Python. O método title() converte a primeira 
+letra de cada palavra em maiúscula e as demais letras em minúscula.
+
+Aqui está um exemplo:
+
+
+texto = "Olá Mundo"
+texto_formatado = texto.title()
+
+print(texto_formatado)
+
+
+Neste exemplo, o método title() é aplicado à variável texto, que contém a string "Olá Mundo". 
+O método converte a primeira letra de cada palavra em maiúscula e as demais letras em minúscula, 
+resultando na saída "Olá Mundo".
+
+O método title() é útil quando você deseja formatar uma string para que as palavras tenham um estilo de capitalização consistente, com a primeira letra em maiúscula.
