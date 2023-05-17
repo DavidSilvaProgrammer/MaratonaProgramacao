@@ -36,3 +36,15 @@ elif pontuacao >= 1:
     print("Você tem um perfil específico com preferências definidas.")
 else:
     print("Seu perfil é difícil de avaliar com base nas respostas fornecidas.")
+    
+    
+    
+A função lower() foi usada neste programa para tratar as respostas fornecidas pelo usuário de forma insensível a maiúsculas e minúsculas.
+
+Quando o usuário digita uma resposta, como "SIM", "sim" ou "SiM", o método lower() é aplicado a 
+cada resposta para convertê-la em minúsculas. 
+Isso é feito para que o programa possa comparar as respostas independentemente do uso de letras maiúsculas ou minúsculas. 
+Dessa forma, se o usuário digitar "Sim", "sim" ou "SIM", todas essas variações serão tratadas da mesma maneira.
+
+Essa abordagem é útil para garantir que a entrada do usuário seja aceita independentemente do uso de maiúsculas ou minúsculas, 
+tornando a comparação de respostas mais flexível e evitando discrepâncias devido ao caso das letras.
