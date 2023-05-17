@@ -1,0 +1,38 @@
+print("Avaliação de Perfil Pessoal")
+print("Responda as seguintes perguntas com 'sim' ou 'não'.")
+
+# Fazer as perguntas
+pergunta1 = input("Você gosta de atividades ao ar livre? ")
+pergunta2 = input("Você prefere ler livros a sair com amigos? ")
+pergunta3 = input("Você é uma pessoa organizada? ")
+pergunta4 = input("Você gosta de assumir riscos? ")
+pergunta5 = input("Você prefere trabalhar em equipe do que individualmente? ")
+
+# Avaliar o perfil com base nas respostas
+pontuacao = 0
+
+if pergunta1.lower() == "sim":
+    pontuacao += 1
+
+if pergunta2.lower() == "sim":
+    pontuacao += 1
+
+if pergunta3.lower() == "sim":
+    pontuacao += 1
+
+if pergunta4.lower() == "sim":
+    pontuacao += 1
+
+if pergunta5.lower() == "sim":
+    pontuacao += 1
+
+# Fornecer a avaliação com base na pontuação
+print("\nAvaliação de Perfil:")
+if pontuacao == 5:
+    print("Você tem um perfil muito diversificado e adaptável.")
+elif pontuacao >= 3:
+    print("Você tem um perfil equilibrado e versátil.")
+elif pontuacao >= 1:
+    print("Você tem um perfil específico com preferências definidas.")
+else:
+    print("Seu perfil é difícil de avaliar com base nas respostas fornecidas.")
