@@ -1,0 +1,34 @@
+def encontra_tipo(n):
+    if n.isdigit():
+        return "decimal"
+    if n.startswith("0b"):
+        return "binário"
+    if n.startswith("0x"):
+        return "hexadecimal"
+    
+    return "desconhecido"
+    
+def conversao(tipo, n):
+    if tipo == "decimal":
+        n_inteiro = int(n)
+        binario = bin(n_inteiro)
+        hexa = hex(n_inteiro)
+        print("Versão binária:", binario)
+        print("Versão hexadecimal:", hexa)
+    elif tipo == "hexadecimal":
+        n_inteiro =int(n,16)
+        binario=bin(n_inteiro)
+        print("Versão decimal:" , n_inteiro)
+        print("Versão binaria:", binario)
+    elif tipo == "binário":
+        n_inteiro =int(n,2)
+        hexa=hex(n_inteiro)
+        print("Versão decimal:" , n_inteiro)
+        print("Versão binária:", hexa)
+        
+n = ""
+while n != "0":
+    n = input("Digite um número (digite 0 para sair):\n")
+    tipo = encontra_tipo(n)
+    print("O número é do tipo:", tipo)
+    conversao(tipo, n)
