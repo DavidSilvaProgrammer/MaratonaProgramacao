@@ -1,0 +1,46 @@
+def decimal_para_binario(decimal):
+    return bin(decimal)[2:]
+
+def decimal_para_hexadecimal(decimal):
+    return hex(decimal)[2:].upper()
+
+def binario_para_decimal(binario):
+    return int(binario, 2)
+
+def binario_para_hexadecimal(binario):
+    decimal = binario_para_decimal(binario)
+    return decimal_para_hexadecimal(decimal)
+
+def hexadecimal_para_decimal(hexadecimal):
+    return int(hexadecimal, 16)
+
+def hexadecimal_para_binario(hexadecimal):
+    decimal = hexadecimal_para_decimal(hexadecimal)
+    return decimal_para_binario(decimal)
+
+# Exemplo de uso:
+numero_decimal = 42
+numero_binario = decimal_para_binario(numero_decimal)
+numero_hexadecimal = decimal_para_hexadecimal(numero_decimal)
+
+print("Número decimal:", numero_decimal)
+print("Número binário:", numero_binario)
+print("Número hexadecimal:", numero_hexadecimal)
+
+# Convertendo de binário para decimal e hexadecimal
+binario = "101010"
+decimal = binario_para_decimal(binario)
+hexadecimal = binario_para_hexadecimal(binario)
+
+print("Número binário:", binario)
+print("Número decimal:", decimal)
+print("Número hexadecimal:", hexadecimal)
+
+# Convertendo de hexadecimal para decimal e binário
+hexadecimal = "2A"
+decimal = hexadecimal_para_decimal(hexadecimal)
+binario = hexadecimal_para_binario(hexadecimal)
+
+print("Número hexadecimal:", hexadecimal)
+print("Número decimal:", decimal)
+print("Número binário:", binario)
