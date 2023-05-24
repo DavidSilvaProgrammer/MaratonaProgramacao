@@ -21,3 +21,21 @@ n = input("Digite um número:\n")
 tipo = encontra_tipo(n)
 print("O número é do tipo:", tipo)
 conversao(tipo, n)
+
+
+********
+
+
+def encontra_tipo(n):
+    if n.isdigit():
+        return "decimal"
+    if n.startswith("0b"):
+        return "binário"
+    if n.startswith("0x"):
+        return "hexadecimal"
+    
+    return "desconhecido"
+
+n = input("Digite um número:\n")
+tipo = encontra_tipo(n)
+print("O número é do tipo:", tipo)
