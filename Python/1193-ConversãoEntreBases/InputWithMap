@@ -1,1 +1,5 @@
 x, y = map(int, input("Digite dois números inteiros: ").split())
+
+print("Números inteiros digitados:"+str(x)+" "+str(y)+"\n")
+
+print("Números inteiros digitados",x,y)
