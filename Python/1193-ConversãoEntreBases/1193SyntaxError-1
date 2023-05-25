@@ -1,0 +1,44 @@
+'''
+3
+101 bin
+101 dec
+8f hex
+
+Case 1:
+5 dec
+5 hex
+'''
+
+import sys
+
+n=input()
+
+if n<0:
+    sys.exit()
+
+for i in range(n):
+    cont=1
+    x, y = input().split()
+    print(f"Case 1 {cont}:")
+    cont+=1
+    int(x)
+    elif y[-3:]=="dec":
+        hexa=hex(n)
+        bina=bin(n)
+        print(f"{hexa} hex\n{bina} bin\n")
+    elif y[-3:]=="hex":
+        decimal=int(y,16)
+        bina=bin(decimal)
+        print(f"{decimal} dec\n{bina} bin\n")
+    elif y[-3:]=="bin":
+        decimal=int(bin,2)
+        hexa=hex(decimal)
+        print(f"{decimal} dec\n{hexa} hex\n")
+        
+    
+        
+        
+    
+
+
+    
