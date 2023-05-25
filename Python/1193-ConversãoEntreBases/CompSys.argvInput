@@ -1,0 +1,12 @@
+import sys
+
+# Usando sys.argv
+if len(sys.argv) > 1:
+    nome = sys.argv[1]
+    print("Olá,", nome)
+else:
+    print("Olá, usuário!")
+
+# Usando input()
+idade = input("Digite sua idade: ")
+print("Sua idade é:", idade)
