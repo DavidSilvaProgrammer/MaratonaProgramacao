@@ -1,0 +1,1 @@
+x, y = map(int, input("Digite dois números inteiros: ").split())
