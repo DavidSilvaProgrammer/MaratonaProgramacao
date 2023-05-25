@@ -1,0 +1,14 @@
+def obter_ultimos_tres_caracteres(string):
+    ultimos_tres = string[-3:]
+    return ultimos_tres
+
+
+texto = "Hello, World!"
+ultimos_tres = obter_ultimos_tres_caracteres(texto)
+print(ultimos_tres)  # Saída: "ld!"
+
+'''
+Nesse exemplo, a função obter_ultimos_tres_caracteres 
+é chamada com a string "Hello, World!" como argumento, e a saída é "ld!", 
+que são os três últimos caracteres da string.
+'''
