@@ -1,0 +1,26 @@
+import sys
+
+n = input()
+
+if int(n) < 0:
+    sys.exit()
+
+cont = 1
+
+for i in range(int(n)):
+    x, y = input().split()
+    print(f"Case {cont}:")
+    cont += 1
+
+    if y[-3:] == "dec":
+        hexa = hex(int(x))[2:]
+        bina = bin(int(x))[2:]
+        print(f"{hexa} hex\n{bina} bin\n")
+    elif y[-3:] == "hex":
+        decimal = int(x, 16)
+        bina = bin(decimal)[2:]
+        print(f"{decimal} dec\n{bina} bin\n")
+    elif y[-3:] == "bin":
+        decimal = int(x, 2)
+        hexa = hex(decimal)[2:]
+        print(f"{decimal} dec\n{hexa} hex\n")
