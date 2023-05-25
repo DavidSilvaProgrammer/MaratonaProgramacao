@@ -1,0 +1,25 @@
+'''
+    start (opcional): É o valor inicial do intervalo. O range() começará 
+    a partir desse valor. Se não for especificado, o valor padrão é 0.
+    
+    stop: É o valor final do intervalo. O range() irá gerar números até, 
+    mas não incluindo esse valor.
+    
+    step (opcional): É o tamanho do passo entre os números gerados pelo range(). 
+    Se não for especificado, o valor padrão é 1.
+'''
+
+# Exemplo 1
+for i in range(5):
+    print(i)
+# Saída: 0, 1, 2, 3, 4
+
+# Exemplo 2
+for i in range(2, 10, 2):
+    print(i)
+# Saída: 2, 4, 6, 8
+
+# Exemplo 3
+numbers = list(range(1, 6))
+print(numbers)
+# Saída: [1, 2, 3, 4, 5]
