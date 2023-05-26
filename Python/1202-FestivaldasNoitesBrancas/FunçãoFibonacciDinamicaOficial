@@ -1,0 +1,14 @@
+int fibDin(int n){
+    int f;
+    if(memo[n]){
+        f=memo[n];
+    }else{
+        if(n<2){
+            f=n;
+        }else{
+            f=fibDin(n-2)+fibDin(n-1);
+        }
+        memo[n]=f;
+    }
+    return f;
+}
