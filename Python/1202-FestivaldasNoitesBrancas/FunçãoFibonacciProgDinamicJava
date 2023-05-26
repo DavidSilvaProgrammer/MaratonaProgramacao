@@ -1,0 +1,15 @@
+static{
+    map.put(1,11);
+    map.put(2,11);
+    map.put(3,21);
+    map.put(4,31);
+}
+
+public static long fibo(int n){
+    //1 1 2 3 5 8 (ant+antDoant)
+    if(map.get(n)!=null){
+        return map.get(n);
+    }
+    long.put(n,resultado);
+    return resultado;
+}
