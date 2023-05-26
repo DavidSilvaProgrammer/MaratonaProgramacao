@@ -1,0 +1,34 @@
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append(fib[i - 1] + fib[i - 2])
+    return fib[n]
+
+t = int(input())
+
+for _ in range(t):
+    fila = input().strip()
+    n = int(fila, 2)
+    resultado = fibonacci(n) % 1000
+    print(f"{resultado:03}")
+    
+'''
+Explicação do enunciado:
+
+O propósito desse programa é resolver o problema apresentado no enunciado relacionado ao 
+"Festival das Noites Brancas". Ele recebe uma entrada que consiste em uma sequência de fileiras, 
+representadas por uma sequência de '1's e '0's, onde '1' indica cadeira livre e '0' indica cadeira 
+ocupada. O programa utiliza a lógica da sequência de Fibonacci para determinar se uma pessoa poderá 
+entrar no teatro com base no número escrito em seu cartão.
+
+O programa calcula o n-ésimo número da sequência de Fibonacci, onde n é obtido a partir da conversão da 
+sequência binária da fileira para um número inteiro. Em seguida, é verificado se os últimos três dígitos 
+do número da sequência de Fibonacci coincidem com os três dígitos escritos no cartão da pessoa. Se houver 
+correspondência, a pessoa pode entrar no teatro; caso contrário, não pode.
+
+O programa processa todas as instâncias fornecidas na entrada e imprime os três dígitos correspondentes 
+para cada fileira, indicando se a pessoa poderá entrar ou não no teatro com base na regra descrita.
+
+Portanto, o objetivo desse programa é determinar os três dígitos que devem estar escritos no cartão 
+para que uma pessoa possa entrar no teatro durante o Festival das Noites Brancas, usando a lógica 
+da sequência de Fibonacci e a interpretação binária da fileira.
