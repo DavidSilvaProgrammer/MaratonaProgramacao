@@ -1,0 +1,16 @@
+import sys
+
+n = int(input())
+
+cont = 1
+
+for i in range(n):
+    c=float(input())
+    if c < 0 or c > 1000:
+        sys.exit()
+    cont=0
+    while c > 1:
+        c/=2
+        cont+=1
+    print(f"{cont} dias")
+        
