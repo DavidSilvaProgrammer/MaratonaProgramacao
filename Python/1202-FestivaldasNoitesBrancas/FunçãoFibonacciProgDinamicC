@@ -1,0 +1,35 @@
+int fibDin(int n){
+    int f;
+    if(memo[n]){
+        f=memo[n];
+    }else{
+        if(n<2){
+            f=n;
+        }else{
+            f=fibDin(n-2)+fibDin(n-1);
+        }
+        memo[n]=f;
+    }
+    return f;
+}
+
+//memo[n] deve ser declarada como um vetor global acima
+
+
+//Agora exemplo com memo[n] sendo passado como parametro
+
+
+int fibDin(int n, int memo[]){
+    int f;
+    if(memo[n]){
+        f=memo[n];
+    }else{
+        if(n<2){
+            f=n;
+        }else{
+            f=fibDin(n-2)+fibDin(n-1);
+        }
+        memo[n]=f;
+    }
+    return f;
+}
