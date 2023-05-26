@@ -1,0 +1,22 @@
+def fibDin(n, memo={}):
+    if n in memo:
+        return memo[n]
+    elif n < 2:
+        f = n
+    else:
+        f = fibDin(n-2, memo) + fibDin(n-1, memo)
+    memo[n] = f
+    return f
+
+n = 10
+resultado = fibDin(n)
+print(resultado)  # Saída: 55
+
+Nessa implementação, o parâmetro n indica a posição da sequência de Fibonacci que se deseja encontrar, 
+e o parâmetro memo é um dicionário que armazena os valores já calculados. Caso o valor para a posição 
+n já tenha sido calculado anteriormente, ele é retornado diretamente do dicionário memo. Caso contrário, 
+a função calcula o valor recursivamente usando os valores das posições anteriores (n-2 e n-1), armazenando 
+o resultado no dicionário memo antes de retorná-lo.
+
+Nesse exemplo, a função fibDin é usada para encontrar o valor na posição 10 
+da sequência de Fibonacci, que é 55.
