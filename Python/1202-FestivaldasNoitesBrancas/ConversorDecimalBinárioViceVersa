@@ -1,0 +1,11 @@
+n=-1
+while n != 0:
+    opcao=int(input("Operação binária 1. Operação decimal 2\n"))
+    if opcao == 2:
+        n=int(input("Digite um número decimal: "))
+        binario=bin(n)
+        print(f"Valor binário: {binario}")
+    if opcao == 1:
+        n=input("Digite um número binário: ")
+        decimal=int(n,2)
+        print(f"Valor decimal: {decimal}" )
