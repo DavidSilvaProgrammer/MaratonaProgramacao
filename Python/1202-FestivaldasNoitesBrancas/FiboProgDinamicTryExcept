@@ -1,0 +1,22 @@
+import sys
+
+memo = []
+f=0
+def fibDin(n):
+    try:
+        indice = memo.index(n)
+        f=memo[indice]
+    except ValueError:
+        if n < 2:
+            f = n
+        else:
+            f = fibDin(n - 2) + fibDin(n - 1)
+            memo[n] = f
+    finally:
+        return f
+
+n = int(input())
+
+for i in range(n):
+    c=int(input())
+    print(fibDin(c))
