@@ -1,0 +1,108 @@
+super_herois = {
+    "Homem-Aranha": 1,
+    "Batman": 2,
+    "Superman": 3,
+    "Mulher-Maravilha": 4,
+    "Homem de Ferro": 5
+}
+
+for heroi, numero in super_herois.items():
+    print(f"Herói: {heroi} - Número: {numero}")
+
+'''
+Explicação:
+Nesse exemplo, o dicionário super_herois contém os super-heróis como chaves e 
+seus respectivos números como valores.
+
+Ao utilizar o loop for com o método items() do dicionário, podemos iterar sobre cada 
+item do dicionário, obtendo tanto a chave (heroi) quanto o valor (numero) correspondente. 
+Em cada iteração, usamos print() para imprimir o nome e número de cada herói.
+
+A saída será:
+
+Herói: Homem-Aranha - Número: 1
+Herói: Batman - Número: 2
+Herói: Superman - Número: 3
+Herói: Mulher-Maravilha - Número: 4
+Herói: Homem de Ferro - Número: 5
+
+Agora imprimindo valores e chaves separadamente:
+
+
+super_herois = {
+    "Homem-Aranha": 1,
+    "Batman": 2,
+    "Superman": 3,
+    "Mulher-Maravilha": 4,
+    "Homem de Ferro": 5
+}
+
+print("Números dos Heróis:")
+for numero in super_herois.values():
+    print(numero)
+
+print("\nNomes dos Heróis:")
+for heroi in super_herois.keys():
+    print(heroi)
+    
+    
+    
+No primeiro loop for, utilizamos o método values() do dicionário para iterar 
+apenas sobre os valores, ou seja, os números dos heróis. Dentro do loop, 
+imprimimos cada número individualmente.
+
+No segundo loop for, utilizamos o método keys() do dicionário para iterar apenas sobre as chaves, 
+ou seja, os nomes dos heróis. Dentro do loop, imprimimos cada nome individualmente.
+
+Saída:
+
+Números dos Heróis:
+1
+2
+3
+4
+5
+
+Nomes dos Heróis:
+Homem-Aranha
+Batman
+Superman
+Mulher-Maravilha
+Homem de Ferro
+
+
+Dessa vez, com uma condição para imprimir Homem-Morcego no lugar de Batman
+
+super_herois = {
+    "Homem-Aranha": 1,
+    "Batman": 2,
+    "Superman": 3,
+    "Mulher-Maravilha": 4,
+    "Homem de Ferro": 5
+}
+
+print("Nomes dos Heróis:")
+for heroi in super_herois.keys():
+    if heroi == "Batman":
+        print("Homem-Morcego")
+    else:
+        print(heroi)
+
+Nesse código, adicionamos a condição if heroi == "Batman": dentro do loop 
+for que itera sobre as chaves do dicionário super_herois. Se o nome do herói for igual a "Batman", 
+a condição será verdadeira e "Homem-Morcego" será impresso. Caso contrário, 
+o nome original do herói será impresso.
+
+Saída:
+
+Nomes dos Heróis:
+Homem-Aranha
+Homem-Morcego
+Superman
+Mulher-Maravilha
+Homem de Ferro
+
+
+
+
+
