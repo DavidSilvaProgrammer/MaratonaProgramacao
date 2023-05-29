@@ -1,0 +1,4 @@
+numero_decimal = int(input("Digite um número decimal: "))
+numero_binario = bin(numero_decimal)[2:]
+
+print("O número binário correspondente é:", numero_binario)
