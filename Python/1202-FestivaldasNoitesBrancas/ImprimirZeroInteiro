@@ -1,0 +1,17 @@
+#Usando format():
+
+numero = 1
+numero_formatado = "{:03}".format(numero)
+print(numero_formatado)
+
+
+Usando f-strings:
+
+numero = 1
+numero_formatado = f"{numero:03}"
+print(numero_formatado)
+
+'''
+Ambos os exemplos irão imprimir:
+001
+'''
