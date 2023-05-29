@@ -21,3 +21,11 @@ n = int(input())
 for i in range(n):
     c = int(input())
     print(fibDin(c))
+
+'''
+No trecho de código if n < len(memo): return memo[n], o índice n é usado diretamente para acessar 
+o valor em memo, pois a sequência de Fibonacci é indexada a partir de zero e memo segue essa convenção.
+
+Portanto, não é necessário ajustar o índice para n - 1 nessa parte específica do código. O valor em 
+memo[n] corresponde corretamente ao valor desejado da sequência de Fibonacci para o índice n.
+'''
