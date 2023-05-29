@@ -1,0 +1,27 @@
+import sys
+
+memo = []
+f = 0
+
+def fibDin(n):
+    if n < len(memo):
+        return memo[n]
+
+    if n < 2:
+        f = n
+    else:
+        f = fibDin(n - 2) + fibDin(n - 1)
+    
+    memo.append(f)  # Adicionar o valor calculado à lista memo
+    
+    return f
+
+n = int(input())
+
+for i in range(n):
+    binario = input()
+    if binario[0]=="0":
+        sys.exit()
+    decimal = int(binario, 2)
+
+    print(f"{fibDin(3):03}")
