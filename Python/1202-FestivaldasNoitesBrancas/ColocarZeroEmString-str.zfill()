@@ -1,0 +1,16 @@
+numero = 1
+numero_formatado = str(numero).zfill(3)
+print(numero_formatado)
+
+
+'''
+Em Python, você pode usar o método str.zfill() para preencher com zeros 
+à esquerda um número. O método zfill() retorna uma cópia da string original 
+com zeros adicionados à esquerda até atingir o comprimento especificado.
+
+Para imprimir o número 1 como "001", você pode usar o seguinte código:
+
+
+O método zfill(3) é usado para preencher com zeros até o comprimento 3. 
+Se o número já tiver três dígitos ou mais, o método não adicionará zeros.
+'''
