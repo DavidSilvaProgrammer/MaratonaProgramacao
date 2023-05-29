@@ -1,0 +1,10 @@
+numero_str = "1234567890"
+tres_digitos = int(numero_str[-3:])
+print(tres_digitos)  # Saída: 890
+
+
+'''
+você pode usar a sintaxe de fatiamento [::] em Python para obter os três últimos 
+dígitos de uma representação de string de um número.
+
+'''
