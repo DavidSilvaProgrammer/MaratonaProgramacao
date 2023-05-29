@@ -28,4 +28,4 @@ for i in range(n):
     if decimal>999 or decimal<0:
         sys.exit()
 
-    print(f"{fibDin(3):03}")
+    print(f"{fibDin(decimal):03}")
