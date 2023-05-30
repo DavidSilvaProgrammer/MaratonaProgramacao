@@ -1,0 +1,20 @@
+def fibDin(n, memo=[]):
+    if n < len(memo):
+        return memo[n]
+    elif n < 2:
+        f = n
+    else:
+        f = (fibDin(n - 2, memo) + fibDin(n - 1, memo)) % 1000
+    memo.append(f)
+    return f
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+    
+    decimal = int(binario, 2) % 1500
+    tres_digitos = fibDin(decimal)
+    print(f"{tres_digitos:03}")
