@@ -1,0 +1,45 @@
+import sys
+
+def fibDin(n, memo=None):
+    if memo is None:
+        memo = [0] * (n + 1)
+    if n < 2:
+        return n
+    if memo[n] != 0:
+        return memo[n]
+    memo[n] = (fibDin(n - 2, memo) + fibDin(n - 1, memo)) % 1000
+    return memo[n]
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+    
+    decimal = int(binario, 2) % 1500
+    tres_digitos = fibDin(decimal)
+    print(f"{tres_digitos:03}")
+
+
+#lista local quando passada dessa forma como parametro opcional
+
+'''
+if memo[n] != 0:
+    return memo[n]
+
+Essa linha verifica se o valor memo[n] já foi calculado e armazenado no memo. A lista memo é 
+usada para armazenar os valores previamente calculados da sequência de Fibonacci.
+
+Na primeira chamada da função fibDin, a lista memo é inicializada como None. Nas chamadas 
+subsequentes, a lista memo é passada como um argumento para a função.
+
+Ao verificar se memo[n] é diferente de zero, estamos verificando se o valor para o número 
+n já foi calculado anteriormente. Se o valor já estiver presente em memo, não é necessário 
+recalcular e podemos simplesmente retornar o valor armazenado. Isso ajuda a evitar chamadas 
+recursivas adicionais e melhora a eficiência do algoritmo.
+
+Caso o valor não esteja presente em memo (ou seja, memo[n] == 0), o cálculo é realizado normalmente 
+e o resultado é armazenado em memo para uso futuro.
+
+Essa verificação ajuda a evitar cálculos redundantes e melhora o desempenho do algoritmo bottom-up recursivo.
