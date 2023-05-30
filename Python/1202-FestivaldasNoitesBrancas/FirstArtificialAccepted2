@@ -1,0 +1,17 @@
+MOD = 1500
+
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append((fib[i - 1] + fib[i - 2]) % 1000)
+    return fib[n]
+
+def binn(n):
+    return int(n, 2) % MOD
+
+num_instancias = int(input())
+
+for _ in range(num_instancias):
+    fileira = input()
+    codigo = fibonacci(binn(fileira))
+    print(f"{codigo:03}")
