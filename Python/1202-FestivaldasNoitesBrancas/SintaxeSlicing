@@ -1,0 +1,18 @@
+Sintaxe de slicing ou sintaxe de fatiamento
+
+A sintaxe utilizada no Python para extrair partes de uma sequência, como strings, listas ou tuplas, é conhecida como "slicing" ou "sintaxe de fatiamento". 
+Portanto, podemos chamar essa sintaxe de "sintaxe de fatiamento" ou "sintaxe de slicing".
+
+A expressão [2:] que você mencionou é um exemplo de sintaxe de fatiamento, onde o número 2 representa o índice de início e : 
+indica que queremos extrair todos os elementos a partir desse índice até o final da sequência.
+
+Dessa forma, a sintaxe de fatiamento permite que você selecione subconjuntos específicos de uma sequência de forma concisa e eficiente.
+
+
+A sintaxe [-2:] também é um exemplo da sintaxe de fatiamento ou slicing do Python. Nesse caso, o valor negativo -2 
+representa o índice a partir do final da sequência. O : indica que queremos extrair todos os elementos a partir 
+desse índice até o final da sequência.
+
+Portanto, quando você usa [-2:], você está selecionando os últimos dois elementos da sequência. Isso é útil 
+quando você precisa acessar os elementos finais de uma sequência de forma conveniente, independentemente 
+do tamanho da sequência.
