@@ -40,3 +40,18 @@ Caso seja uma chave válida, significa que o valor correspondente a n já foi ca
 
 '''
 
+
+'''
+
+No caso específico da sequência de Fibonacci, após um certo número de termos, os três últimos dígitos começam 
+a se repetir em um padrão periódico. Esse período é chamado de período pisano.
+
+No caso do problema, onde a sequência de Fibonacci é utilizada para determinar 
+os números escritos nos cartões de entrada do teatro, o período pisano é de 1500. 
+Portanto, a sequência de Fibonacci é reduzida para um período de 1500 antes de realizar outras operações.
+
+Ao aplicar o módulo por 1500 nos valores da sequência de Fibonacci, estamos efetivamente restringindo 
+os valores a um intervalo de 0 a 1499, e assim, garantindo que os três últimos dígitos se repitam em um padrão previsível.
+
+''''
+
