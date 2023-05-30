@@ -1,0 +1,23 @@
+import sys
+
+def fibDin(n, memo):
+    if n < len(memo):
+        return memo[n]
+
+    if n < 2:
+        f = n
+    else:
+        f = fibDin(n - 2, memo) + fibDin(n - 1, memo)
+    
+    memo.append(f)  # Adicionar o valor calculado à lista memo
+    
+    return f
+
+num_instancias = int(input())
+
+for _ in range(num_instancias):
+    fileira = input()
+    indice = fileira.rindex('1') + 1
+    memo = []
+    codigo = fibDin(indice, memo) % 1000
+    print(f"{codigo:03}")
