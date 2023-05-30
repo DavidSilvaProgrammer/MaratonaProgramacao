@@ -1,0 +1,26 @@
+import sys
+
+def fibDin(n):
+    memo = [0] * (n + 1)
+    return fibDinRecursive(n, memo)
+
+def fibDinRecursive(n, memo):
+    if n < 2:
+        return n
+
+    if memo[n] != 0:
+        return memo[n]
+
+    memo[n] = (fibDinRecursive(n - 2, memo) + fibDinRecursive(n - 1, memo)) % 1000
+    return memo[n]
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+
+    decimal = int(binario, 2) % 1500
+    tres_digitos = fibDin(decimal)
+    print(f"{tres_digitos:03}")
