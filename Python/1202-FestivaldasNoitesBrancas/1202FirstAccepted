@@ -24,3 +24,19 @@ for _ in range(n):
     decimal = int(binario, 2)%1500
     tres_digitos = fibDin(decimal)
     print(f"{tres_digitos:03}")
+    
+'''
+No Python, ao utilizar o operador in para verificar a presença de um elemento em um dicionário, 
+a comparação é feita com base nas chaves do dicionário.
+
+No caso do trecho de código "if n in memo:", a variável n está sendo comparada com as chaves do 
+dicionário memo. O programa verifica se o valor de n está presente como uma chave no dicionário.
+
+O mecanismo de busca do operador in percorre as chaves do dicionário e verifica se alguma delas corresponde 
+ao valor de n. Se a chave n for encontrada, a condição é considerada verdadeira e o bloco de código dentro do if será executado.
+
+Dessa forma, o programa consegue identificar se o número n é uma chave presente no dicionário memo. 
+Caso seja uma chave válida, significa que o valor correspondente a n já foi calculado e está armazenado no dicionário.
+
+'''
+
