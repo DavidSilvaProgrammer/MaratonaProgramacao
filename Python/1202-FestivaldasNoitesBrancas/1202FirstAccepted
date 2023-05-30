@@ -54,4 +54,21 @@ Ao aplicar o módulo por 1500 nos valores da sequência de Fibonacci, estamos ef
 os valores a um intervalo de 0 a 1499, e assim, garantindo que os três últimos dígitos se repitam em um padrão previsível.
 
 ''''
+''''
 
+A sequência de Fibonacci começa a repetir em diferentes pontos dependendo do número de dígitos considerado.
+
+    Para 1 dígito: A sequência de Fibonacci começa a repetir após o 60º número, onde todos os números 
+    subsequentes têm apenas 1 dígito. Portanto, os números de Fibonacci de F(61) em diante terão apenas 1 dígito.
+
+    Para 2 dígitos: A sequência de Fibonacci começa a repetir após o 300º número, onde todos os números subsequentes 
+    têm apenas 2 dígitos. Portanto, os números de Fibonacci de F(301) em diante terão apenas 2 dígitos.
+
+    Para 3 dígitos: A sequência de Fibonacci começa a repetir após o 1500º número, onde todos os números 
+    subsequentes têm apenas 3 dígitos. Portanto, os números de Fibonacci de F(1501) em diante terão apenas 3 dígitos.
+
+Esses pontos de repetição são determinados pelo fato de que a sequência de Fibonacci tem propriedades cíclicas e 
+padrões de repetição. A medida que a sequência cresce, os números de Fibonacci começam a repetir 
+padrões e a quantidade de dígitos diminui.
+
+''''
