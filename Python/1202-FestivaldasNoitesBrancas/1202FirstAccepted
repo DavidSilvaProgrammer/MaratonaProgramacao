@@ -72,3 +72,19 @@ padrões de repetição. A medida que a sequência cresce, os números de Fibona
 padrões e a quantidade de dígitos diminui.
 
 ''''
+
+''''
+O módulo por 1000, representado por f %= 1000, é aplicado dentro da função fibDin. Ele é usado para garantir 
+que o resultado retornado pela função esteja limitado 
+a três dígitos, uma vez que o objetivo é obter apenas os três últimos dígitos do número na sequência de Fibonacci.
+
+Já o módulo por 1500, representado por int(binario, 2) % 1500, é aplicado na conversão do número binário 
+para decimal antes de ser passado como argumento para a função fibDin. Esse módulo é usado para garantir 
+que o número decimal resultante esteja dentro de um intervalo que contém todas as repetições possíveis da 
+sequência de Fibonacci de três dígitos. Como mencionado anteriormente, a sequência de Fibonacci começa a se 
+repetir em relação aos três últimos dígitos a partir de 1500. Portanto, ao realizar o módulo por 1500, estamos 
+assegurando que o número decimal esteja dentro desse intervalo repetitivo, permitindo que a função fibDin encontre 
+o valor correto na sequência de Fibonacci.
+
+Esses dois módulos são necessários para garantir que o programa esteja lidando com valores válidos dentro do contexto 
+do problema, limitando o tamanho dos números e garantindo que a sequência de Fibonacci seja encontrada corretamente.
