@@ -1,0 +1,24 @@
+import sys
+
+memo = [0] * 1501  # Inicializar a lista memo com valores preenchidos com zero
+memo[0] = 0
+memo[1] = 1
+
+
+def fibDin(n):
+
+    for i in range(2, n + 1):
+        memo[i] = (memo[i - 2] + memo[i - 1]) % 1000
+
+    return memo[n]
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+    
+    decimal = int(binario, 2) % 1500
+    tres_digitos = fibDin(decimal)
+    print(f"{tres_digitos:03}")
