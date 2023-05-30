@@ -1,0 +1,47 @@
+'''
+As duas funções implementam a lógica da recursão dinâmica para calcular a sequência de Fibonacci 
+com memoização, ou seja, armazenando os valores já calculados em uma estrutura de dados para evitar cálculos repetidos.
+
+A diferença entre as duas funções está no armazenamento dos valores calculados. Na primeira função, 
+o armazenamento é feito em um dicionário chamado memo, onde a chave é o índice n e o valor é o resultado 
+da sequência de Fibonacci para aquele índice. Essa abordagem permite acessar rapidamente os valores 
+já calculados usando a verificação n in memo.
+
+Na segunda função, o armazenamento é feito em uma lista chamada memo. Cada valor calculado é adicionado 
+à lista, permitindo acessá-los pelo índice correspondente. A verificação if n < len(memo) é utilizada 
+para verificar se o valor já foi calculado e está presente na lista memo.
+
+Ambas as implementações são corretas e utilizam a memoização para evitar cálculos repetidos, 
+melhorando o desempenho do algoritmo de Fibonacci. A diferença na estrutura de dados utilizada 
+pode levar a uma pequena diferença de desempenho, mas o resultado final será o mesmo.
+'''
+
+memo = {}  # Inicializar a lista memo como um dicionário vazio
+
+
+def fibDin(n):
+    if n in memo:
+        f = memo[n]
+    elif n < 2:
+        f = n
+    else:
+        f = fibDin(n - 2) + fibDin(n - 1)
+    f%=1000
+    memo[n] = f
+    return f   Outra: import sys
+
+memo = []
+f = 0
+
+def fibDin(n):
+    if n < len(memo):
+        return memo[n]
+
+    if n < 2:
+        f = n
+    else:
+        f = fibDin(n - 2) + fibDin(n - 1)
+    f%=1000
+    memo.append(f)
+    
+    return f
