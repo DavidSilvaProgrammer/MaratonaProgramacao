@@ -1,0 +1,16 @@
+MOD = 1500
+
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, (a + b) % 1000
+    return a
+
+def binn(n):
+    return int(n, 2) % MOD
+
+n = int(input())
+
+for _ in range(n):
+    bin_str = input()
+    print("{:03}".format(fib(binn(bin_str))))
