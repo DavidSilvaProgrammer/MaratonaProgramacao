@@ -1,0 +1,29 @@
+import sys
+
+memo = {}  # Inicializar a lista memo como um dicionário vazio
+
+
+def fibDin(n):
+    if n in memo:
+        f = memo[n]
+    elif n < 2:
+        f = n
+    else:
+        a, b = 0, 1
+        for _ in range(2, n + 1):
+            a, b = b, (a + b) % 1000
+        f = b
+    memo[n] = f
+    return f
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+    if len(binario)>10000:
+        sys.exit()
+    decimal=int(str(int(binario, 2))[-3:])
+    tres_digitos = fibDin(decimal)
+    print(f"{tres_digitos % 1000:03}")
