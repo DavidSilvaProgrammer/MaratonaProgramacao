@@ -1,0 +1,8 @@
+import random
+
+limite_superior = 100
+valor_maximo = 50
+
+numero_aleatorio = random.randint(1, limite_superior)
+numero_aleatorio = min(numero_aleatorio, valor_maximo)
+print(numero_aleatorio)
