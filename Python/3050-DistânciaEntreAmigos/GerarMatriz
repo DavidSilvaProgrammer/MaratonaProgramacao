@@ -1,0 +1,23 @@
+linhas = int(input("Digite a quantidade de linhas da matriz: "))
+colunas = int(input("Digite a quantidade de colunas da matriz: "))
+
+matriz = []
+for i in range(linhas):
+    linha = []
+    for j in range(colunas):
+        elemento = int(input(f"Digite o valor do elemento [{i}][{j}]: "))
+        linha.append(elemento)
+    matriz.append(linha)
+
+print(matriz)
+
+'''
+matriz = [[0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0]]
+
+
+matriz = [[1, 2],
+          [3, 4]]
+
+'''
