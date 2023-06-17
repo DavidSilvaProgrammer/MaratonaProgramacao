@@ -1,0 +1,14 @@
+import random
+
+linhas = int(input("Digite a quantidade de linhas da matriz: "))
+matriz = []
+
+for i in range(linhas):
+    colunas = int(input(f"Digite a quantidade de colunas da linha {i+1}: "))
+    linha = []
+    for j in range(colunas):
+        valor = random.randint(1, 100)
+        linha.append(valor)
+    matriz.append(linha)
+
+print(matriz)
