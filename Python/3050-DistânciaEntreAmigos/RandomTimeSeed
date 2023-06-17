@@ -1,0 +1,8 @@
+import time
+import random
+
+tempo_atual = int(time.time())
+random.seed(tempo_atual)
+
+numero_aleatorio = random.random()
+print(numero_aleatorio)
