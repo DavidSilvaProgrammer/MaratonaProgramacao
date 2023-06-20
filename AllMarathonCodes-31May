@@ -17,3 +17,730 @@ while True:
             print(m) 
             break 
         m += 1
+
+********************************
+
+
+Sim. A questão 1031 Crise de Energia pede que 13 seja o valor do último elemento nessa sequência de pulos.
+
+Então utilizei a função pop que o professor explicou na semana passada para ir retirando 
+elementos da lista com base no valor do pulo "m" e no módulo pelo tamanho da lista. 
+Subtraindo 1 de "m + pos(posição)" por causa do vetor começar no índice  0
+
+Já o calculo do módulo é necessário para o pulo não exceder a lista.
+
+Assim, enquanto o último elemento que permanecer na lista não for 13, a variável "m" recebe +1 
+e a lista regiões volta a ser incrementada no inicio do primeiro while pela função range até 
+encontrar o pulo adequado ao objetivo.
+
+A questão também pede que a região 1 seja desligada primeiro, por isso utilizo o pop na 
+lista regiões logo no primeiro while em que "pos" ainda vale 0.
+
+Só esqueci de fazer a limitação para o valor de entrada não ser menos que 13 e não 
+ultrapassar 100. Mas o programa passou.
+
+***********************
+
+Olá, bom dia. Ficou legal seu código, Fábio. Bem compacto e com funções bem definidas. 
+Segui seu código como base dessa vez e fiz algo bem semelhante mais para aprender a lógica 
+dessa questão 1032 mesmo. A função primo fiz igual só troquei algumas coisas na segunda função 
+e no modo de impressão na função principal.
+
+def eh_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+def primo_josephus(n):
+    pessoas = list(range(1, n+1))
+    pos = 0
+    pulo_primo = 2
+    
+    while len(pessoas) > 1:
+        while not eh_primo(pulo_primo):
+            pulo_primo += 1
+  	 
+        remove_elemento = (pos + pulo_primo - 1) % len(pessoas)
+        pessoas.pop(remove_elemento)
+        pos = remove_elemento % len(pessoas)
+        pulo_primo += 1
+    
+    return pessoas[0]
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(primo_josephus(n))
+
+*************************
+
+Explicação do que eu entendi:
+
+def eh_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**(0.5))+1):
+        if n % i == 0:
+            return False
+    return True
+
+    
+'''
+A função eh_primo recebe n como parâmetro e retorna falso se o número for menor que 2. Também tem um range que vai até a raiz quadrada de n +1. Obs.: É necessário colocar esse +1, pois a função range termina antes do último número. Logo adiante, na condição if, o módulo de n por i é calculado, então se retornar zero é porque ocorreu uma divisão inteira e esse número não é primo, então retornará false. Se a condição if não for acionada, a função retornará verdadeira, confirmando que é um número primo.
+'''
+
+
+def primo_josephus(n):
+    pessoas = list(range(1, n+1))
+    pos = 0
+    pulo_primo = 2
+    
+    while len(pessoas) > 1:
+        while not eh_primo(pulo_primo):
+            pulo_primo += 1
+  	 
+        remove_elemento = (pos + pulo_primo - 1) % len(pessoas)
+        pessoas.pop(remove_elemento)
+        pos = remove_elemento % len(pessoas)
+        pulo_primo += 1
+    
+    return pessoas[0]
+
+
+'''
+A função primo_josephus recebe “n” como parâmetro e cria uma lista de pessoas que vai de 1 a “n+1”, 
+Obs: Lembrando que este +1 segue o mesmo princípio do range anterior.
+Depois disso, existem duas variáveis, “pos” para posição e “pulo_primo” igual a 2 (este valor sendo 
+determinado por ser o primeiro número primo a ser utilizado).
+
+Em seguida, vem um loop while que só sairá quando houver apenas um elemento restante na lista. 
+Depois vem outro loop while que servirá para capturar o próximo número primo que será usado no salto.
+
+Mais para frente, fora desse ciclo de captura de primos, mas ainda dentro do ciclo da lista que irá até 
+que pessoas tenham apenas um único elemento, existe a variável "remove_elemento" que irá remover, 
+através da função pop, um elemento da lista com base no valor de pos + variável pulo_primo com -1 
+(considerando que o vetor começa em zero) e calculado pelo módulo do valor da função len 
+(que retorna o número de elementos da lista pessoas).
+
+Obs.: Lembrando que o módulo é necessário para que os saltos feitos com base nos valores dos 
+números primos não ultrapassem o número de elementos da lista. Além disso, é necessário fazer 
+o módulo da variável remove_elemento com a função len na lista pessoas para reajustar a posição 
+da lista para o próximo pulo primo.
+
+Depois disso, ao final do loop, o pulo_primo é incrementado em +1 novamente, de modo que o loop 
+“while not eh_primo (primo)” seja acionado novamente em busca do novo número primo que 
+servirá para definir um novo valor para o pulo .
+
+Basicamente, depois disso, o programa continua até que apenas o elemento de índice 
+0 permaneça na lista pessoas.
+
+
+'''
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(primo_josephus(n))
+
+
+'''
+E por fim, na função principal, o usuário tem a opção de inserir o valor de entrada na 
+variável “n”. Existe um if que encerra o programa se o número digitado for 0 e no final é 
+impresso o elemento com índice 0, que é retornado na função primo_joseph. 
+'''
+Obs.: Fiz mais para aprender a lógica do código do Fábio. Valeu, Fábio pelo código.
+
+
+**********************************
+
+Olá, boa noite! Gostaria de compartilhar o meu código que foi 
+aprovado na questão 1024 - Criptografia do Beecrowd hoje com a ajuda do colega Saulo.
+
+def criptografar(mensagem):
+    # primeira etapa:
+    mensagem_codificada = ''
+    for caracter in mensagem:
+        if caracter.isalpha():
+            novo_caracter = chr(ord(caracter) + 3)
+            
+        else:
+            novo_caracter = caracter
+        mensagem_codificada += novo_caracter
+    # segunda etapa:
+    mensagem_codificada = mensagem_codificada[::-1]
+
+    # terceira etapa:
+    metade = len(mensagem_codificada) // 2
+    primeira_metade = mensagem_codificada[:metade] 
+    segunda_metade=''
+    for caracter in mensagem_codificada[metade:]:
+        segunda_metade += chr(ord(caracter) - 1) 
+    mensagem_codificada = primeira_metade+segunda_metade
+        
+
+    return mensagem_codificada
+
+
+n = int(input())
+
+for i in range(n):
+    linha = input()
+    mensagem_codificada = criptografar(linha)
+    print(mensagem_codificada)
+
+
+***********************
+
+
+No primeiro passo da função criptografar, precisei criar a variável "mensagem_codificada" e atribuir a ela o tipo string, 
+utilizando aspas para evitar erros nas operações, mesmo o Python sendo uma linguagem de tipagem dinâmica. O loop for 
+é utilizado para percorrer cada caractere da mensagem e o if identifica se o caractere é uma letra através da função "isalpha()".
+
+Se o caractere for uma letra, ele é convertido em seu número correspondente na tabela ASCII através da função ord(), 
+somado por 3 e convertido novamente em um caractere pela função chr(). O resultado é armazenado na variável 
+"novo_caracter". Caso o caractere não seja uma letra, ele é armazenado em "novo_caracter" sem conversão. 
+Assim, ao final de cada rodada do loop, o valor contido em "novo_caracter" irá incrementar a string “mensagem_codificada”.
+
+Na segunda etapa, a string “mensagem_codificada” é invertida e armazenada nela mesma facilmente pelo uso 
+da sintaxe de fatiamento disponível no Python. A sintaxe “::” com o valor “-1” colocada dentro dos colchetes 
+da string tem um efeito similar ao comando for em C com início, fim e pulo ou o “for i in range” no próprio Python.
+
+Na terceira etapa da função, a variável “metade” recebe o resultado de uma divisão inteira entre o número 
+de caracteres da string “mensagem_codificada” e 2. Depois ela serve como parâmetro na sintaxe de fatiamento 
+do Python em “mensagem_codificada” para indicar até qual caractere a string “primeira_metade” irá receber 
+de “mensagem_codificada”. 
+
+Após isso, no for, a variável “metade” serve como condição inicial na string “mensagem_codificada”, fazendo 
+com que o loop seja inicializado apenas a partir do caractere com o índice de mesmo número do valor de “metade”. 
+Assim, conforme solicitado na questão, cada caractere dessa segunda metade da string é convertido em seu caractere 
+antecessor na tabela ASCII. Para isso, utilizo as funções chr e ord -1. No final da função, as strings “primeira_metade” 
+e “segunda_metade” são concatenadas dentro de “mensagem_codificada”.
+
+Por fim, na função principal, criei a variável “n” através de um input para o usuário, um for i in range com “n” 
+como parâmetro, a variável linha para receber a mensagem do usuário, chamei a função criptografar e coloquei um 
+print para imprimir o resultado da função dentro do loop.
+
+O que achei interessante foi que não precisei atender às condições de N (1 ≤ N ≤ 10.000) ou linhas com limite de M 
+(1 ≤ M ≤ 1000) caracteres para que o programa fosse aprovado no Beecrowd. Acredito que isso tenha a ver com a diferença 
+de armazenamento de strings de Python para C. Talvez, se eu tivesse feito esse programa em C e fizesse uma matriz de 
+char que não seguisse essas condições, o Beecrowd não aceitaria.
+
+
+*************************
+
+Olá, colegas e professor, boa tarde! Gostaria de compartilhar os códigos que fiz para a questão 1068 em Python e Linguagem C.
+
+while True:
+    parentese_abertura= 0
+    parentese_fechamento=0
+    expressao = input("Digite uma string: ")
+    for caractere in expressao:
+        if caractere == "(":
+            parentese_abertura += 1
+        if caractere == ")":
+            parentese_fechamento +=1
+        
+    if (parentese_abertura == parentese_fechamento):
+        print("correct")
+    else:
+        print("incorrect")
+
+A princípio, quando eu fiz esse código em Python, o Beecrowd alertou um erro na linha de entrada: “input() EOFError: EOF when reading a line”. Entendi que isso ocorreu porque a função input do Python pode apresentar esse erro quando está armazenando muitos dados em sequência, pois se o usuário não digita um valor específico e apenas clica enter, a função vai encerrar sem registrar nenhum dado, deixando o input vazio e travando a função.
+
+Para resolver esse problema, encontrei duas soluções. A primeira foi tratar a exceção utilizando os comandos try e except: 
+
+while True:
+    try:
+        expressao = input()
+        if len(expressao) > 0 and len(expressao) <= 1000:
+            parentese = 0
+            for caractere in expressao:
+                if caractere == "(":
+                    parentese += 1
+                elif caractere == ")" and parentese != 0:
+                    parentese -= 1
+                elif caractere == ")":
+                    parentese = -1
+                    break
+            if parentese == 0:
+                print("correct")
+            else:
+                print("incorrect")
+        else:
+            break
+    except EOFError:
+        break
+        
+Obs.: Eu incluí uma limitação de tamanho na string "expressao", mas o programa foi aceito sem isso também. 
+
+A outra opção que encontrei foi trocar a função input por readline(), que armazena o “\n” na entrada de dados e evita o EOFError:
+
+import sys
+
+while True:
+    expressao = sys.stdin.readline().strip()
+    if expressao == '':
+        sys.exit()
+    else:
+        if len(expressao) > 0 and len(expressao) <= 1000:
+            parentese = 0
+            for caractere in expressao:
+                if caractere == "(":
+                    parentese += 1
+                elif caractere == ")" and parentese != 0:
+                    parentese -= 1
+                elif caractere == ")":
+                    parentese = -1
+                    break
+            if parentese == 0:
+                print("correct")
+            else:
+                print("incorrect")
+
+Obs.: o que achei interessante foi que mesmo usando o strip() que remove o “\n” e os espaços 
+extras nessa função o Beecrowd aceitou também e apenas continuou implicando com o input(), mesmo 
+eu colocando um if para o surgimento de string de valor NULL com a função sys.exit() para saída do programa. 
+
+Somente consegui aprovação com input() por meio do tratamento de exceções try e except.
+
+Depois desse problema todo com o input(), ainda surgiu outro em relação à própria lógica da questão 
+que eu não tinha percebido. Como o professor mostrou na sala e a questão pede, não basta apenas existir 
+a mesma quantidade de parentes de abertura e de fechamento, eles também não podem ficar invertidos assim: “)(“, a não ser 
+que formem ângulo com outros como: “()()”.
+
+Devo ressaltar que, anteriormente, no meu código, eu tinha criado duas variáveis contadoras para os parênteses, 
+mas percebi por meio da ajuda do colega e do professor na sala que esse método não é muito eficiente. 
+Como nos últimos dois códigos que postei, para resolver o problema dos parênteses, adotei a sugestão do professor 
+e do colega de utilizar somente uma variável para contar.
+
+Basicamente, a lógica do programa consiste em incrementar a variável a cada parêntese de abertura encontrado. 
+Em seguida, com o uso de duas condicionais "elif", eu verifico se o parêntese estava sendo fechado de forma 
+adequada ou não. Em resumo, se o valor final da variável “parentese” for igual a 0, a resposta impressa será 
+"correct", caso contrário será "incorret"."
+
+Já em C, tentei fazer um modelo semelhante:
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 1001
+
+int main() {
+    
+    char expressao[MAX];
+    int parentese, tamanho,i;
+    for (i = 0; i < 10000; i++) {
+        parentese = 0;
+        if (fgets(expressao, MAX, stdin) == NULL) {
+            break;
+        }
+        tamanho = strlen(expressao);
+        for (i = 0; i < tamanho; i++) {
+            if (expressao[i] == '(') {
+                parentese++;
+            } else if (expressao[i] == ')' && parentese != 0) {
+                parentese--;
+            } else if (expressao[i] == ')' && parentese == 0) {
+                parentese = -1;
+                break;
+            }
+        }
+        if (parentese == 0) {
+            printf("correct\n");
+        } else {
+            printf("incorrect\n");
+        }
+    }
+
+    return 0;
+}
+
+No entanto, encontrei um erro semelhante do Python durante a entrada de dados em C quando 
+utilizei a função fgets. Só depois que eu adicionei um if para comparar se a variável “expressao” 
+era igual a NULL e encerrar o loop, caso essa situação ocorresse, foi possível solucionar o problema 
+e o código foi finalmente aceito pelo Beecrowd.
+
+O que achei engraçado foi que o maior desafio acabou sendo na hora de ajustar a entrada de dados no 
+programa e não tanto na lógica dos parênteses. De toda forma, gostei dessa questão e fiquei satisfeito 
+com o aprendizado que ela me proporcionou. 
+
+As outras duas questões 1025 e 1252 ainda estou fazendo e espero consegui concluir 
+mais alguma até próximo sábado.
+
+Desejo um bom feriado a todos!
+
+***********************
+
+Boa tarde, colegas e professor. Gostaria de compartilhar aqui no grupo os códigos que eu fiz para a questão 
+1025 do mármore. Alguns foram aprovados, outros não, mas serviram de aprendizado e de base para os que foram aprovados.
+
+A princípio, eu achei o enunciado da questão meio confuso, tive a impressão que o programa solicitado seria 
+bem complexo. No entanto, o grande problema é o tempo de apenas 2 segundos que é permitido para a execução do 
+programa. Isso me atrapalhou porque eu não tinha visto no assunto da questão (requisito da questão que aparece 
+antes de clicar para ler o enunciado) que seria necessário utilizar busca binária para a solução do problema, 
+por isso meus códigos ficavam sempre dando "Time limit exceeded".
+
+Em relação ao enunciado, pelo que eu entendi, de maneira resumida, é solicitado um programa que receba 
+como entrada o número de elementos que devem ser consultados, o valor de cada um deles em ordem crescente, 
+o número de consultas e o valor de cada consulta. Como saída, se o elemento não for encontrado, isso deve 
+ser informado. Se for encontrado, é solicitado que coloque o valor do elemento e a posição em que ele foi 
+encontrado, considerando que o resultado da posição de cada elemento deve começar a contar a partir de 1.
+
+
+Código 1 (Time limit exceeded):
+
+import sys
+
+def busca_indice(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    q_lista = [int(sys.stdin.readline()) for i in range(q)]
+    
+    print("CASE# {}:".format(caso))
+    
+    for i in range(len(q_lista)):
+        if busca_indice(n_lista, q_lista[i]) is None:
+            print("{} not found".format(q_lista[i]))
+        else:
+            idx=busca_indice(n_lista, q_lista[i])
+            print("{} found at {}".format(q_lista[i],idx+1))
+    caso+=1
+
+Nesse código, eu utilizei a biblioteca sys para usar a função readline() por essa ser mais rápida do que 
+o input. Criei uma lista para os elementos gerais (n_lista) e outra para os elementos de busca (q_lista). 
+Usei a função nativa do Python sort() para ordenar a lista dos elementos gerais e criei uma função que 
+faz uma busca sequencial e retorna o índice do elemento procurado se este for encontrado na n_lista. 
+Se não for, a função retorna None e é impressa na tela a mensagem de que o elemento não foi encontrado.
+
+Código 2 (Time limit exceeded):
+
+import sys
+
+def busca_indice(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return None
+
+caso = 1
+resultados = []
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+    
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    
+    caso_resultados = []
+    
+    for i in range(q):
+        q_elemento = int(sys.stdin.readline())
+        idx = busca_indice(n_lista, q_elemento)
+        if idx is None:
+            caso_resultados.append("{} not found".format(q_elemento))
+        else:
+            caso_resultados.append("{} found at {}".format(q_elemento, idx+1))
+    
+    resultados.append("CASE# {}:\n{}".format(caso, '\n'.join(caso_resultados)))
+    caso += 1
+
+print('\n'.join(resultados))
+
+Nesse código, com o intuito de otimizar o anterior, fui armazenando os resultados para cada caso em uma 
+string chamada "caso_resultados" e depois fui passando esses resultados de cada caso para uma outra string 
+chamada apenas “resultado”, a fim de imprimir tudo junto na parte final do programa. 
+
+Para isso, utilizei a função append para incrementar a string com os resultados e a função join() para alinhar 
+os resultados verticalmente e colocar tudo na string “resultado”, depois só fiz imprimir essa string no fim 
+do loop, o que ocorre somente quando o usuário digita “0 0” no momento de escolher o número de elementos e o 
+de consultas. O Beecrowd não apontou erro de lógica nesse programa na ordem da saída, somente de tempo.
+
+Código 3 (Time limit exceeded de novo):
+
+import sys
+
+def busca_indice(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            return i
+    return None
+    
+caso = 1
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    
+    print("CASE# {}:".format(caso))
+    for i in range(q):
+        q_elemento = int(input())
+        idx = busca_indice(n_lista, q_elemento)
+        if idx is None:
+            print("{} not found".format(q_elemento))
+        else:
+            print("{} found at {}".format(q_elemento, idx+1))
+    
+    caso += 1
+
+Esse código é uma simplificação dos dois anteriores. Ele só possui a n_lista e em vez de armazenar os resultados, 
+ele simplesmente já vai imprimindo na tela. O beecrowd também não apontou erro de lógica nesse programa na ordem 
+da saída, somente de tempo, como nos anteriores.
+
+Código 4 (Accepted):
+
+import bisect
+import sys
+
+def busca_binaria(lista, elemento):
+    idx = bisect.bisect_left(lista, elemento)
+    if idx != len(lista) and lista[idx] == elemento: 
+        return idx
+    return None
+
+caso = 1
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    
+    print("CASE# {}:".format(caso))
+    for i in range(q):
+        q_elemento = int(sys.stdin.readline())
+        idx = busca_binaria(n_lista, q_elemento)
+        if idx is None:
+            print("{} not found".format(q_elemento))
+        else:
+            print("{} found at {}".format(q_elemento, idx+1))
+    
+    caso += 1
+
+A partir desse código, finalmente decidi usar a busca binária para vencer essa limitação de 2 segundos. Decidi então alterar 
+minha função de busca sequencial utilizando em seu interior a função nativa do Python bisect_left().
+
+Pelo que eu pesquisei, o Python não possui de forma nativa uma busca binária que retorne com certeza a presença de um elemento. 
+Mas possui essa função bisect_left() que serve como um facilitador na criação manual de uma função de busca binária 
+que retorne um elemento com certeza de sua existência na lista.
+
+Em resumo, esse bisect_left() simplesmente retorna a posição em que se pode inserir um elemento em uma lista de modo que 
+ela continue ordenada, ou seja, essa função apenas retorna a posição onde o elemento pode estar em uma lista ordenada. 
+No entanto, para ter certeza se o elemento realmente está presente na lista, é necessário, por fora dessa função, comparar 
+o elemento do índice encontrado com o elemento de busca.
+
+Além disso, de antemão, é necessário colocar uma condição para verificar se esse índice encontrado pelo bisect_left() 
+é menor ou diferente do tamanho da lista. Porque essa função, como já citei, retorna somente a posição em que um 
+elemento pode ser inserido de maneira ordenada, logo se o valor do elemento for superior a todos da lista, o bisect_left() 
+retornará um índice que causa um erro no programa na hora da comparação, justamente por esse índice não está presente 
+na lista e não poder ser utilizado.
+
+Exemplo: 
+
+Em uma certa lista com 10 elementos, ocorre o erro de comparação com indice valendo 10, sendo que o índice 9 
+que seria do elemento 10 pela contagem começar do 0:
+
+lista[indice] == elemento
+
+Obs.: Considerando que os índices dos elementos de uma lista começam em 0, para resolver esse problema 
+em Python e ainda fazer a comparação do elemento no índice encontrado com o elemento procurado, basta colocar algo como: 
+
+"if indice != len(lista) and lista[indice] == elemento:”
+
+Código 5 (Accepted)
+
+import bisect
+import sys
+
+def busca_binaria(lista, elemento):
+    idx = bisect.bisect_left(lista, elemento)
+    if idx != len(lista) and lista[idx] == elemento:
+        return idx
+    return None
+
+
+caso = 1
+resultados = []
+
+while True:
+    n, q = map(int, sys.stdin.readline().split())
+
+    if n == 0 and q == 0:
+        break
+
+    n_lista = [int(sys.stdin.readline()) for i in range(n)]
+    n_lista.sort()
+    caso_resultados = []
+    
+    for i in range(q):
+        q_elemento = int(sys.stdin.readline())
+        idx = busca_binaria (n_lista, q_elemento)
+        if idx is None:
+            caso_resultados.append("{} not found".format(q_elemento))
+        else:
+            caso_resultados.append("{} found at {}".format(q_elemento, idx+1))
+    
+    resultados.append("CASE# {}:\n{}".format(caso, '\n'.join(caso_resultados)))
+    caso += 1
+
+print('\n'.join(resultados))
+
+Nesse último código, apenas segui a lógica do meu código 2, armazenando os resultados, a diferença é somente o uso da busca binária.
+
+Essa foi a experiência que tive com o problema 1025, mas ainda vou resolver o 1252, que parece 
+ser bem semelhante ao 1025, exigindo uma ordenação e um limite de tempo de execução de 2 segundos também.
+
+
+************************
+
+Olá, boa noite, colegas e professor. Gostaria de compartilhar com vocês os códigos que 
+fiz para solucionar os três desafios da maratona e que foram aceitos no Beecrowd.
+
+Desafio 1193 - Conversão entre Bases (Accepted)
+
+import sys
+
+n = input()
+
+if int(n) < 0:
+    sys.exit()
+
+cont = 1
+
+for i in range(int(n)):
+    x, y = input().split()
+    print(f"Case {cont}:")
+    cont += 1
+
+    if y[-3:] == "dec":
+        hexa = hex(int(x))[2:]
+        bina = bin(int(x))[2:]
+        print(f"{hexa} hex\n{bina} bin\n")
+    elif y[-3:] == "hex":
+        decimal = int(x, 16)
+        bina = bin(decimal)[2:]
+        print(f"{decimal} dec\n{bina} bin\n")
+    elif y[-3:] == "bin":
+        decimal = int(x, 2)
+        hexa = hex(decimal)[2:]
+        print(f"{decimal} dec\n{hexa} hex\n")
+
+Neste desafio, é necessário realizar conversões entre decimal, hexadecimal e binário. 
+Para isso, utilizei a função split para receber os valores de x e y em uma única linha. 
+Em seguida, implementei condicionais if e elif para identificar o tipo de conversão com base 
+nas abreviações hex, dec e bin presentes no input. Utilizei também a sintaxe de fatiamento 
+do Python para comparar apenas a parte das abreviações. Realizei as conversões usando as funções 
+nativas do Python mesmo, int(), bin() e hex().
+
+Desafio 1170 - Blobs (Accepted)
+
+import sys
+
+n = int(input())
+
+cont = 1
+
+for i in range(n):
+    c=float(input())
+    if c < 0 or c > 1000:
+        sys.exit()
+    cont=0
+    while c > 1:
+        c/=2
+        cont+=1
+    print(f"{cont} dias")
+
+Este desafio foi divertido e tranquilo de resolver. É sobre uma criatura que consome metade 
+de seu estoque de alimentos a cada dia. O objetivo é determinar em quantos dias a criatura terá 
+1 kg ou menos de comida. Para isso, criei um loop for para o número de testes, solicitei o input 
+da quantidade de comida para a variável c do tipo float e utilizei um loop while para continuar 
+dividindo pela metade o valor da variável c até que o valor fosse igual ou menor que um. Por fim, 
+apenas imprimi a quantidade registrada de dias pelo contador do loop.
+
+Desafio 1202 - Festival das Noites Brancas (Accepted)
+
+import sys
+
+def fib(n):
+    if n < 2:
+        return n
+
+    a, b = 0, 1
+
+    for _ in range(2, n + 1):
+        a, b = b, (a + b)
+
+    return b
+
+n = int(input())
+
+for _ in range(n):
+    binario = input()
+    if binario[0] == "0" and len(binario) > 1:
+        sys.exit()
+
+    decimal = int(binario, 2)%1500
+    print(f"{fib(decimal) % 1000:03}")
+
+Este, sem dúvidas, é o desafio mais difícil dos três. Pelo que entendi, a questão descreve sobre 
+candidatos a ingressos do festival sentados em fileiras de cadeiras, algumas cadeiras estão reservadas 
+e outras não. O valor do código binário gerado por essa dualidade de cadeiras em cada fileira representa 
+uma posição na sequência de Fibonacci. Assim, quando alguém na fileira tem um papel correspondente ao valor 
+nessa posição na sequência de Fibonacci, todos os candidatos na fileira recebem ingressos.
+
+Para resolver, a princípio, eu tentei fazer com função recursiva dinâmica, mas várias vezes na hora de submeter 
+estava apresentando o erro “Time limit exceeded” mesmo assim. 
+
+Depois de muitas tentativas, pesquisei mais sobre a sequência de fibonacci e descobri que todos os seus 3 
+primeiros dígitos dos valores sequenciais (justamente o que a questão pede) começam a se repetir a partir 
+do valor na posição 1500 da sequência e com base nisso consegui resolver o problema sem precisar de recursão 
+dinâmica para deixar o programa mais rápido.
+
+Utilizei então uma função de fibonacci simples e iterativa para encontrar o valor da posição indicada pelo 
+código binário da fileira, simplesmente limitando esse valor por meio do cálculo pelo seu módulo por 1500. 
+
+Pelo que percebi, a passagem desse valor do código binário que é necessário converter para decimal e depois 
+passar como parâmetro da função de fibonacci, independentemente de ser dinâmica ou não, é o processo que pode 
+deixar o programa mais lento, pois quanto maior o valor, mais loops são executados para encontrar o resultado. 
+
+Após isso, já no final do programa, seguindo o que pede no enunciado, formatei a saída do resultado para limitar a 
+três dígitos usando o operador de módulo por 1000 e usei a sintaxe de formatação do Python com ":03", para preencher 
+com zeros à esquerda até alcançar a quantidade de 3 dígitos solicitados para cada número entre 0 a 999. Ficando o 1, 
+por exemplo, 001.
+
+Obs: Uma outra coisa que eu coloquei no código foi uma condicional if para encerrar o programa com sys.exit() 
+se o número binário digitado começar com 0 e não for apenas o próprio zero (algo que o enunciado pede), 
+mas eu consegui aprovar o código sem essa parte também.
+
+Esses foram os desafios. Achei os desafios 1193 e 1170 os mais divertidos de resolver, enquanto o desafio 1202 
+(Festival das Noites Brancas), achei que ele é o mais desafiador e o que rende mais aprendizado.
