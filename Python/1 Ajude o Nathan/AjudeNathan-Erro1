@@ -1,0 +1,14 @@
+testes=int(input())
+
+for i in range (testes):
+    k, t, n = map(int, input("Digite três valores inteiros separados por espaços: ").split())
+    
+    res1=t//k
+    res2=n//k
+    
+    res3=res1+res2
+    
+    if res3%2 == 0:
+        print("Thiago")
+    else:
+        print("Nathan")
