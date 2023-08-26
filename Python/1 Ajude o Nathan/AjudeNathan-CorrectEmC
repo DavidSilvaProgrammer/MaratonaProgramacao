@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int teste,t,n,k,resp1,resp2;
+    scanf("%d",&teste);
+    
+    for(int i=0;i<=teste;i++){
+        scanf("%d %d %d",&k,&t,&n);
+        resp1=t+n;
+        resp2=resp1%k;
+        if(resp2%2 == 0){
+            printf("Thiago");
+        }else{
+            printf("Nathan");
+        }
+    }
+    
+    return 0;
+}
