@@ -1,0 +1,16 @@
+A função prime_factors(n) usa um loop para verificar divisores potenciais e determina quais deles são fatores primos. A ideia é percorrer todos os números menores ou iguais à raiz quadrada de n, porque se um número tem um fator maior do que a sua raiz quadrada, então também terá um fator menor.
+
+Aqui está como a função prime_factors() trabalha:
+
+    Inicializa uma lista vazia chamada factors para armazenar os fatores primos encontrados.
+    Inicializa o divisor como 2.
+    Entra em um loop while que continua até n ser reduzido a 1 (todos os fatores foram extraídos).
+    Dentro do loop while, entra em outro loop while que verifica se n é divisível pelo divisor atual.
+    Se n for divisível por divisor, isso significa que divisor é um fator primo, pois não foi possível dividir n por nenhum número menor do que divisor. Portanto, ele é adicionado à lista factors como um fator primo.
+    Enquanto n for divisível por divisor, a divisão é repetida até que n não seja mais divisível por divisor.
+    O divisor é incrementado para verificar o próximo número.
+    O loop externo continua até que todos os fatores primos tenham sido extraídos.
+
+A função prime_factors() não verifica se cada fator é primo, mas sim se cada fator é indivisível por números menores. Essa abordagem é baseada no conceito de que, se um número é divisível por um número composto (não primo), ele também seria divisível por um de seus fatores primos menores. Portanto, apenas os fatores primos serão adicionados à lista factors.
+
+Se a ideia é determinar se um número em si é primo ou não, uma abordagem diferente seria necessária. No entanto, a função prime_factors() está projetada para encontrar os fatores primos de um número.
