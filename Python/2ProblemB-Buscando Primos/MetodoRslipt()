@@ -22,4 +22,19 @@ print("Número:", numero)
 
 //texto = "Este é um exemplo de frase"
 //partes = texto.rsplit(' ', 1)
+
 //print(partes)  # Saída: ['Este é um exemplo de', 'frase']
+
+
+//Outro exemplo:
+
+entrada = input("Digite o nome e o número: ")
+
+partes = entrada.rsplit(' ', 1)
+
+nome = partes[0]
+
+numero = float(partes[-1])
+
+print("Nome:", nome)
+print("Número:", numero)
