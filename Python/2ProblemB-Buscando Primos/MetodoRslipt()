@@ -1,0 +1,25 @@
+# Recebe a entrada do usuário
+entrada = input("Digite o nome e o número: ")
+
+# Divide a entrada em duas partes usando o espaço como separador, no máximo uma divisão
+partes = entrada.rsplit(' ', 1)
+
+# O primeiro elemento será o nome
+nome = partes[0]
+
+# O último elemento será o número
+numero_str = partes[1]
+
+# Converte a string do número para um número em ponto flutuante (float)
+numero = float(numero_str)
+
+# Imprime o nome e o número em formato float
+print("Nome:", nome)
+print("Número:", numero)
+
+
+//Outro exemplo:
+
+//texto = "Este é um exemplo de frase"
+//partes = texto.rsplit(' ', 1)
+//print(partes)  # Saída: ['Este é um exemplo de', 'frase']
