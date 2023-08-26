@@ -1,0 +1,39 @@
+def fatores_primos(n):
+    fatores = []
+    divisor = 2
+    while n > 1:
+        while n % divisor == 0:
+            factores.append(divisor)
+            n =n// divisor
+        divisor += 1
+    return factors
+
+num = int(input("Digite um número: "))
+fatores_primos = prime_factors(num)
+
+print(f"Fatores primos de {num}: {fatores_primos}")
+
+
+lista_nome=[]
+lista_numero=[]
+
+n=int(input())
+
+for i in range(n):
+    entrada = input("Digite o nome e o número: ")
+    partes = entrada.rsplit(' ', 1)
+    nome = partes[0]
+    numero = int(partes[-1])
+    
+    lista_nome.append(nome)
+    lista_numero.append(numero)
+    
+
+        
+        
+    
+    
+
+print(f"{lista_nome}\n {lista_numero}")
+
+
