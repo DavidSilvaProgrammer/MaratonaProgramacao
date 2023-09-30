@@ -1,0 +1,39 @@
+import itertools
+
+# Dicionário com as distâncias entre os pontos
+caminhos = {}
+caminhos["ab"] = 4
+caminhos["ac"] = 2
+caminhos["bc"] = 1
+caminhos["bd"] = 5
+caminhos["cd"] = 8
+caminhos["ce"] = 10
+caminhos["de"] = 2
+caminhos["df"] = 6
+caminhos["ef"] = 2
+
+# Encontra todas as permutações das chaves (rotas possíveis)
+chaves = list(caminhos.keys())
+rotas_possiveis = itertools.permutations(chaves)
+
+menor_distancia = float('inf')
+melhor_rota = None
+
+# Calcula a distância total de cada rota
+for rota in rotas_possiveis:
+    distancia_total = 0
+    for i in range(len(rota) - 1):
+        distancia_total += caminhos[rota[i]]
+    if distancia_total < menor_distancia:
+        menor_distancia = distancia_total
+        melhor_rota = rota
+
+# Imprime a distância de todas as rotas possíveis
+for rota in rotas_possiveis:
+    distancia_total = 0
+    for i in range(len(rota) - 1):
+        distancia_total += caminhos[rota[i]]
+    print(f"Rota {rota}: Distância total = {distancia_total}")
+
+# Imprime a rota mais eficiente
+print(f"\nMelhor rota: {melhor_rota} com distância total de {menor_distancia}")
