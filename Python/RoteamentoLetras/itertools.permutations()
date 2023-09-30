@@ -1,0 +1,10 @@
+import itertools
+
+iterable = [1, 2, 3]
+
+# Gera todas as permutações possíveis dos elementos de "iterable"
+permutacoes = itertools.permutations(iterable)
+
+# permutacoes é um objeto iterável que pode ser usado em um loop for
+for permutacao in permutacoes:
+    print(permutacao)
