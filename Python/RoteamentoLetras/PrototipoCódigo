@@ -1,0 +1,20 @@
+caminhos = {}
+soma=[]
+
+caminhos["ab"] = 4
+caminhos["ac"] = 2
+caminhos["bc"] = 1
+caminhos["bd"] =5
+caminhos["cd"]=8
+caminhos["ce"]=10
+caminhos["de"]=2
+caminhos["df"]=6
+caminhos["ef"]=2
+
+for chave, valor in caminhos.items():
+    print(f"Chave: {chave}, Valor: {valor}")
+    
+    if chave == "ab":
+        for chave, valor in caminhos.items():
+            soma.append()=
+    
