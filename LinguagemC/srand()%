@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(NULL));
+
+    int limiteMinimo = 1;
+    int limiteMaximo = 100; // Você pode ajustar esses valores conforme necessário
+
+    int numeroAleatorio = (rand() % (limiteMaximo - limiteMinimo + 1)) + limiteMinimo;
+    printf("Número aleatório entre %d e %d: %d\n", limiteMinimo, limiteMaximo, numeroAleatorio);
+
+    return 0;
+}
