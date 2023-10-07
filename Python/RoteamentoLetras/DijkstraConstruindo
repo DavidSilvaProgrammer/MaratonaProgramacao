@@ -1,0 +1,28 @@
+grafo = {
+    'a': {'b': 4, 'c': 2},
+    'b': {'a': 4, 'c': 1, 'd': 5},
+    'c': {'a': 2, 'b': 1, 'd': 8, 'e': 10},
+    'd': {'b': 5, 'c': 8, 'e': 2, 'f': 6},
+    'e': {'c': 10, 'd': 2, 'f': 2},
+    'f': {'d': 6, 'e': 2}
+}
+
+# Inicializa um dicionário para armazenar os menores valores de cada chave
+menores_valores = {}
+
+# Itera sobre as chaves do grafo
+for chave in grafo.keys():
+    menor_valor = float('inf')  # Inicializa com infinito para encontrar o menor valor
+    vizinhos = grafo[chave]
+
+    # Encontra o menor valor entre os vizinhos da chave atual
+    for valor in vizinhos.values():
+        if valor < menor_valor:
+            menor_valor = valor
+
+    # Armazena o menor valor no dicionário
+    menores_valores[chave] = menor_valor
+
+# Imprime os menores valores de cada chave
+for chave, valor in menores_valores.items():
+    print(f'Menor valor para a chave {chave}: {valor}')
