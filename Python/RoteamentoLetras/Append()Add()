@@ -1,0 +1,17 @@
+my_set = {1, 2, 3}
+my_set.add(4)
+
+*********************************
+
+my_list = [1, 2, 3]
+
+def add_element(lst, element):
+    lst.append(element)
+
+add_element(my_list, 4)
+
+*****************************
+
+my_dict = {"a": 1, "b": 2}
+my_dict["c"] = 3
+
