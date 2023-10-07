@@ -1,0 +1,93 @@
+caminhos = {
+    "ab": 4,
+    "ac": 2,
+    "bc": 1,
+    "bd": 5,
+    "cd": 8,
+    "ce": 10,
+    "de": 2,
+    "df": 6,
+    "ef": 2
+}
+
+# Define o grafo como um dicionário de dicionários
+grafo = {
+    'a': {'b': 4, 'c': 2},
+    'b': {'a': 4, 'c': 1, 'd': 5},
+    'c': {'a': 2, 'b': 1, 'd': 8, 'e': 10},
+    'd': {'b': 5, 'c': 8, 'e': 2, 'f': 6},
+    'e': {'c': 10, 'd': 2, 'f': 2},
+    'f': {'d': 6, 'e': 2}
+}
+
+def dijkstra(grafo, inicio, fim):
+    distancias = {vertice: float('inf') for vertice in grafo}
+    distancias[inicio] = 0
+    visitados = set()
+    atual = inicio
+
+    while atual != fim:
+        visitados.add(atual)
+        vizinhos = grafo[atual]
+
+        for vizinho, peso in vizinhos.items():
+            if vizinho not in visitados:
+                distancia = distancias[atual] + peso
+                if distancia < distancias[vizinho]:
+                    distancias[vizinho] = distancia
+
+        nao_visitados = {vertice: distancias[vertice] for vertice in grafo if vertice not in visitados}
+        atual = min(nao_visitados, key=lambda vertice: nao_visitados[vertice])
+
+    return distancias[fim]
+
+inicio = 'a'
+fim = 'f'
+menor_distancia = dijkstra(grafo, inicio, fim)
+print(f'A menor distância de {inicio} até {fim} é {menor_distancia}')
+
+**********************
+
+caminhos = {
+    "ab": 4,
+    "ac": 2,
+    "bc": 1,
+    "bd": 5,
+    "cd": 8,
+    "ce": 10,
+    "de": 2,
+    "df": 6,
+    "ef": 2
+}
+
+# Função para calcular a menor distância
+def menor_distancia(caminhos, inicio, fim):
+    distancias = {}  # Dicionário para armazenar as distâncias até cada vértice
+    distancias[inicio] = 0
+
+    while True:
+        menor_vertice = None
+        menor_dist = float('inf')
+
+        for aresta, peso in caminhos.items():
+            if aresta[0] in distancias and aresta[1] not in distancias:
+                nova_dist = distancias[aresta[0]] + peso
+                if nova_dist < menor_dist:
+                    menor_vertice = aresta[1]
+                    menor_dist = nova_dist
+
+        if menor_vertice is None:
+            break
+
+        distancias[menor_vertice] = menor_dist
+
+    return distancias.get(fim, "Não há caminho")
+
+inicio = 'a'
+fim = 'f'
+resultado = menor_distancia(caminhos, inicio, fim)
+print(f'A menor distância de {inicio} até {fim} é {resultado}')
+
+****************************
+
+
