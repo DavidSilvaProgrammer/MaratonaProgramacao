@@ -1,0 +1,18 @@
+public class NumericalCharsManual {
+    public static void main(String[] args) {
+        String texto = "A string 1234 contém alguns números 5678.";
+
+        // Chame a função para encontrar e imprimir os caracteres numéricos
+        encontrarCaracteresNumericos(texto);
+    }
+
+    public static void encontrarCaracteresNumericos(String texto) {
+        for (int i = 0; i < texto.length(); i++) {
+            char caracter = texto.charAt(i);
+
+            if (Character.isDigit(caracter)) {
+                System.out.println("Caracter numérico encontrado: " + caracter);
+            }
+        }
+    }
+}
