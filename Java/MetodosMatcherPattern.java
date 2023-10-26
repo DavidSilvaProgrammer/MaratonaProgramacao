@@ -18,3 +18,20 @@ public class NumericalCharsExample {
         }
     }
 }
+
+/*
+
+    Você começa definindo uma string texto que contém a frase na qual você deseja encontrar caracteres numéricos.
+
+    Em seguida, você define uma expressão regular \\d usando a classe Pattern. Essa expressão regular significa encontrar qualquer caractere que seja um dígito numérico.
+
+    Um objeto Matcher é criado com a expressão regular e a string texto para encontrar correspondências.
+
+    Em seguida, você usa um loop while com matcher.find() para encontrar todas as correspondências na string. O método find() encontra a próxima correspondência na string.
+
+    Para cada correspondência encontrada, você usa matcher.group() para obter o caractere numérico encontrado e, em seguida, o imprime na tela.
+
+Esse método é eficaz para encontrar caracteres numéricos em uma string usando expressões regulares, e é especialmente útil quando você precisa de flexibilidade na definição de padrões de busca.
+
+*/
+
