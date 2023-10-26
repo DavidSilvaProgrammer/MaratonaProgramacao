@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SeparateNumberBlocks {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite uma sequência de caracteres: ");
+        String input = scanner.nextLine();
+
+        List<Integer> numeros = separarBlocosDeNumeros(input);
+
+        System.out.println("Números separados em blocos: " + numeros);
+
+        scanner.close();
+    }
+
+    public static List<Integer> separarBlocosDeNumeros(String input) {
+        List<Integer> numeros = new ArrayList<>();
+        StringBuilder blocoDigitos = new StringBuilder();
+
+        for (char caracter : input.toCharArray()) {
+            if (Character.isDigit(caracter)) {
+                blocoDigitos.append(caracter);
+            } else {
+                if (blocoDigitos.length() > 0) {
+                    int numero = Integer.parseInt(blocoDigitos.toString());
+                    numeros.add(numero);
+                    blocoDigitos.setLength(0);
+                }
+            }
+        }
+
+        if (blocoDigitos.length() > 0) {
+            int numero = Integer.parseInt(blocoDigitos.toString());
+            numeros.add(numero);
+        }
+
+        return numeros;
+    }
+}
