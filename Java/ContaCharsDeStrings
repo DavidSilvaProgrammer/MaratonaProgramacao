@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite uma string: ");
+        String input = scanner.nextLine();
+
+        int numeroDeCaracteres = contarCaracteres(input);
+
+        System.out.println("A string tem " + numeroDeCaracteres + " caracteres.");
+    }
+
+    public static int contarCaracteres(String str) {
+        // Use o método length() para contar o número de caracteres na string.
+        return str.length();
+    }
+}
+
+
+*******************************
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite uma string: ");
+        String input = scanner.nextLine();
+
+        int numeroDeCaracteres = input.length();
+
+        System.out.println("A string tem " + numeroDeCaracteres + " caracteres.");
+    }
+
+    
+}
