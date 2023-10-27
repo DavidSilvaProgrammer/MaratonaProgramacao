@@ -1,0 +1,72 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+    public static class MinValue {
+        int value;
+
+        public MinValue() {
+            this.value = Integer.MAX_VALUE;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tamanhoPilha = scanner.nextInt();
+        Stack<Integer> pilha = new Stack<>();
+        MinValue menorValor = new MinValue();
+
+        for (int i = 0; i < tamanhoPilha; i++) {
+            String operacao = scanner.next();
+
+            if (operacao.equals("PUSH")) {
+                int valor = scanner.nextInt();
+                push(pilha, valor, menorValor);
+            } else if (operacao.equals("POP")) {
+                pop(pilha, menorValor);
+            } else if (operacao.equals("MIN")) {
+                int minimo = min(menorValor);
+                if (minimo != Integer.MAX_VALUE) {
+                    System.out.println(minimo);
+                } else {
+                    System.out.println("EMPTY");
+                }
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static void push(Stack<Integer> pilha, int valor, MinValue menorValor) {
+        pilha.push(valor);
+        if (valor < menorValor.value) {
+            menorValor.value = valor;
+        }
+    }
+
+    public static void pop(Stack<Integer> pilha, MinValue menorValor) {
+        if (!pilha.isEmpty()) {
+            int elemento = pilha.pop();
+            if (elemento == menorValor.value) {
+                atualizarMenorValor(pilha, menorValor);
+            }
+        }
+    }
+
+    public static void atualizarMenorValor(Stack<Integer> pilha, MinValue menorValor) {
+        if (pilha.isEmpty()) {
+            menorValor.value = Integer.MAX_VALUE;
+        } else {
+            menorValor.value = Integer.MAX_VALUE;
+            for (int valor : pilha) {
+                if (valor < menorValor.value) {
+                    menorValor.value = valor;
+                }
+            }
+        }
+    }
+
+    public static int min(MinValue menorValor) {
+        return menorValor.value;
+    }
+}
