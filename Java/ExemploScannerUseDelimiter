@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String texto = "Alice;Bob;Charlie;David";
+        Scanner scanner = new Scanner(texto);
+
+        scanner.useDelimiter(";"); // Define o delimitador como o caractere ";"
+
+        while (scanner.hasNext()) {
+            String nome = scanner.next();
+            System.out.println("Nome: " + nome);
+        }
+
+        scanner.close();
+    }
+}
+
+
+*************************
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String texto = "Alice Bob Charlie David";
+        Scanner scanner = new Scanner(texto);
+
+        scanner.useDelimiter(""); // Define o delimitador como o caractere ";"
+
+        while (scanner.hasNext()) {
+            String nome = scanner.next();
+            System.out.println("Nome: " + nome);
+        }
+
+        scanner.close();
+    }
+}
