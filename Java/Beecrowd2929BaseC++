@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stack>
+#include <climits>
+#include <cstring>
+
+using namespace std;
+
+int menor(stack<int> p) {
+    int min = INT_MAX; // Inicialize com INT_MAX
+    while (!p.empty()) {
+        if (p.top() < min) {
+            min = p.top();
+        }
+        p.pop();
+    }
+    return min;
+}
+
+int main() {
+    stack<int> pilha, aux;
+    int n, valor;
+    char cmd[5];
+    scanf("%d", &n);
+    while (n--) {
+        scanf("%s", cmd);
+        if (!strcmp(cmd, "PUSH")) {
+            scanf("%d", &valor);
+            pilha.push(valor);
+        }
+        if (!strcmp(cmd, "POP")) {
+            if (pilha.empty()) {
+                printf("EMPTY\n");
+            } else {
+                pilha.pop();
+            }
+        }
+        if (!strcmp(cmd, "MIN")) {
+            if (pilha.empty()) {
+                printf("EMPTY\n");
+            } else {
+                printf("%d\n", menor(pilha));
+            }
+        }
+    }
+
+    return 0;
+}
