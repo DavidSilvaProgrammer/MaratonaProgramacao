@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Main {
+    private static int topo = -1;
+    private static int[] pilha;
+    private static int[] menorValores;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tamanhoPilha = scanner.nextInt();
+        pilha = new int[tamanhoPilha];
+        menorValores = new int[tamanhoPilha];
+
+        for (int i = 0; i < tamanhoPilha; i++) {
+            String operacao = scanner.next();
+
+            if (operacao.equals("PUSH")) {
+                int valor = scanner.nextInt();
+                push(valor);
+            } else if (operacao.equals("POP")) {
+                if (!vazia()) {
+                    int elemento = pop();
+                } else {
+                    System.out.println("EMPTY");
+                }
+            } else if (operacao.equals("MIN")) {
+                if (!vazia()) {
+                    int minimo = menorValores[topo];
+                    System.out.println(minimo);
+                } else {
+                    System.out.println("EMPTY");
+                }
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static boolean vazia() {
+        return topo == -1;
+    }
+
+    public static void push(int numero) {
+        pilha[++topo] = numero;
+        if (topo == 0 || numero < menorValores[topo - 1]) {
+            menorValores[topo] = numero;
+        } else {
+            menorValores[topo] = menorValores[topo - 1];
+        }
+    }
+
+    public static int pop() {
+        if (!vazia()) {
+            int elemento = pilha[topo--];
+            return elemento;
+        } else {
+            return -1;
+        }
+    }
+}
