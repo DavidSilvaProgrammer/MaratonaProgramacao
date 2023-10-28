@@ -31,6 +31,7 @@ public class TiposPrimitivos {
 
         System.out.print("Digite uma String: ");
         String texto = scanner.next(); // Lê uma String
+        String texto = scanner.nextLine();
 
         // Imprimir os valores na tela
         System.out.println("Valores inseridos:");
