@@ -1,0 +1,21 @@
+n = int(input())
+stack = []
+min_stack = []
+
+for _ in range(n):
+    operation = input().split()
+    if operation[0] == 'PUSH':
+        value = int(operation[1])
+        stack.append(value)
+        if not min_stack or value <= min_stack[-1]:
+            min_stack.append(value)
+    elif operation[0] == 'POP':
+        if stack:
+            if stack[-1] == min_stack[-1]:
+                min_stack.pop()
+            stack.pop()
+    elif operation[0] == 'MIN':
+        if min_stack:
+            print(min_stack[-1])
+        else:
+            print("EMPTY")
