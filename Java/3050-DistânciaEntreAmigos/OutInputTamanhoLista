@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a quantidade de prédios: ");
+        int n = scanner.nextInt();
+        List<Integer>[] area = new List[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Informe o tamanho do prédio " + i + ": ");
+            int c = scanner.nextInt();
+            area[i] = new ArrayList<>(c);
+
+            for (int j = 0; j < c; j++) {
+                System.out.print("Informe o elemento " + j + " do prédio " + i + ": ");
+                int elemento = scanner.nextInt();
+                area[i].add(elemento);
+            }
+        }
+
+        // Tamanho da lista de listas
+        int tamanhoListaDeListas = area.length;
+        System.out.println("Tamanho da lista de listas: " + tamanhoListaDeListas);
+
+        // Tamanho de cada lista dentro da lista
+        for (int i = 0; i < n; i++) {
+            int tamanhoListaInterna = area[i].size();
+            System.out.println("Tamanho da lista do prédio " + i + ": " + tamanhoListaInterna);
+        }
+
+        scanner.close();
+    }
+}
