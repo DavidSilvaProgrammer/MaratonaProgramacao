@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a quantidade de prédios: ");
+        int n = scanner.nextInt();
+        List<Integer>[] area = new List[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Informe o tamanho do prédio " + i + ": ");
+            int c = scanner.nextInt();
+            area[i] = new ArrayList<>(c);
+
+            for (int j = 0; j < c; j++) {
+                System.out.print("Informe o elemento " + j + " do prédio " + i + ": ");
+                int elemento = scanner.nextInt();
+                area[i].add(elemento);
+            }
+        }
+
+        // Acessa o elemento no índice 1 da lista area[0]
+        if (area[0].size() > 1) {
+            int elemento = area[0].get(1);
+            System.out.println("Elemento na posição 1 do prédio 0: " + elemento);
+        } else {
+            System.out.println("O prédio 0 não possui elementos suficientes para acessar a posição 1.");
+        }
+
+        scanner.close();
+    }
+}
