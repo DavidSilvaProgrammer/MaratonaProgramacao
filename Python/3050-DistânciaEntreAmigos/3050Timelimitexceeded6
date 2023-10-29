@@ -1,0 +1,21 @@
+from array import array
+
+n = int(input())
+predios = array('i', map(int, input().split()))
+
+//predios = [int(x) for x in sys.stdin.readline().split()]
+
+maiorDistancia = 0
+
+for i in range(n):
+    for j in range(n):
+        
+        if j - i < 0:
+            distancia = predios[i] + ((j - i) * -1) + predios[j]
+        else:
+            distancia = predios[i] + (j - i) + predios[j]
+        
+        if distancia > maiorDistancia:
+            maiorDistancia = distancia
+
+print(maiorDistancia)
