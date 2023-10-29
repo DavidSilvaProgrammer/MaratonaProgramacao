@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] predios = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            predios[i] = scanner.nextInt();
+        }
+
+        int maiorDistancia = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int distancia;
+                if (j - i < 0) {
+                    distancia = predios[i] + ((j - i) * -1) + predios[j];
+                } else {
+                    distancia = predios[i] + (j - i) + predios[j];
+                }
+
+                if (distancia > maiorDistancia) {
+                    maiorDistancia = distancia;
+                }
+            }
+        }
+
+        System.out.println(maiorDistancia);
+    }
+}
