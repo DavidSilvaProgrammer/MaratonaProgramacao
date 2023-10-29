@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int maiorInterno=-1;
+
+        System.out.print("Informe o tamanho da lista de listas: ");
+        int tamanhoListaDeListas = scanner.nextInt();
+        List<Integer>[] area = new List[tamanhoListaDeListas];
+
+        for (int i = 0; i < tamanhoListaDeListas; i++) {
+            System.out.print("Informe o tamanho da lista do prédio " + i + ": ");
+            int tamanhoListaInterna = scanner.nextInt();
+            area[i] = new ArrayList<>(tamanhoListaInterna);
+            if (tamanhoListaInterna>maiorInterno){
+                maiorInterno=tamanhoListaInterna;
+            }
+
+            // Preencha a lista interna com zeros
+            for (int j = 0; j < tamanhoListaInterna; j++) {
+                area[i].add(0);
+            }
+        }
+
+        // Tamanho da lista de listas
+        System.out.println("Tamanho da lista de listas: " + area.length);
+
+        // Tamanho de cada lista interna
+        for (int i = 0; i < tamanhoListaDeListas; i++) {
+            System.out.println("Tamanho da lista do prédio " + i + ": " + area[i].size());
+        }
+        
+        System.out.println("Maior tamanho interno: "+maiorInterno);
+        
+        scanner.close();
+    }
+}
