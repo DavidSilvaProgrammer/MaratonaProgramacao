@@ -1,0 +1,15 @@
+n = int(input("Informe n de prédio:"))
+predios = []
+
+for i in range(n):
+    predios.append(int(input("Informe tamanho do prédio " + str(i) + ":")))
+
+maiorDis = 0
+
+for i in range(n):
+    for j in range(i+1, n):
+        distancia = abs(j - i)  # Calcula a distância entre os prédios
+        distancia_total = predios[i] + predios[j] + distancia
+        maiorDis = max(maiorDis, distancia_total)
+
+print(maiorDis)
