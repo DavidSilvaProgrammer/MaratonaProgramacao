@@ -1,0 +1,20 @@
+n = int(input())
+predios = [int(x) for x in input().split()]
+
+maiorDistancia = 0
+
+for i in range(n):
+    for j in range(n):
+        
+        if j-i<0:
+            distancia = predios[i] +((j-i)*-1) + predios[j]
+
+        else:
+            
+            distancia = predios[i] + (j-i) + predios[j]
+        
+        if distancia>maiorDistancia:
+            
+            maiorDistancia = distancia
+
+print(maiorDistancia)
