@@ -1,0 +1,23 @@
+public class SplitTester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] xpto;
+
+		Scanner in = new Scanner(System.in);
+
+		
+		
+		xpto = in.nextLine().split(" ");
+
+		for (String x : xpto)
+
+			System.out.print(x);
+
+	}
+
+}
