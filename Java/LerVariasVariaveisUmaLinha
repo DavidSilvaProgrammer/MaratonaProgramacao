@@ -21,3 +21,91 @@ public class SplitTester {
 	}
 
 }
+***************************
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int casos, x, y, z;
+        String[] valores;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Casos de testes:");
+
+        valores = input.nextLine().split(" ");
+
+        x = Integer.parseInt(valores[0]);
+        y = Integer.parseInt(valores[1]);
+        z = Integer.parseInt(valores[2]);
+
+        System.out.println("x: " + x + "\ny: " + y + "\nz: " + z);
+
+
+        input.close();
+    }
+}
+
+
+*************************
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int casos, x, y, z;
+        String[] valores;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Casos de testes:");
+
+        valores = input.nextLine().split(" ");
+
+        x = Integer.parseInt(valores[0]);
+        y = Integer.parseInt(valores[1]);
+        z = Integer.parseInt(valores[2]);
+
+        System.out.println("x: " + x + "\ny: " + y + "\nz: " + z);
+
+        input.close();
+    }
+}
+
+
+**************************
+
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int casos, x,y,z; 
+	    String valores[]; //String[] valores;
+	    
+	    Scanner input = new Scanner(System.in);
+	    
+		System.out.println("Casos de testes:");
+		
+		valores = input.nextLine().split("");
+		
+		x= Integer.parseInt(valores[0]);
+		y= Integer.parseInt(valores[1]);
+		z= Integer.parseInt(valores[2]);
+		
+		System.out.println("x: "+ x+"\ny: "+y+"\nz: "+z);
+		
+		
+		
+		
+		
+		
+		
+	}
+}
