@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class LeituraDeTresInteiros {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite três inteiros separados por espaço:");
+
+        // Lê a linha inteira como uma string
+        String linha = scanner.nextLine();
+
+        // Divide a string em partes usando o espaço como delimitador
+        String[] partes = linha.split(" ");
+
+        // Converte as partes em inteiros
+        int numero1 = Integer.parseInt(partes[0]);
+        int numero2 = Integer.parseInt(partes[1]);
+        int numero3 = Integer.parseInt(partes[2]);
+
+        System.out.println("Você digitou: " + numero1 + ", " + numero2 + ", " + numero3);
+
+        // Fecha o scanner para liberar recursos
+        scanner.close();
+    }
+}
