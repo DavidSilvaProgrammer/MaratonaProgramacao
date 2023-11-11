@@ -23,3 +23,30 @@ public class LeituraDeTresInteiros {
         scanner.close();
     }
 }
+
+
+****************************
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int casos;
+        String x, y, z;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Casos de testes:");
+        String[] valores = input.nextLine().split(" ");
+        x = valores[0];
+        y = valores[1];
+        z = valores[2];
+
+        System.out.println("x: " + x + "\ny: " + y + "\nz: " + z);
+
+        input.close();
+    }
+}
+
