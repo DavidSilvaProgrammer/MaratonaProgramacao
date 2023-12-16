@@ -1,0 +1,93 @@
+Boa tarde. Vou postar a lista de exercícios que o professor passou hoje no classroom e um código que eu fiz em Java 
+com a ajuda do professor para resolver a primeira questão, "Problem A. Ajude o Nathan!".
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int t, k,thiago,nathan; 
+	    String valores[];
+	    
+	    Scanner input = new Scanner(System.in);
+	    
+		t = input.nextInt();
+		
+		input.nextLine();
+		
+		for (int i=0;i<t;i++){
+		
+		    valores = input.nextLine().split(" ");
+		
+		    k= Integer.parseInt(valores[0]);
+		    thiago= Integer.parseInt(valores[1]);
+		    nathan= Integer.parseInt(valores[2]);
+		    
+		    if (((thiago+nathan)/k)%2 == 0){
+		        System.out.println("Thiago");
+		    }else{
+		        System.out.println("Nathan");
+		    }
+		    
+		}
+		
+	}
+}
+
+A questão fala sobre uma partida de tênis de mesa entre Thiago e Nathan e pede para descobrir quem será o 
+próximo jogador da rodada se baseando no valor "k" de jogadas e nos pontos dos jogadores.  
+A questão pede um valor inteiro de casos de testes e que os valores "k", "T" e "N" sejam passados em uma única linha. 
+
+Para receber tudo em uma única linha em Java, tive que criar um pequeno vetor para receber os valores por meio 
+do método split no tipo string e depois converti para inteiro. 
+
+Já em relação a lógica do problema, é possível resolver somando a quantidade de pontos dos jogadores, 
+dividindo pelo valor "k" e depois tirando o modulo por 2 para saber se o resultado é par ou ímpar. 
+Se for par, isso significa que o resultado é Thiago, já que é ele que iniciou as rodadas. 
+Se for ímpar, significa que é a vez de Nathan.
+
+
+*********************
+
+
+Bom dia, professor e colegas. Consegui resolver a 3050, o problema dos prédios. Fiz em Java. 
+Código foi aprovado no Beecrowd. Já faz um tempo que o professor passou essa questão, mas só consegui resolver agora. 
+
+A princípio, eu pensava que precisaria fazer uma matriz para calcular a altura e a distancia entre os predios, 
+mas basta criar um vetor e ir preenchendo os elementos com os valores da altura de cada prédio, depois cria um 
+outro loop, só que dessa vez aninhado para encontrar a maior distância.
+
+Criei as variáveis n, distancia e maiorDistancia. O for aninhado sempre vai armazenando em distancia a 
+soma da altura dos prédios "predios[i] + predios[j]" com a diferença da distância "(j-i)".
+
+Depois é só fazer a comparação na condicional if e armazenar a maior distância na variavel maiorDistancia.
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] predios = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            predios[i] = scanner.nextInt();
+        }
+
+        int maiorDistancia = 0;
+        int distancia;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                distancia = predios[i] + predios[j] + (j - i);
+                if (distancia > maiorDistancia) {
+                    maiorDistancia = distancia;
+                }
+            }
+        }
+
+        System.out.println(maiorDistancia);
+    }
+}
