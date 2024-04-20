@@ -1,0 +1,39 @@
+while True:
+    try:
+        B, N, *_ = map(int, input().split())
+    except ValueError:
+        print("erro b n")
+        break
+    
+    if B == 0 and N == 0:
+        break
+    
+    R = list(map(int, input().split()))
+    
+    if len(R) != B:
+        print("erro r")
+        break
+    
+    for _ in range(N+1):
+        try:
+            D, C, V = map(int, input().split())
+        except ValueError:
+            print("erro d c v")
+            break
+        
+        if D < 0 or D >= B or C < 0 or C >= B:
+            break
+        
+        R[D-1] -= V
+        R[C-1] += V
+        
+    
+    s = True
+    for i in range(N):
+        if R[i-1] < 0:
+            s = False
+            print("N")
+            
+    
+    if s:
+        print("S")
