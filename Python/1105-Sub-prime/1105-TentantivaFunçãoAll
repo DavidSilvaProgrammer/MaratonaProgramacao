@@ -1,0 +1,39 @@
+while True:
+    try:
+        B, N, *_ = map(int, input("Digite B e N: ").split())
+        print("B:", B, "e N:", N)
+        
+    except ValueError:
+        print("Entrada inválida. Por favor, insira dois números inteiros separados por espaço.")
+        continue
+    
+    if B == 0 and N == 0:
+        break
+    
+    R = list(map(int, input("Digite R: ").split()))
+    
+    if len(R) != B:
+        print("O número de elementos em R não corresponde a B.")
+        continue
+    
+    for _ in range(N):
+        try:
+            D, C, V = map(int, input("Digite D C V: ").split())
+        except ValueError:
+            print("Entrada inválida para D, C, V. Certifique-se de inserir três números inteiros separados por espaço.")
+            break
+        
+        D -= 1
+        C -= 1
+        
+        if not (0 <= D < B and 0 <= C < B):
+            print("D ou C está fora do intervalo permitido.")
+            break
+        
+        R[D] -= V
+        R[C] += V
+        
+    if all(val >= 0 for val in R):
+        print("S")
+    else:
+        print("N")
