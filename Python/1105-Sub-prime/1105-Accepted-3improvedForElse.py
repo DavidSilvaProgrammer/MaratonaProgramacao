@@ -34,3 +34,12 @@ while True:
             break
     else:  
         print("S")
+
+# not all(0 <= val <= 10**4 for val in R): 
+#Esta parte verifica se todos os valores em R 
+#estão dentro do intervalo permitido de 0 a 104104. 
+#Aqui, all() é uma função que verifica se todos os elementos 
+#de um iterável são verdadeiros. 0 <= val <= 10**4 for val in R é 
+#uma expressão geradora que verifica se todos os valores em R estão dentro 
+#do intervalo permitido. O not antes disso inverte o resultado, então se qualquer 
+#valor em R estiver fora do intervalo, a expressão como um todo será verdadeira.
