@@ -9,7 +9,8 @@ while True:
         break
     
     R = list(map(int, input().split()))
-    
+
+    #(0 ≤ Ri ≤ 104, para 1 ≤ i ≤ B)
     if len(R) != B or not all(0 <= val <= 10**4 for val in R):
         break
     for _ in range(N):
