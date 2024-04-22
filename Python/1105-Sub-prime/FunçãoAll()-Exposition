@@ -1,0 +1,25 @@
+# Definindo uma lista com alguns valores
+numeros = [2, 4, 6, 8, 10]
+
+# Verificando se todos os números na lista são pares
+resultado = all(numero % 2 == 0 for numero in numeros)
+
+# Imprimindo o resultado
+print(resultado)  # Isso vai imprimir True, porque todos os números são pares
+
+#A função all() em Python retorna True se todos os elementos em um iterável 
+#forem avaliados como verdadeiros. Caso contrário, retorna False.
+
+
+#A função all() aceita apenas um argumento, que é um iterável
+#(como uma lista de booleanos, por exemplo), mas esse iterável 
+#pode conter quantas comparações você desejar.
+
+# Definindo uma lista de números
+numeros = [2, 4, 6, 8, 10]
+
+# Verificando se todos os números na lista são pares e maiores que zero
+resultado = all(numero % 2 == 0 and numero > 0 for numero in numeros)
+
+# Imprimindo o resultado
+print(resultado)  # Isso vai imprimir True, porque todos os números são pares e maiores que zero
