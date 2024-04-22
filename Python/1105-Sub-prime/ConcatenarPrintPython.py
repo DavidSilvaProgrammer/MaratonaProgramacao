@@ -1,5 +1,6 @@
 print("Olá, " + str(42) + " mundo!")
 
+print(f"Olá, {42} mundo!")
 
 *********************
 
