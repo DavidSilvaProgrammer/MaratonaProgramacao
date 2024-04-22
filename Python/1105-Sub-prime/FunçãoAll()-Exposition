@@ -23,3 +23,14 @@ resultado = all(numero % 2 == 0 and numero > 0 for numero in numeros)
 
 # Imprimindo o resultado
 print(resultado)  # Isso vai imprimir True, porque todos os números são pares e maiores que zero
+
+
+#Um exemplo que não usa explicitamente um loop for dentro da expressão passada para all():
+
+# Verificando se todos os elementos de uma lista são True
+valores = [True, True, False, True]
+resultado = all(valores)
+
+# Imprimindo o resultado
+print(resultado)  # Isso imprimirá False, porque nem todos os elementos são True
+
