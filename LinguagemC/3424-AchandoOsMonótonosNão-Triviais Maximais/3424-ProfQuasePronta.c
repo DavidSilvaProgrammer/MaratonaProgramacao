@@ -4,7 +4,8 @@
 int main() {
     char str[30];
     char* token;
-    int tam,cont=0;
+    int n,tam,cont=0;
+    scanf(%d,&n);
     scanf("%s",str);
     token = strtok(str,"b");
     while(token!=NULL){
