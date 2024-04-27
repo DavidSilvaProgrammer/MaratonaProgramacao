@@ -54,4 +54,30 @@ A função strtok em C recebe dois parâmetros:
     delimitadores será considerado um delimitador. Quando strtok encontra um desses delimitadores 
     na string a ser tokenizada, ele divide a string e retorna o token. Se vários delimitadores 
     aparecerem consecutivamente, eles serão tratados como um único delimitador.
-    */
+
+
+Por exemplo, se quisermos dividir a string "Hello, world! This is a test." com os delimitadores " ,.!", 
+chamamos strtok da seguinte forma:
+
+char str[] = "Hello, world! This is a test.";
+char delimiters[] = " ,.!";
+char *token = strtok(str, delimiters);
+
+A função strtok em C recebe dois parâmetros:
+
+    String a ser tokenizada: Este é um ponteiro para uma string que será dividida em tokens. A primeira vez que strtok é chamado, esta string é fornecida como o primeiro argumento. Nas chamadas subsequentes, este argumento deve ser NULL, indicando que a função deve continuar a tokenização da mesma string a partir de onde parou.
+
+    String de delimitadores: Este é um ponteiro para uma string contendo os caracteres que serão usados como delimitadores para dividir a string em tokens. Cada caractere na string de delimitadores será considerado um delimitador. Quando strtok encontra um desses delimitadores na string a ser tokenizada, ele divide a string e retorna o token. Se vários delimitadores aparecerem consecutivamente, eles serão tratados como um único delimitador.
+
+Por exemplo, se quisermos dividir a string "Hello, world! This is a test." com os delimitadores " ,.!", chamamos strtok da seguinte forma:
+
+c
+
+char str[] = "Hello, world! This is a test.";
+char delimiters[] = " ,.!";
+char *token = strtok(str, delimiters);
+
+Neste exemplo, a string "Hello, world! This is a test." será dividida 
+em tokens com base nos delimitadores fornecidos.
+
+ */
