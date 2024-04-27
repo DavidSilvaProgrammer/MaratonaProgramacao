@@ -17,3 +17,8 @@ então strings[0] == NULL é a verificação apropriada para determinar se o vet
 é a verificação apropriada para determinar se a string está vazia.
 
 Espero que isso esclareça as diferenças! Se ainda houver dúvidas, estou aqui para ajudar.
+
+
+    str[0] == NULL: Isso está tentando verificar se o primeiro caractere da string str é nulo. No entanto, NULL é um ponteiro nulo e não pode ser comparado diretamente com um caractere. Para verificar se a string está vazia, você deve comparar o primeiro caractere com '\0', que é o caractere nulo terminador que marca o fim de uma string em C.
+
+    strlen(str) > 5000: Esta parte parece correta, está verificando se o comprimento da string é maior que 5000.
