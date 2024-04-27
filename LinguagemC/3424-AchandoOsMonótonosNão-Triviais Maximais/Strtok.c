@@ -15,6 +15,26 @@ int main() {
 }
 
 
+************************
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[] = "A B C D E F G E";
+    char delimiters[] = " "; // Delimitadores: espaço, vírgula, ponto e exclamação
+    char *token = strtok(str, delimiters);
+
+    while (token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, delimiters);
+    }
+
+    return 0;
+}
+
+
+
 /*
 
 A função strtok utiliza um ponteiro por algumas razões:
