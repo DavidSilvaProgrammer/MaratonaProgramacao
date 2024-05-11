@@ -34,3 +34,24 @@ for numero in lista:
 for numero, repeticao in contagem.items():
     print(f'O número "{numero}" aparece {repeticao} vezes na lista.')
 
+
+
+
+################################
+
+A linha de código if caractere in contagem: verifica se a chave caractere está presente 
+no dicionário contagem. Em outras palavras, ela verifica se o dicionário já possui uma entrada 
+para o caractere atual.
+
+Se o caractere já estiver presente no dicionário contagem, isso significa que ele já foi 
+encontrado anteriormente na lista e sua contagem de repetição já está sendo rastreada. 
+Nesse caso, o programa incrementa o valor da contagem para esse caractere em 1.
+
+Se o caractere não estiver presente no dicionário contagem, isso significa que ele ainda 
+não foi encontrado anteriormente na lista. Nesse caso, o programa cria uma nova entrada 
+no dicionário para o caractere e define sua contagem inicial como 1.
+
+Essa linha de código é uma maneira de verificar se um caractere já foi encontrado 
+antes na lista e, se sim, atualizar sua contagem de repetição; ou, se não, iniciar 
+uma nova contagem para esse caractere.
+
