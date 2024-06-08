@@ -42,4 +42,28 @@ Claro! Vou explicar a lógica passo a passo:
 
 Espero que isso esclareça a lógica por trás do algoritmo!
 
+
+########
+
+Entendido! Vamos calcular a quantidade de casais de animais e o número de gaiolas necessárias com base nos pressupostos fornecidos:
+
+    No primeiro mês, há apenas um casal.
+    No segundo mês, esse casal atinge a maturidade sexual e pode produzir um novo casal.
+    A partir do terceiro mês, cada casal existente produz um novo casal a cada mês.
+
+Vamos criar uma tabela para visualizar melhor isso:
+
+Mês	Casais	Novos Casais	Total Casais	Gaiolas
+1	1	0	1	1
+2	1	1	2	1
+3	2	1	3	1
+4	3	2	5	1
+5	5	3	8	2
+6	8	5	13	3
+
+
+Você pode ajustar o valor de meses conforme necessário. Esse código calculará o número final de casais de animais 
+e o número de gaiolas necessárias para abrigá-los após o número especificado de meses.
+
+
 '''
