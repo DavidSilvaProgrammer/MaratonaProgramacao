@@ -1,0 +1,20 @@
+def calculaCasal(m):
+    casais_mes = [1, 1]
+    total_casal = 0
+    gaiolas = 0
+    
+    for i in range(2, m):
+        total_casal = casais_mes[i - 1] + casais_mes[i - 2] 
+        casais_mes.append(total_casal)
+        
+    for casais in casais_mes:
+        if casais > 5:
+            gaiolas += 1
+            
+    print(f"{total_casal} {gaiolas} ")
+            
+        
+n = int(input())
+for i in range(n):
+    m = int(input())
+    calculaCasal(m)
