@@ -16,3 +16,30 @@ def calcular_gaiolas(meses):
 meses = 6  # Altere para o número de meses desejado
 casais_final, gaiolas_final = calcular_gaiolas(meses)
 print(f"Após {meses} meses, haverá um total de {casais_final} casais de animais, requerendo {gaiolas_final} gaiolas.")
+
+
+
+'''
+
+Claro! Vou explicar a lógica passo a passo:
+
+    Inicialização:
+        Começamos com dois casais de animais: um casal no primeiro mês e outro no segundo mês, como especificado.
+        Também iniciamos com uma única gaiola.
+
+    Loop para cada mês após o segundo mês:
+        Começamos o loop a partir do terceiro mês, já que nos dois primeiros meses já temos os casais iniciais.
+        Para cada mês, calculamos o número de novos casais que serão produzidos. Isso é simplesmente o número de casais do mês anterior.
+        Calculamos o total de casais para o mês atual, que é a soma dos casais do mês anterior e do mês retrasado.
+        Adicionamos o total de casais calculado para o mês atual à lista de casais.
+
+    Verificação de novas gaiolas:
+        Verificamos se o número total de casais ultrapassou a capacidade atual de gaiolas (que abriga 5 casais cada).
+        Se for necessário uma nova gaiola, incrementamos o contador de gaiolas.
+
+    Resultado:
+        Após o loop, temos a lista completa de casais em cada mês e o número total de gaiolas necessário para abrigá-los.
+
+Espero que isso esclareça a lógica por trás do algoritmo!
+
+'''
