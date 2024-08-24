@@ -1,1 +1,2 @@
 algoritmo kmp
+pesquisar por fórmulas de permutação, combinações.
