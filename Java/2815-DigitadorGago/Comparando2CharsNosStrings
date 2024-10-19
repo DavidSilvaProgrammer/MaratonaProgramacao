@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello";
+        
+        // Verifica se a string tem pelo menos 2 caracteres
+        if (str.length() >= 2) {
+            char primeiroChar = str.charAt(0);
+            char segundoChar = str.charAt(1);
+            
+            // Comparando os dois primeiros caracteres
+            if (primeiroChar == segundoChar) {
+                System.out.println("Os dois primeiros caracteres são iguais: " + primeiroChar);
+            } else {
+                System.out.println("Os dois primeiros caracteres são diferentes: " + primeiroChar + " e " + segundoChar);
+            }
+        } else {
+            System.out.println("A string deve ter pelo menos 2 caracteres.");
+        }
+    }
+}
