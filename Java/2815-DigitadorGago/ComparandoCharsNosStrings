@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        String input = "ababc"; // Exemplo de string
+
+        // Verifica se a string tem pelo menos 4 caracteres
+        if (input.length() >= 4) {
+            // Compara as letras
+            if (input.charAt(0) == input.charAt(2) && input.charAt(1) == input.charAt(3)) {
+                input = input.substring(2);
+            }
+        }
+
+        System.out.println(input); // Exibe o resultado
+    }
+}
