@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class EntradaMultiplaComSplit {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedindo ao usuário para inserir dois números inteiros na mesma linha
+        System.out.println("Digite dois números inteiros separados por espaço:");
+
+        // Lendo a linha inteira
+        String linha = scanner.nextLine();
+
+        // Separando a linha pelos espaços
+        String[] partes = linha.split(" ");
+
+        // Convertendo as partes para inteiros
+        int num1 = Integer.parseInt(partes[0]);
+        int num2 = Integer.parseInt(partes[1]);
+
+        // Exibindo os números lidos
+        System.out.println("Você digitou os números: " + num1 + " e " + num2);
+
+        scanner.close();
+    }
+}
